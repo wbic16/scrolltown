@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Scrolltown: The Great Form Mix-Up</title>
+<style>
+  :root{
+    --bg1:#FFFBF0; --bg2:#FFEFCE;
+    --ink:#3E3A34; --ink-soft:#5C554B;
+    --card:#FFFDF6;
+    --coral-plate:#FBE7DB; --sky-plate:#DFECFA; --butter-plate:#FCF0BE; --mint-plate:#DFF1E0;
+    --coral:#D9705C; --blue:#6E97CC; --yellow:#DEB33C; --green:#6FA877;
+    --caption-bg:#463B31; --caption-ink:#FFF6E3;
+    --btn-bg:#FFFFFF; --btn-border:#E8D9BE;
+    --shadow:0 10px 28px rgba(120,84,30,.14);
+    --track:#F0E3C8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg1:#33291F; --bg2:#241C15;
+      --ink:#F7EDD8; --ink-soft:#D8C9AC;
+      --card:#3B3025;
+      --coral-plate:#5A3B2E; --sky-plate:#33455C; --butter-plate:#5C4E26; --mint-plate:#33503A;
+      --caption-bg:#1F1811; --caption-ink:#FFF6E3;
+      --btn-bg:#4A3C2C; --btn-border:#6B5638;
+      --shadow:0 10px 28px rgba(0,0,0,.4);
+      --track:#57462D;
+    }
+  }
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0;
+    font-family: ui-rounded, "SF Pro Rounded", "Segoe UI Rounded", "Segoe UI", system-ui, -apple-system, sans-serif;
+    color:var(--ink);
+    background:linear-gradient(180deg, var(--bg1), var(--bg2));
+    min-height:100vh;
+    line-height:1.55;
+  }
+  .wrap{ max-width:880px; margin:0 auto; padding:20px 16px 40px; }
+
+  header{ text-align:center; padding:14px 8px 6px; }
+  header h1{
+    margin:0; font-size:clamp(1.7rem, 5.5vw, 2.6rem); font-weight:800; letter-spacing:.01em;
+  }
+  header h1 .mix{ color:var(--coral); }
+  header p{ margin:8px auto 0; font-size:clamp(1rem,3vw,1.2rem); color:var(--ink-soft); max-width:34em; }
+
+  .player{
+    background:var(--card); border-radius:28px; box-shadow:var(--shadow);
+    padding:14px; margin-top:18px; border:3px solid rgba(255,255,255,.6);
+  }
+  .stage{
+    border-radius:20px; overflow:hidden; position:relative;
+    background:#DFECFA; line-height:0;
+  }
+  .stage svg{ width:100%; height:auto; display:block; }
+  .scene{ display:none; }
+  .scene.active{ display:block; }
+
+  .scene-label{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:12px 6px 0; flex-wrap:wrap;
+  }
+  .scene-label .sname{ font-weight:800; font-size:1.1rem; }
+  .scene-label .scount{ color:var(--ink-soft); font-size:.95rem; font-weight:600; }
+
+  .progress{ height:14px; background:var(--track); border-radius:999px; margin:10px 2px 0; overflow:hidden; }
+  .progress > div{ height:100%; width:0%; background:linear-gradient(90deg, var(--yellow), var(--coral)); border-radius:999px; transition:width .5s ease; }
+
+  .caption{
+    margin-top:12px; background:var(--caption-bg); color:var(--caption-ink);
+    border-radius:20px; padding:18px 20px; min-height:118px;
+    display:flex; flex-direction:column; gap:10px; justify-content:center;
+  }
+  .chip{
+    align-self:flex-start; font-weight:800; font-size:.95rem; letter-spacing:.04em;
+    padding:4px 14px; border-radius:999px; color:#3E3A34; background:#FCF0BE;
+  }
+  .caption .line{ font-size:clamp(1.2rem, 3.6vw, 1.5rem); font-weight:600; line-height:1.45; margin:0; }
+  .caption .the-end{ font-size:clamp(1.2rem,3.6vw,1.5rem); font-weight:800; }
+
+  .controls{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+  .controls button, .pills button{
+    font:inherit; cursor:pointer; border-radius:999px; font-weight:800;
+    min-height:56px; border:3px solid var(--btn-border); background:var(--btn-bg); color:var(--ink);
+    transition:transform .12s ease, background .15s ease;
+  }
+  .controls button{ flex:1 1 0; padding:10px 14px; font-size:1.1rem; box-shadow:0 4px 0 var(--btn-border); }
+  .controls button:active{ transform:translateY(3px); box-shadow:0 1px 0 var(--btn-border); }
+  .controls button:focus-visible, .pills button:focus-visible{ outline:4px solid var(--blue); outline-offset:2px; }
+  #playBtn{ background:var(--coral); border-color:#B95543; color:#FFF8EC; box-shadow:0 4px 0 #B95543; flex:1.4 1 0; }
+  #playBtn:active{ box-shadow:0 1px 0 #B95543; }
+  #replayBtn{ background:var(--green); border-color:#4E8560; color:#FFF8EC; box-shadow:0 4px 0 #4E8560; display:none; }
+  #replayBtn.show{ display:block; }
+
+  .pills{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .pills button{
+    min-height:52px; padding:8px 14px; font-size:.98rem; flex:1 1 30%;
+    display:flex; align-items:center; gap:8px; justify-content:center; text-align:center;
+  }
+  .pills button .dot{
+    width:14px; height:14px; border-radius:50%; flex:0 0 auto; background:var(--track);
+    border:2px solid rgba(62,58,52,.25);
+  }
+  .pills button[aria-current="true"]{ background:var(--butter-plate); border-color:var(--yellow); }
+  .pills button[aria-current="true"] .dot{ background:var(--coral); border-color:#B95543; }
+
+  .about{ margin:18px 6px 0; color:var(--ink-soft); font-size:1rem; text-align:center; }
+  footer{ text-align:center; margin-top:26px; color:var(--ink-soft); font-size:.95rem; font-weight:600; }
+
+  /* ---------- SVG animation helpers ---------- */
+  .bob{ animation:bob 2.6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .bob2{ animation:bob 3.1s ease-in-out infinite .5s; transform-box:fill-box; transform-origin:center; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-6px);} }
+  .wave{ animation:wave 1.6s ease-in-out infinite; transform-box:fill-box; transform-origin:15% 90%; }
+  @keyframes wave{ 0%,100%{ transform:rotate(0deg);} 50%{ transform:rotate(-28deg);} }
+  .swing{ animation:swing 2.2s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 0%; }
+  @keyframes swing{ 0%,100%{ transform:rotate(14deg);} 50%{ transform:rotate(-14deg);} }
+  .hop{ animation:hop 1.1s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .hop2{ animation:hop 1.1s ease-in-out infinite .35s; transform-box:fill-box; transform-origin:center; }
+  .hop3{ animation:hop 1.1s ease-in-out infinite .7s; transform-box:fill-box; transform-origin:center; }
+  @keyframes hop{ 0%,100%{ transform:translateY(0);} 40%{ transform:translateY(-14px);} }
+  .spin{ animation:spin 2.4s linear infinite; transform-box:fill-box; transform-origin:center; }
+  @keyframes spin{ to{ transform:rotate(360deg);} }
+  .glowPulse{ animation:glowPulse 2.8s ease-in-out infinite; }
+  @keyframes glowPulse{ 0%,100%{ opacity:.35;} 50%{ opacity:.9;} }
+  .badgeGlow{ animation:badgeGlow 4s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .badgeGlow.b2{ animation-delay:1s; } .badgeGlow.b3{ animation-delay:2s; } .badgeGlow.b4{ animation-delay:3s; }
+  @keyframes badgeGlow{ 0%,70%,100%{ opacity:.25; transform:scale(1);} 85%{ opacity:1; transform:scale(1.25);} }
+  .flutterDown{ animation:flutterDown 7s linear infinite; transform-box:fill-box; transform-origin:center; }
+  .flutterDown.d2{ animation-duration:9s; animation-delay:-3s; }
+  .flutterDown.d3{ animation-duration:8s; animation-delay:-5.5s; }
+  .flutterDown.d4{ animation-duration:10s; animation-delay:-1.5s; }
+  @keyframes flutterDown{
+    0%{ transform:translate(0,-10px) rotate(-8deg); opacity:0; }
+    10%{ opacity:1; }
+    50%{ transform:translate(26px,120px) rotate(10deg); }
+    90%{ opacity:1; }
+    100%{ transform:translate(-8px,250px) rotate(-6deg); opacity:0; }
+  }
+  .driftPage{ animation:driftPage 9s linear infinite; }
+  .driftPage.d2{ animation-duration:12s; animation-delay:-4s; }
+  .driftPage.d3{ animation-duration:10.5s; animation-delay:-7s; }
+  @keyframes driftPage{ from{ transform:translateX(-90px);} to{ transform:translateX(880px);} }
+  .butterfly{ animation:butterfly 11s ease-in-out infinite; }
+  @keyframes butterfly{
+    0%{ transform:translate(-40px,120px); } 25%{ transform:translate(220px,60px); }
+    50%{ transform:translate(470px,130px); } 75%{ transform:translate(680px,55px); }
+    100%{ transform:translate(860px,110px); }
+  }
+  .wingFlap{ animation:wingFlap .5s ease-in-out infinite alternate; transform-box:fill-box; transform-origin:center; }
+  @keyframes wingFlap{ from{ transform:scaleX(1);} to{ transform:scaleX(.45);} }
+  .capWobble{ animation:capWobble 3.4s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 90%; }
+  @keyframes capWobble{ 0%,55%,100%{ transform:rotate(0);} 65%{ transform:rotate(-7deg);} 78%{ transform:rotate(6deg);} 90%{ transform:rotate(-3deg);} }
+  .drawerPop{ animation:drawerPop 3.4s ease-in-out infinite; }
+  @keyframes drawerPop{ 0%,55%,100%{ transform:translateX(0);} 70%,88%{ transform:translateX(16px);} }
+  .unroll{ animation:unroll 4.5s ease-in-out infinite; transform-box:fill-box; transform-origin:0% 50%; }
+  @keyframes unroll{ 0%,20%{ transform:scaleX(.25);} 55%,85%{ transform:scaleX(1);} 100%{ transform:scaleX(.25);} }
+  .chuteForm{ animation:chuteForm 4s ease-in-out infinite; }
+  @keyframes chuteForm{ 0%,30%{ transform:translate(0,-6px); opacity:0;} 45%{ opacity:1;} 75%,100%{ transform:translate(4px,64px); opacity:1;} }
+  .walkerCross{ animation:walkerCross 12s ease-in-out infinite; }
+  @keyframes walkerCross{ 0%,15%{ transform:translateX(0);} 80%,100%{ transform:translateX(330px);} }
+  .leafFall{ animation:leafFall 8s linear infinite; transform-box:fill-box; transform-origin:center; }
+  .leafFall.d2{ animation-duration:10s; animation-delay:-4s; }
+  .leafFall.d3{ animation-duration:9s; animation-delay:-6.5s; }
+  @keyframes leafFall{
+    0%{ transform:translate(0,-8px) rotate(0); opacity:0; } 12%{ opacity:1; }
+    100%{ transform:translate(-50px,300px) rotate(200deg); opacity:0; }
+  }
+  .cartRoll{ animation:cartRoll 5s ease-in-out infinite; }
+  @keyframes cartRoll{ 0%,100%{ transform:translateX(0);} 50%{ transform:translateX(26px);} }
+  .permitTop{ animation:hop 2.2s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+
+  .mote{ animation:moteDrift 9s ease-in-out infinite; }
+  .mote.d2{ animation-duration:12s; animation-delay:-4s; }
+  .mote.d3{ animation-duration:10.5s; animation-delay:-6.5s; }
+  @keyframes moteDrift{ 0%,100%{ transform:translateY(0); opacity:.35; } 50%{ transform:translateY(-16px); opacity:1; } }
+  .scrollPulse{ animation:scrollPulse 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  @keyframes scrollPulse{ 0%,100%{ opacity:.88; } 50%{ opacity:1; } }
+  .winGlow{ animation:winGlow 5s ease-in-out infinite; }
+  @keyframes winGlow{ 0%,100%{ opacity:.75; } 50%{ opacity:1; } }
+  .numGlow{ animation:numGlow 3.6s ease-in-out infinite; }
+  @keyframes numGlow{ 0%,100%{ opacity:.8; } 50%{ opacity:1; } }
+  @media (prefers-reduced-motion: reduce){
+    .bob,.bob2,.wave,.swing,.hop,.hop2,.hop3,.spin,.flutterDown,.driftPage,.butterfly,
+    .capWobble,.drawerPop,.unroll,.chuteForm,.walkerCross,.leafFall,.cartRoll,.permitTop,.wingFlap{
+      animation-duration:24s; animation-timing-function:linear;
+    }
+    .glowPulse,.badgeGlow,.mote,.scrollPulse,.winGlow,.numGlow{ animation-duration:14s; }
+    .progress > div{ transition:none; }
+    .controls button{ transition:none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Scrolltown: <span class="mix">The Great Form Mix-Up</span></h1>
+    <p>A Saturday-morning cartoon about a town inside a scroll</p>
+  </header>
+
+  <main class="player" aria-label="Cartoon player">
+    <div class="stage" id="stage">
+
+      <!-- ============ SCENE 1 : HOME STREET ============ -->
+      <div class="scene" data-scene="0" role="img" aria-label="Scene 1: Fern waves hello on Home Street, in front of little scroll-houses with curled paper roofs.">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        
+        <defs>
+          <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3A6E"/><stop offset=".45" stop-color="#B4658A"/><stop offset=".78" stop-color="#F2A65E"/><stop offset="1" stop-color="#FFD98A"/></linearGradient>
+          <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB2D9"/><stop offset=".55" stop-color="#C9E4F2"/><stop offset="1" stop-color="#FFE9B8"/></linearGradient>
+          <linearGradient id="skyEve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A2E5E"/><stop offset=".5" stop-color="#C46A7A"/><stop offset="1" stop-color="#FFC978"/></linearGradient>
+          <radialGradient id="goldGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset=".55" stop-color="#FFC94D" stop-opacity=".45"/><stop offset="1" stop-color="#FFC94D" stop-opacity="0"/></radialGradient>
+          <linearGradient id="scrollG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC0"/><stop offset=".5" stop-color="#FFD76E"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+          <linearGradient id="coralG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F28A72"/><stop offset="1" stop-color="#DE6A52"/></linearGradient>
+          <linearGradient id="knitG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6DC"/><stop offset="1" stop-color="#F0D9A8"/></linearGradient>
+          <linearGradient id="butterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD76E"/><stop offset="1" stop-color="#EFAF2E"/></linearGradient>
+          <radialGradient id="brassG" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFE9A8"/><stop offset=".55" stop-color="#D9A83E"/><stop offset="1" stop-color="#9A6B1E"/></radialGradient>
+          <linearGradient id="brassSurf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8BC5E"/><stop offset=".5" stop-color="#C08A2E"/><stop offset="1" stop-color="#8A5A1E"/></linearGradient>
+          <linearGradient id="woodG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A33"/><stop offset="1" stop-color="#5C3A1E"/></linearGradient>
+          <radialGradient id="skinG" cx=".5" cy=".35" r=".85"><stop offset="0" stop-color="#FFD9B0"/><stop offset="1" stop-color="#F0AC7E"/></radialGradient>
+          <radialGradient id="hairG" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#B07C3E"/><stop offset=".6" stop-color="#8A5A2A"/><stop offset="1" stop-color="#6B3F16"/></radialGradient>
+          <linearGradient id="tealG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E8A80"/><stop offset="1" stop-color="#175E58"/></linearGradient>
+          <linearGradient id="plumG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E4A7A"/><stop offset="1" stop-color="#3E2A52"/></linearGradient>
+          <pattern id="knitPat" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 Q2 0 4 4 Q6 8 8 4" fill="none" stroke="#D9B96A" stroke-width="1" opacity=".55"/></pattern>
+          <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <rect width="800" height="500" fill="url(#skyG)"/>
+        <!-- giant luminous Great Scroll unfurling behind the town -->
+        <g class="scrollPulse">
+          <ellipse cx="400" cy="215" rx="330" ry="215" fill="url(#goldGlow)" filter="url(#soft)"/>
+          <path d="M150 60 Q400 10 650 60 L650 330 Q400 385 150 330 Z" fill="url(#scrollG)" opacity=".92"/>
+          <path d="M150 60 Q400 10 650 60" fill="none" stroke="#E8962E" stroke-width="10" stroke-linecap="round"/>
+          <ellipse cx="150" cy="60" rx="26" ry="15" fill="#F2B84B" stroke="#C97A1E" stroke-width="3"/><ellipse cx="150" cy="60" rx="11" ry="6" fill="#FFE9A8"/>
+          <ellipse cx="650" cy="330" rx="26" ry="15" fill="#F2B84B" stroke="#C97A1E" stroke-width="3"/>
+          <path d="M210 130 h380 M210 175 h380 M210 220 h300" stroke="#D98A2E" stroke-width="5" opacity=".35" stroke-linecap="round"/>
+        </g>
+        <rect y="360" width="800" height="140" fill="#2E5E58"/>
+        <path d="M0 430 Q 400 405 800 435 L800 500 L0 500 Z" fill="#F7C98A"/>
+        <path d="M0 430 Q 400 405 800 435" fill="none" stroke="#FFE9A8" stroke-width="4" opacity=".6"/>
+        <g transform="translate(52,252)">
+      <rect x="0" y="0" width="130" height="118" rx="18" fill="#F7E3C2"/>
+      <path d="M-8 6 Q65.0 -52 138 6 L138 -14 Q65.0 -64 -8 -14 Z" fill="#7A4A8A"/>
+      <path d="M124 -34 a13 13 0 1 1 13 13 a9.5 9.5 0 1 0 -9.5 -9.5" fill="#7A4A8A" opacity=".85"/>
+      <rect x="48.0" y="60" width="34" height="58" rx="17" fill="#2E7D74"/>
+      <circle cx="74.0" cy="90" r="3.5" fill="#FFE9A8"/>
+      <rect x="12" y="22" width="24" height="24" rx="6" fill="#FFD76E" class="winGlow"/><rect x="94" y="22" width="24" height="24" rx="6" fill="#FFD76E" class="winGlow"/>
+      <path d="M12 34 h24 M24 22 v24 M94 34 h24 M106 22 v24" stroke="#B9762A" stroke-width="2"/>
+    </g>
+        <!-- Fern's glowing house-scroll -->
+        <g>
+          <ellipse cx="330" cy="290" rx="105" ry="76" fill="#FFD76E" class="glowPulse" filter="url(#soft)"/>
+          <rect x="268" y="232" width="124" height="128" rx="16" fill="#FFF6DC"/>
+          <path d="M256 240 Q330 186 404 240 L404 218 Q330 170 256 218 Z" fill="url(#butterG)"/>
+          <path d="M388 204 a16 16 0 1 1 16 16 a12 12 0 1 0 -12 -12" fill="#B9762A"/>
+          <rect x="308" y="292" width="44" height="68" rx="20" fill="url(#coralG)"/>
+          <circle cx="330" cy="330" r="5" fill="#FFE9A8"/>
+          <rect x="282" y="252" width="24" height="24" rx="6" fill="#FFD76E" class="winGlow"/>
+          <rect x="354" y="252" width="24" height="24" rx="6" fill="#FFD76E" class="winGlow"/>
+        </g>
+        <g transform="translate(590,262)">
+      <rect x="0" y="0" width="120" height="108" rx="18" fill="#EAD9F2"/>
+      <path d="M-8 6 Q60.0 -52 128 6 L128 -14 Q60.0 -64 -8 -14 Z" fill="#2E7D74"/>
+      <path d="M114 -34 a13 13 0 1 1 13 13 a9.5 9.5 0 1 0 -9.5 -9.5" fill="#2E7D74" opacity=".85"/>
+      <rect x="43.0" y="50" width="34" height="58" rx="17" fill="#8A5A1E"/>
+      <circle cx="69.0" cy="80" r="3.5" fill="#FFE9A8"/>
+      <rect x="12" y="22" width="24" height="24" rx="6" fill="#FFD76E" class="winGlow"/><rect x="84" y="22" width="24" height="24" rx="6" fill="#FFD76E" class="winGlow"/>
+      <path d="M12 34 h24 M24 22 v24 M84 34 h24 M96 22 v24" stroke="#B9762A" stroke-width="2"/>
+    </g>
+        <g fill="#FFE9A8"><circle cx="120" cy="120" r="3" class="mote"/><circle cx="300" cy="80" r="2.2" class="mote d2"/><circle cx="520" cy="140" r="2.6" class="mote d3"/><circle cx="660" cy="90" r="2" class="mote d2"/><circle cx="420" cy="200" r="1.8" class="mote d3"/><circle cx="200" cy="230" r="2" class="mote"/></g>
+        
+        <g transform="translate(477,392) scale(0.92)"><g class="bob">
+          <!-- shoes: mint sneakers with stripes -->
+          <g><rect x="-30" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M-26 -8 h16 M-26 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/><rect x="6" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M10 -8 h16 M10 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/></g>
+          <!-- coral overalls with rolled cuffs -->
+          <path d="M-26 -96 h52 l4 44 h-18 l-3 -30 h-8 l-3 30 h-18 Z" fill="url(#coralG)"/>
+          <path d="M-30 -56 h18 v10 h-18 Z M12 -56 h18 v10 h-18 Z" fill="#F0907A"/>
+          <rect x="-24" y="-96" width="48" height="14" rx="4" fill="url(#coralG)"/>
+          <circle cx="-14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/><circle cx="14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/>
+          <rect x="-13" y="-72" width="26" height="16" rx="3" fill="none" stroke="#B95543" stroke-width="1.6" stroke-dasharray="3 3"/>
+          <!-- cream knit sleeves -->
+          <rect x="-44" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="-37" cy="-80" r="8" fill="#F2B98A"/>
+          <g class="wave"><rect x="34" y="-118" width="15" height="40" rx="7.5" fill="url(#knitG)"/><circle cx="42" cy="-122" r="9" fill="#F2B98A"/></g>
+          <!-- butter scarf wrapped + knotted -->
+          <ellipse cx="0" cy="-104" rx="27" ry="12" fill="url(#butterG)"/>
+          <circle cx="20" cy="-100" r="8" fill="#E9B94E"/><path d="M24 -96 l10 12 l-9 3 l-5 -10 Z" fill="#F2C94C"/>
+          <!-- brass scroll key-badge on black cord: disc + spiral, no letter -->
+          <path d="M-12 -100 L0 -70 L12 -100" stroke="#2B2118" stroke-width="2.4" fill="none"/>
+          <circle cx="0" cy="-66" r="9" fill="url(#brassG)" stroke="#7A5518" stroke-width="1.8"/>
+          <path d="M0 -66 m-5 0 a5 5 0 1 1 5 5 a3.2 3.2 0 1 0 -3.2 -3.2" fill="none" stroke="#5C3D0E" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- head -->
+          <circle cx="0" cy="-142" r="34" fill="url(#skinG)"/>
+          <ellipse cx="-17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/><ellipse cx="17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/>
+          <!-- freckles across cheeks and nose -->
+          <g fill="#B06A3B" opacity=".85"><circle cx="-14" cy="-133" r="1.5"/><circle cx="-9" cy="-131" r="1.3"/><circle cx="-19" cy="-131" r="1.2"/><circle cx="14" cy="-133" r="1.5"/><circle cx="9" cy="-131" r="1.3"/><circle cx="19" cy="-131" r="1.2"/><circle cx="-2.5" cy="-136" r="1.2"/><circle cx="2.5" cy="-136" r="1.2"/></g>
+          <!-- very large amber-brown eyes with highlights -->
+          <ellipse cx="-13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/><ellipse cx="13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/>
+          <circle cx="-13" cy="-143" r="7" fill="#C46A1B"/><circle cx="13" cy="-143" r="7" fill="#C46A1B"/>
+          <circle cx="-13" cy="-142" r="4" fill="#1E140C"/><circle cx="13" cy="-142" r="4" fill="#1E140C"/>
+          <circle cx="-15.5" cy="-147" r="2.4" fill="#FFFFFF"/><circle cx="10.5" cy="-147" r="2.4" fill="#FFFFFF"/>
+          <circle cx="-10" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/><circle cx="16" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/>
+          <path d="M-21 -158 Q-13 -162 -6 -158 M7 -158 Q13 -162 20 -158" stroke="#4A2C12" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="0" cy="-135" rx="3.4" ry="2.4" fill="#D98A5F"/>
+          <path d="M-7 -126 Q0 -121 7 -126" stroke="#7A3B22" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- honey-brown hair: side-swept fringe + two scroll-puff buns with spirals -->
+          <path d="M-34 -142 a34 34 0 0 1 68 0 l0 -8 Q18 -168 -6 -160 Q-28 -154 -34 -134 Z" fill="url(#hairG)"/>
+          <path d="M-34 -150 Q-10 -172 20 -164 Q4 -156 -8 -152 Q-24 -147 -34 -138 Z" fill="#A06A33" opacity=".7"/>
+          <circle cx="-38" cy="-170" r="19" fill="url(#hairG)"/><circle cx="38" cy="-170" r="19" fill="url(#hairG)"/>
+          <path d="M-38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M-30 -118 q-6 10 2 16 M30 -118 q6 10 -2 16" stroke="url(#hairG)" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <g transform="translate(-52,-86) rotate(-18)"><rect x="-7" y="-26" width="14" height="52" rx="7" fill="#F7E3B8" stroke="#D9B96A" stroke-width="2"/><ellipse cx="0" cy="-26" rx="7" ry="3.5" fill="#E8C97E"/><path d="M-4 -26 a4 3 0 1 1 8 0" fill="none" stroke="#B98A1F" stroke-width="1.6"/></g>
+          <ellipse cx="0" cy="2" rx="34" ry="4" fill="#3A2350" opacity=".18"/>
+        </g>
+        </g>
+        <g class="butterfly"><g class="wingFlap"><ellipse cx="-8" cy="0" rx="10" ry="7" fill="#C99AE0"/><ellipse cx="8" cy="0" rx="10" ry="7" fill="#C99AE0"/></g><rect x="-2" y="-7" width="4" height="14" rx="2" fill="#3E2A52"/></g>
+        <g fill="#F28A72"><circle cx="90" cy="412" r="6"/><circle cx="720" cy="417" r="6"/><circle cx="230" cy="432" r="6"/></g>
+        <g fill="#FFD76E"><circle cx="130" cy="427" r="5"/><circle cx="660" cy="434" r="5"/></g>
+      </svg>
+      </div>
+
+      <!-- ============ SCENE 2 : NUMBER-CART TOUR ============ -->
+      <div class="scene" data-scene="1" role="img" aria-label="Scene 2: Fern rides the number-cart past the five town places: Records Desk, Minutes Tower, Ledger Counting House, Catalog Map Room, and Forms Router Post Tower.">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        
+        <defs>
+          <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3A6E"/><stop offset=".45" stop-color="#B4658A"/><stop offset=".78" stop-color="#F2A65E"/><stop offset="1" stop-color="#FFD98A"/></linearGradient>
+          <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB2D9"/><stop offset=".55" stop-color="#C9E4F2"/><stop offset="1" stop-color="#FFE9B8"/></linearGradient>
+          <linearGradient id="skyEve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A2E5E"/><stop offset=".5" stop-color="#C46A7A"/><stop offset="1" stop-color="#FFC978"/></linearGradient>
+          <radialGradient id="goldGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset=".55" stop-color="#FFC94D" stop-opacity=".45"/><stop offset="1" stop-color="#FFC94D" stop-opacity="0"/></radialGradient>
+          <linearGradient id="scrollG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC0"/><stop offset=".5" stop-color="#FFD76E"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+          <linearGradient id="coralG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F28A72"/><stop offset="1" stop-color="#DE6A52"/></linearGradient>
+          <linearGradient id="knitG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6DC"/><stop offset="1" stop-color="#F0D9A8"/></linearGradient>
+          <linearGradient id="butterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD76E"/><stop offset="1" stop-color="#EFAF2E"/></linearGradient>
+          <radialGradient id="brassG" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFE9A8"/><stop offset=".55" stop-color="#D9A83E"/><stop offset="1" stop-color="#9A6B1E"/></radialGradient>
+          <linearGradient id="brassSurf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8BC5E"/><stop offset=".5" stop-color="#C08A2E"/><stop offset="1" stop-color="#8A5A1E"/></linearGradient>
+          <linearGradient id="woodG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A33"/><stop offset="1" stop-color="#5C3A1E"/></linearGradient>
+          <radialGradient id="skinG" cx=".5" cy=".35" r=".85"><stop offset="0" stop-color="#FFD9B0"/><stop offset="1" stop-color="#F0AC7E"/></radialGradient>
+          <radialGradient id="hairG" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#B07C3E"/><stop offset=".6" stop-color="#8A5A2A"/><stop offset="1" stop-color="#6B3F16"/></radialGradient>
+          <linearGradient id="tealG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E8A80"/><stop offset="1" stop-color="#175E58"/></linearGradient>
+          <linearGradient id="plumG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E4A7A"/><stop offset="1" stop-color="#3E2A52"/></linearGradient>
+          <pattern id="knitPat" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 Q2 0 4 4 Q6 8 8 4" fill="none" stroke="#D9B96A" stroke-width="1" opacity=".55"/></pattern>
+          <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <rect width="800" height="500" fill="url(#skyDay)"/>
+        <ellipse cx="400" cy="150" rx="380" ry="150" fill="url(#goldGlow)" opacity=".5" filter="url(#soft)"/>
+        <rect y="330" width="800" height="170" fill="#3E7A6E"/>
+        <path d="M0 420 L800 400 L800 500 L0 500 Z" fill="#F7D98A"/>
+        <g font-size="30" font-weight="bold" fill="#B95543" opacity=".5"><text x="40" y="472">1</text><text x="170" y="466">2</text><text x="300" y="474">3</text><text x="430" y="465">4</text><text x="560" y="472">5</text><text x="690" y="464">1</text></g>
+        <g>
+          <rect x="18" y="180" width="130" height="150" rx="14" fill="#F7D9C2"/><rect x="18" y="180" width="130" height="30" rx="12" fill="url(#coralG)"/>
+          <text x="83" y="202" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFF6E3">RECORDS</text>
+          <rect x="34" y="226" width="98" height="24" rx="6" fill="#FFF6DC"/><rect x="34" y="258" width="98" height="24" rx="6" fill="#FFF6DC"/>
+          <g class="drawerPop"><rect x="34" y="290" width="98" height="24" rx="6" fill="url(#butterG)"/><rect x="48" y="278" width="52" height="20" rx="3" fill="#FFFFFF" transform="rotate(-6 74 288)"/></g>
+          <circle cx="83" cy="302" r="4" fill="#3E2A52"/>
+          <circle cx="83" cy="140" r="21" fill="url(#skinG)"/><path d="M62 138 a21 21 0 0 1 42 0 Z" fill="#4A3A52"/>
+          <ellipse cx="76" cy="140" rx="6.5" ry="8" fill="#FFF"/><ellipse cx="90" cy="140" rx="6.5" ry="8" fill="#FFF"/><circle cx="76" cy="141" r="3.6" fill="#7A3B12"/><circle cx="90" cy="141" r="3.6" fill="#7A3B12"/><circle cx="74" cy="138" r="1.3" fill="#FFF"/><circle cx="88" cy="138" r="1.3" fill="#FFF"/>
+          <path d="M77 151 Q83 156 89 151" stroke="#7A3B22" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="68" y="158" width="30" height="24" rx="9" fill="#5B84B8"/>
+        </g>
+        <g>
+          <rect x="168" y="150" width="90" height="180" rx="12" fill="#F7E3A8"/><path d="M158 152 L213 104 L268 152 Z" fill="url(#butterG)"/>
+          <circle cx="213" cy="196" r="26" fill="#FFF6DC"/>
+          <g class="swing"><path d="M213 178 L213 192" stroke="#9A6B1E" stroke-width="4"/><path d="M198 210 Q213 190 228 210 L224 222 Q213 216 202 222 Z" fill="url(#brassG)"/><circle cx="213" cy="226" r="4" fill="#9A6B1E"/></g>
+          <rect x="196" y="262" width="34" height="68" rx="15" fill="url(#woodG)"/>
+          <circle cx="213" cy="66" r="19" fill="url(#skinG)"/><path d="M194 64 a19 19 0 0 1 38 0 Z" fill="url(#hairG)"/>
+          <ellipse cx="207" cy="66" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="219" cy="66" rx="5.5" ry="7" fill="#FFF"/><circle cx="207" cy="67" r="3" fill="#7A3B12"/><circle cx="219" cy="67" r="3" fill="#7A3B12"/>
+          <path d="M207 75 Q213 80 219 75" stroke="#7A3B22" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="199" y="82" width="28" height="22" rx="8" fill="url(#butterG)"/>
+        </g>
+        <g>
+          <rect x="278" y="180" width="140" height="150" rx="12" fill="#CDE6CF"/><rect x="278" y="180" width="140" height="30" rx="12" fill="url(#tealG)"/>
+          <text x="348" y="202" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFF6E3">LEDGER</text>
+          <g class="bob2"><g transform="translate(348,306) scale(0.92)">
+      <rect x="-46" y="-64" width="92" height="62" rx="14" fill="url(#brassSurf)" stroke="#5C3A1E" stroke-width="3"/>
+      <rect x="-46" y="-64" width="92" height="12" rx="6" fill="url(#woodG)"/>
+      <rect x="-28" y="-44" width="56" height="26" rx="6" fill="#2E2118"/>
+      <text x="0" y="-26" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFE9A8" class="numGlow">123</text>
+      <circle cx="-18" cy="-72" r="4.5" fill="#FF8A6B"/><circle cx="18" cy="-72" r="4.5" fill="#FF8A6B"/>
+      <rect x="-30" y="-80" width="60" height="9" rx="4.5" fill="url(#woodG)"/>
+      <path d="M-34 -10 h68" stroke="#5C3A1E" stroke-width="2" opacity=".5"/>
+      <g class="spin"><circle cx="-26" cy="10" r="11" fill="#3A2A1A"/><circle cx="-26" cy="10" r="4.5" fill="#FFE9A8"/></g>
+      <g class="spin"><circle cx="26" cy="10" r="11" fill="#3A2A1A"/><circle cx="26" cy="10" r="4.5" fill="#FFE9A8"/></g>
+    </g></g>
+          <circle cx="300" cy="330" r="9" fill="#E9B94E" class="hop"/><circle cx="348" cy="330" r="9" fill="#F28A72" class="hop2"/><circle cx="396" cy="330" r="9" fill="#5B84B8" class="hop3"/>
+        </g>
+        <g>
+          <rect x="438" y="180" width="140" height="150" rx="12" fill="#D9E4F2"/><rect x="438" y="180" width="140" height="30" rx="12" fill="#5B84B8"/>
+          <text x="508" y="202" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFF6E3">MAP ROOM</text>
+          <g class="unroll"><rect x="456" y="228" width="104" height="72" rx="8" fill="#FFF6DC"/><path d="M466 282 Q492 250 516 272 T552 258" stroke="#4E9C6B" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="486" cy="252" r="5" fill="#DE6A52"/><circle cx="534" cy="284" r="5" fill="#E9B94E"/></g>
+          <rect x="450" y="224" width="10" height="80" rx="5" fill="url(#woodG)"/>
+          <circle cx="508" cy="140" r="21" fill="#C68863"/><path d="M487 138 a21 21 0 0 1 42 0 Z" fill="#2E2118"/>
+          <ellipse cx="501" cy="140" rx="6.5" ry="8" fill="#FFF"/><ellipse cx="515" cy="140" rx="6.5" ry="8" fill="#FFF"/><circle cx="501" cy="141" r="3.6" fill="#4A2408"/><circle cx="515" cy="141" r="3.6" fill="#4A2408"/>
+          <path d="M502 151 Q508 156 514 151" stroke="#5C2E12" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="493" y="158" width="30" height="24" rx="9" fill="#4E9C6B"/>
+        </g>
+        <g>
+          <rect x="606" y="130" width="100" height="200" rx="12" fill="#F7D9C2"/><path d="M596 134 L656 84 L716 134 Z" fill="url(#coralG)"/>
+          <rect x="632" y="150" width="48" height="60" rx="8" fill="#FFF6DC"/><path d="M632 196 L690 236" stroke="#B95543" stroke-width="10" stroke-linecap="round"/>
+          <g class="chuteForm"><rect x="676" y="222" width="34" height="24" rx="3" fill="#FFFFFF" stroke="#D9B96A" stroke-width="2"/></g>
+          <rect x="668" y="292" width="52" height="40" rx="6" fill="#5B84B8"/><rect x="668" y="292" width="52" height="14" rx="6" fill="#3E5E8A"/>
+          <circle cx="656" cy="52" r="19" fill="url(#skinG)"/><path d="M637 50 a19 19 0 0 1 38 0 Z" fill="#4A3A52"/>
+          <ellipse cx="650" cy="52" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="662" cy="52" rx="5.5" ry="7" fill="#FFF"/><circle cx="650" cy="53" r="3" fill="#7A3B12"/><circle cx="662" cy="53" r="3" fill="#7A3B12"/>
+          <ellipse cx="656" cy="61" rx="5" ry="4" fill="#E88A6B"/><rect x="642" y="68" width="28" height="20" rx="8" fill="#4E9C6B"/>
+        </g>
+        <g fill="#FFE9A8"><circle cx="120" cy="120" r="3" class="mote"/><circle cx="300" cy="80" r="2.2" class="mote d2"/><circle cx="520" cy="140" r="2.6" class="mote d3"/><circle cx="660" cy="90" r="2" class="mote d2"/><circle cx="420" cy="200" r="1.8" class="mote d3"/><circle cx="200" cy="230" r="2" class="mote"/></g>
+        <g class="cartRoll">
+          <rect x="76" y="382" width="120" height="16" rx="8" fill="url(#woodG)"/>
+          <rect x="82" y="366" width="8" height="18" fill="url(#woodG)"/><rect x="182" y="366" width="8" height="18" fill="url(#woodG)"/>
+          <g class="spin"><circle cx="94" cy="408" r="13" fill="#3A2A1A"/><circle cx="94" cy="408" r="5" fill="#FFE9A8"/></g>
+          <g class="spin"><circle cx="178" cy="408" r="13" fill="#3A2A1A"/><circle cx="178" cy="408" r="5" fill="#FFE9A8"/></g>
+          <text x="136" y="394" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFF6E3">1 · 1 · 1</text>
+          
+        <g transform="translate(136,386) scale(0.62)"><g class="bob">
+          <!-- shoes: mint sneakers with stripes -->
+          <g><rect x="-30" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M-26 -8 h16 M-26 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/><rect x="6" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M10 -8 h16 M10 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/></g>
+          <!-- coral overalls with rolled cuffs -->
+          <path d="M-26 -96 h52 l4 44 h-18 l-3 -30 h-8 l-3 30 h-18 Z" fill="url(#coralG)"/>
+          <path d="M-30 -56 h18 v10 h-18 Z M12 -56 h18 v10 h-18 Z" fill="#F0907A"/>
+          <rect x="-24" y="-96" width="48" height="14" rx="4" fill="url(#coralG)"/>
+          <circle cx="-14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/><circle cx="14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/>
+          <rect x="-13" y="-72" width="26" height="16" rx="3" fill="none" stroke="#B95543" stroke-width="1.6" stroke-dasharray="3 3"/>
+          <!-- cream knit sleeves -->
+          <rect x="-44" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="-37" cy="-80" r="8" fill="#F2B98A"/>
+          <rect x="36" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="43" cy="-80" r="8" fill="#F2B98A"/>
+          <!-- butter scarf wrapped + knotted -->
+          <ellipse cx="0" cy="-104" rx="27" ry="12" fill="url(#butterG)"/>
+          <circle cx="20" cy="-100" r="8" fill="#E9B94E"/><path d="M24 -96 l10 12 l-9 3 l-5 -10 Z" fill="#F2C94C"/>
+          <!-- brass scroll key-badge on black cord: disc + spiral, no letter -->
+          <path d="M-12 -100 L0 -70 L12 -100" stroke="#2B2118" stroke-width="2.4" fill="none"/>
+          <circle cx="0" cy="-66" r="9" fill="url(#brassG)" stroke="#7A5518" stroke-width="1.8"/>
+          <path d="M0 -66 m-5 0 a5 5 0 1 1 5 5 a3.2 3.2 0 1 0 -3.2 -3.2" fill="none" stroke="#5C3D0E" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- head -->
+          <circle cx="0" cy="-142" r="34" fill="url(#skinG)"/>
+          <ellipse cx="-17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/><ellipse cx="17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/>
+          <!-- freckles across cheeks and nose -->
+          <g fill="#B06A3B" opacity=".85"><circle cx="-14" cy="-133" r="1.5"/><circle cx="-9" cy="-131" r="1.3"/><circle cx="-19" cy="-131" r="1.2"/><circle cx="14" cy="-133" r="1.5"/><circle cx="9" cy="-131" r="1.3"/><circle cx="19" cy="-131" r="1.2"/><circle cx="-2.5" cy="-136" r="1.2"/><circle cx="2.5" cy="-136" r="1.2"/></g>
+          <!-- very large amber-brown eyes with highlights -->
+          <ellipse cx="-13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/><ellipse cx="13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/>
+          <circle cx="-13" cy="-143" r="7" fill="#C46A1B"/><circle cx="13" cy="-143" r="7" fill="#C46A1B"/>
+          <circle cx="-13" cy="-142" r="4" fill="#1E140C"/><circle cx="13" cy="-142" r="4" fill="#1E140C"/>
+          <circle cx="-15.5" cy="-147" r="2.4" fill="#FFFFFF"/><circle cx="10.5" cy="-147" r="2.4" fill="#FFFFFF"/>
+          <circle cx="-10" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/><circle cx="16" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/>
+          <path d="M-21 -158 Q-13 -162 -6 -158 M7 -158 Q13 -162 20 -158" stroke="#4A2C12" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="0" cy="-135" rx="3.4" ry="2.4" fill="#D98A5F"/>
+          <path d="M-7 -126 Q0 -121 7 -126" stroke="#7A3B22" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- honey-brown hair: side-swept fringe + two scroll-puff buns with spirals -->
+          <path d="M-34 -142 a34 34 0 0 1 68 0 l0 -8 Q18 -168 -6 -160 Q-28 -154 -34 -134 Z" fill="url(#hairG)"/>
+          <path d="M-34 -150 Q-10 -172 20 -164 Q4 -156 -8 -152 Q-24 -147 -34 -138 Z" fill="#A06A33" opacity=".7"/>
+          <circle cx="-38" cy="-170" r="19" fill="url(#hairG)"/><circle cx="38" cy="-170" r="19" fill="url(#hairG)"/>
+          <path d="M-38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M-30 -118 q-6 10 2 16 M30 -118 q6 10 -2 16" stroke="url(#hairG)" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <g transform="translate(-52,-86) rotate(-18)"><rect x="-7" y="-26" width="14" height="52" rx="7" fill="#F7E3B8" stroke="#D9B96A" stroke-width="2"/><ellipse cx="0" cy="-26" rx="7" ry="3.5" fill="#E8C97E"/><path d="M-4 -26 a4 3 0 1 1 8 0" fill="none" stroke="#B98A1F" stroke-width="1.6"/></g>
+          <ellipse cx="0" cy="2" rx="34" ry="4" fill="#3A2350" opacity=".18"/>
+        </g>
+        </g>
+        </g>
+      </svg>
+      </div>
+
+      <!-- ============ SCENE 3 : ACHOO! ============ -->
+      <div class="scene" data-scene="2" role="img" aria-label="Scene 3: The Forms Router Post Tower sneezes and forms flutter down like snowflakes. A garden permit lands in a birdbath and an old page slides under a bench.">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        
+        <defs>
+          <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3A6E"/><stop offset=".45" stop-color="#B4658A"/><stop offset=".78" stop-color="#F2A65E"/><stop offset="1" stop-color="#FFD98A"/></linearGradient>
+          <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB2D9"/><stop offset=".55" stop-color="#C9E4F2"/><stop offset="1" stop-color="#FFE9B8"/></linearGradient>
+          <linearGradient id="skyEve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A2E5E"/><stop offset=".5" stop-color="#C46A7A"/><stop offset="1" stop-color="#FFC978"/></linearGradient>
+          <radialGradient id="goldGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset=".55" stop-color="#FFC94D" stop-opacity=".45"/><stop offset="1" stop-color="#FFC94D" stop-opacity="0"/></radialGradient>
+          <linearGradient id="scrollG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC0"/><stop offset=".5" stop-color="#FFD76E"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+          <linearGradient id="coralG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F28A72"/><stop offset="1" stop-color="#DE6A52"/></linearGradient>
+          <linearGradient id="knitG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6DC"/><stop offset="1" stop-color="#F0D9A8"/></linearGradient>
+          <linearGradient id="butterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD76E"/><stop offset="1" stop-color="#EFAF2E"/></linearGradient>
+          <radialGradient id="brassG" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFE9A8"/><stop offset=".55" stop-color="#D9A83E"/><stop offset="1" stop-color="#9A6B1E"/></radialGradient>
+          <linearGradient id="brassSurf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8BC5E"/><stop offset=".5" stop-color="#C08A2E"/><stop offset="1" stop-color="#8A5A1E"/></linearGradient>
+          <linearGradient id="woodG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A33"/><stop offset="1" stop-color="#5C3A1E"/></linearGradient>
+          <radialGradient id="skinG" cx=".5" cy=".35" r=".85"><stop offset="0" stop-color="#FFD9B0"/><stop offset="1" stop-color="#F0AC7E"/></radialGradient>
+          <radialGradient id="hairG" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#B07C3E"/><stop offset=".6" stop-color="#8A5A2A"/><stop offset="1" stop-color="#6B3F16"/></radialGradient>
+          <linearGradient id="tealG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E8A80"/><stop offset="1" stop-color="#175E58"/></linearGradient>
+          <linearGradient id="plumG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E4A7A"/><stop offset="1" stop-color="#3E2A52"/></linearGradient>
+          <pattern id="knitPat" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 Q2 0 4 4 Q6 8 8 4" fill="none" stroke="#D9B96A" stroke-width="1" opacity=".55"/></pattern>
+          <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <rect width="800" height="500" fill="url(#skyDay)"/>
+        <ellipse cx="390" cy="180" rx="300" ry="170" fill="url(#goldGlow)" opacity=".45" filter="url(#soft)"/>
+        <rect y="380" width="800" height="120" fill="#3E7A6E"/>
+        <g>
+          <rect x="300" y="150" width="180" height="240" rx="16" fill="#F7D9C2"/>
+          <rect x="300" y="150" width="180" height="34" rx="16" fill="url(#coralG)"/>
+          <text x="390" y="174" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFF6E3">POST TOWER</text>
+          <g class="capWobble"><path d="M284 154 L390 66 L496 154 Z" fill="url(#coralG)"/><circle cx="390" cy="62" r="12" fill="url(#brassG)"/></g>
+          <circle cx="390" cy="238" r="34" fill="#FFF6DC"/>
+          <circle cx="390" cy="240" r="25" fill="url(#skinG)"/>
+          <path d="M365 236 a25 25 0 0 1 50 0 Z" fill="#4A3A52"/>
+          <ellipse cx="381" cy="240" rx="6" ry="7.5" fill="#FFF"/><ellipse cx="399" cy="240" rx="6" ry="7.5" fill="#FFF"/><circle cx="381" cy="241" r="3.2" fill="#7A3B12"/><circle cx="399" cy="241" r="3.2" fill="#7A3B12"/>
+          <g class="swing"><ellipse cx="390" cy="251" rx="7" ry="5.5" fill="#E88A6B"/></g>
+          <path d="M381 261 Q390 255 399 261" stroke="#7A3B22" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <rect x="352" y="300" width="76" height="90" rx="10" fill="#FFF6DC"/><path d="M352 336 L428 380" stroke="#B95543" stroke-width="9" stroke-linecap="round"/>
+        </g>
+        <g fill="#FFFFFF" stroke="#D9B96A" stroke-width="2">
+          <g class="flutterDown"><rect x="180" y="90" width="46" height="34" rx="4" transform="rotate(-10 203 107)"/></g>
+          <g class="flutterDown d2"><rect x="520" y="70" width="50" height="36" rx="4" transform="rotate(8 545 88)"/></g>
+          <g class="flutterDown d3"><rect x="90" y="150" width="42" height="32" rx="4" transform="rotate(14 111 166)"/></g>
+          <g class="flutterDown d4"><rect x="600" y="160" width="44" height="33" rx="4" transform="rotate(-12 622 176)"/></g>
+          <g class="flutterDown d2"><rect x="420" y="40" width="40" height="30" rx="4" transform="rotate(6 440 55)"/></g>
+        </g>
+        <g fill="#FFFFFF" opacity=".85"><circle cx="330" cy="120" r="13" class="glowPulse"/><circle cx="452" cy="112" r="16" class="glowPulse"/><circle cx="392" cy="96" r="11" class="glowPulse"/></g>
+        <g>
+          <rect x="586" y="392" width="12" height="42" fill="#5B84B8"/>
+          <path d="M548 392 Q592 412 636 392 L630 378 Q592 394 554 378 Z" fill="#5B84B8"/>
+          <ellipse cx="592" cy="380" rx="40" ry="7" fill="#A9C6E8"/>
+          <g transform="rotate(-14 592 362)"><rect x="566" y="344" width="52" height="36" rx="4" fill="#FFFFFF" stroke="#D9B96A" stroke-width="2"/><circle cx="592" cy="362" r="9" fill="#DE6A52"/><path d="M592 353 q2 -6 8 -7" stroke="#4E9C6B" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+        </g>
+        <g>
+          <rect x="96" y="356" width="150" height="14" rx="7" fill="url(#woodG)"/><rect x="96" y="330" width="150" height="12" rx="6" fill="url(#woodG)"/>
+          <rect x="108" y="370" width="12" height="48" fill="url(#woodG)"/><rect x="222" y="370" width="12" height="48" fill="url(#woodG)"/>
+          <rect x="130" y="404" width="66" height="10" rx="5" fill="#E8C97E"/><rect x="140" y="392" width="58" height="14" rx="3" fill="#FFF3D6" transform="rotate(3 169 399)"/>
+        </g>
+        <g class="bob">
+          <ellipse cx="672" cy="330" rx="35" ry="29" fill="#FFF6DC"/><circle cx="700" cy="306" r="18" fill="#FFF6DC"/>
+          <path d="M712 304 l16 5 l-16 6 Z" fill="#E9B94E"/><circle cx="702" cy="303" r="4.5" fill="#FFF"/><circle cx="703" cy="304" r="2.4" fill="#1E140C"/>
+          <path d="M686 282 Q700 268 716 280 L722 288 Q700 278 680 290 Z" fill="#4E9C6B"/><circle cx="700" cy="276" r="6" fill="#DE6A52"/>
+          <path d="M648 322 q-16 4 -20 16 q14 2 22 -6" fill="#E88A6B"/>
+          <line x1="660" y1="356" x2="660" y2="372" stroke="#E9B94E" stroke-width="4" stroke-linecap="round"/><line x1="682" y1="356" x2="682" y2="372" stroke="#E9B94E" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <g fill="#FFE9A8"><circle cx="120" cy="120" r="3" class="mote"/><circle cx="300" cy="80" r="2.2" class="mote d2"/><circle cx="520" cy="140" r="2.6" class="mote d3"/><circle cx="660" cy="90" r="2" class="mote d2"/><circle cx="420" cy="200" r="1.8" class="mote d3"/><circle cx="200" cy="230" r="2" class="mote"/></g>
+        <!-- Fern watching, mouth open in surprise -->
+        <g transform="translate(92,262) scale(0.62)"><g class="bob2">
+          <rect x="-30" y="-14" width="26" height="13" rx="6" fill="#7FD8B4"/><rect x="6" y="-14" width="26" height="13" rx="6" fill="#7FD8B4"/>
+          <path d="M-26 -96 h52 l4 44 h-18 l-3 -30 h-8 l-3 30 h-18 Z" fill="url(#coralG)"/>
+          <rect x="-44" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><rect x="30" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/>
+          <ellipse cx="0" cy="-104" rx="27" ry="12" fill="url(#butterG)"/><circle cx="20" cy="-100" r="8" fill="#E9B94E"/>
+          <path d="M-12 -100 L0 -70 L12 -100" stroke="#2B2118" stroke-width="2.4" fill="none"/><circle cx="0" cy="-66" r="9" fill="url(#brassG)" stroke="#7A5518" stroke-width="1.8"/><path d="M0 -66 m-5 0 a5 5 0 1 1 5 5 a3.2 3.2 0 1 0 -3.2 -3.2" fill="none" stroke="#5C3D0E" stroke-width="1.7"/>
+          <circle cx="0" cy="-142" r="34" fill="url(#skinG)"/>
+          <g fill="#B06A3B"><circle cx="-14" cy="-133" r="1.5"/><circle cx="14" cy="-133" r="1.5"/><circle cx="-2.5" cy="-136" r="1.2"/><circle cx="2.5" cy="-136" r="1.2"/></g>
+          <ellipse cx="-13" cy="-144" rx="9.5" ry="11" fill="#FFF"/><ellipse cx="13" cy="-144" rx="9.5" ry="11" fill="#FFF"/><circle cx="-13" cy="-143" r="7" fill="#C46A1B"/><circle cx="13" cy="-143" r="7" fill="#C46A1B"/><circle cx="-13" cy="-142" r="4" fill="#1E140C"/><circle cx="13" cy="-142" r="4" fill="#1E140C"/><circle cx="-15.5" cy="-147" r="2.4" fill="#FFF"/><circle cx="10.5" cy="-147" r="2.4" fill="#FFF"/>
+          <ellipse cx="0" cy="-124" rx="5" ry="6.5" fill="#7A3B22"/>
+          <path d="M-34 -142 a34 34 0 0 1 68 0 l0 -8 Q18 -168 -6 -160 Q-28 -154 -34 -134 Z" fill="url(#hairG)"/>
+          <circle cx="-38" cy="-170" r="19" fill="url(#hairG)"/><circle cx="38" cy="-170" r="19" fill="url(#hairG)"/>
+          <path d="M-38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7" fill="none" stroke="#5C3A16" stroke-width="2.6"/><path d="M38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7" fill="none" stroke="#5C3A16" stroke-width="2.6"/>
+        </g>
+        </g>
+      </svg>
+      </div>
+
+      <!-- ============ SCENE 4 : RIVER OF PAGES ============ -->
+      <div class="scene" data-scene="3" role="img" aria-label="Scene 4: At the Scroll Valley, loose pages drift past like a river. Ledger unfolds into a bridge and the crew crosses one at a time.">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        
+        <defs>
+          <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3A6E"/><stop offset=".45" stop-color="#B4658A"/><stop offset=".78" stop-color="#F2A65E"/><stop offset="1" stop-color="#FFD98A"/></linearGradient>
+          <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB2D9"/><stop offset=".55" stop-color="#C9E4F2"/><stop offset="1" stop-color="#FFE9B8"/></linearGradient>
+          <linearGradient id="skyEve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A2E5E"/><stop offset=".5" stop-color="#C46A7A"/><stop offset="1" stop-color="#FFC978"/></linearGradient>
+          <radialGradient id="goldGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset=".55" stop-color="#FFC94D" stop-opacity=".45"/><stop offset="1" stop-color="#FFC94D" stop-opacity="0"/></radialGradient>
+          <linearGradient id="scrollG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC0"/><stop offset=".5" stop-color="#FFD76E"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+          <linearGradient id="coralG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F28A72"/><stop offset="1" stop-color="#DE6A52"/></linearGradient>
+          <linearGradient id="knitG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6DC"/><stop offset="1" stop-color="#F0D9A8"/></linearGradient>
+          <linearGradient id="butterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD76E"/><stop offset="1" stop-color="#EFAF2E"/></linearGradient>
+          <radialGradient id="brassG" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFE9A8"/><stop offset=".55" stop-color="#D9A83E"/><stop offset="1" stop-color="#9A6B1E"/></radialGradient>
+          <linearGradient id="brassSurf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8BC5E"/><stop offset=".5" stop-color="#C08A2E"/><stop offset="1" stop-color="#8A5A1E"/></linearGradient>
+          <linearGradient id="woodG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A33"/><stop offset="1" stop-color="#5C3A1E"/></linearGradient>
+          <radialGradient id="skinG" cx=".5" cy=".35" r=".85"><stop offset="0" stop-color="#FFD9B0"/><stop offset="1" stop-color="#F0AC7E"/></radialGradient>
+          <radialGradient id="hairG" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#B07C3E"/><stop offset=".6" stop-color="#8A5A2A"/><stop offset="1" stop-color="#6B3F16"/></radialGradient>
+          <linearGradient id="tealG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E8A80"/><stop offset="1" stop-color="#175E58"/></linearGradient>
+          <linearGradient id="plumG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E4A7A"/><stop offset="1" stop-color="#3E2A52"/></linearGradient>
+          <pattern id="knitPat" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 Q2 0 4 4 Q6 8 8 4" fill="none" stroke="#D9B96A" stroke-width="1" opacity=".55"/></pattern>
+          <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <rect width="800" height="500" fill="url(#skyDay)"/>
+        <ellipse cx="400" cy="170" rx="360" ry="150" fill="url(#goldGlow)" opacity=".4" filter="url(#soft)"/>
+        <path d="M0 210 Q200 160 400 205 T800 195 L800 500 L0 500 Z" fill="#3E7A6E"/>
+        <rect x="0" y="300" width="800" height="110" fill="url(#tealG)"/>
+        <g fill="#FFFFFF" stroke="#D9B96A" stroke-width="2" opacity=".95">
+          <g class="driftPage"><rect x="0" y="322" width="52" height="36" rx="4" transform="rotate(-6 26 340)"/></g>
+          <g class="driftPage d2"><rect x="0" y="362" width="46" height="33" rx="4" transform="rotate(9 23 378)"/></g>
+          <g class="driftPage d3"><rect x="0" y="336" width="56" height="38" rx="4" transform="rotate(-12 28 355)"/></g>
+        </g>
+        <path d="M560 268 L800 258 L800 320 L560 322 Z" fill="#5E9C6B"/>
+        <!-- Ledger bridge: brass deck on wood pylons, glowing 123 -->
+        <g>
+          <path d="M238 306 Q420 262 606 300 L606 324 Q420 286 238 330 Z" fill="url(#brassSurf)" stroke="#5C3A1E" stroke-width="3"/>
+          <path d="M238 306 Q420 262 606 300" fill="none" stroke="#FFE9A8" stroke-width="4" opacity=".7"/>
+          <rect x="238" y="296" width="26" height="56" rx="8" fill="url(#woodG)"/><rect x="580" y="290" width="26" height="56" rx="8" fill="url(#woodG)"/>
+          <rect x="390" y="252" width="60" height="28" rx="7" fill="#2E2118"/>
+          <text x="420" y="271" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFE9A8" class="numGlow">123</text>
+          <circle cx="420" cy="242" r="6" fill="#FF8A6B"/><line x1="420" y1="248" x2="420" y2="252" stroke="url(#woodG)" stroke-width="4"/>
+          <g stroke="#5C3A1E" stroke-width="4" opacity=".55"><line x1="300" y1="306" x2="300" y2="324"/><line x1="370" y1="292" x2="370" y2="310"/><line x1="470" y1="290" x2="470" y2="308"/><line x1="545" y1="300" x2="545" y2="318"/></g>
+        </g>
+        <g class="walkerCross"><g class="bob">
+          <rect x="252" y="216" width="42" height="46" rx="14" fill="#FFF6DC"/><path d="M252 240 h42 v14 a21 12 0 0 1 -42 0 Z" fill="#8FD0A0"/>
+          <rect x="260" y="246" width="10" height="10" rx="3" fill="#DE6A52"/><rect x="276" y="246" width="10" height="10" rx="3" fill="#E9B94E"/>
+          <circle cx="273" cy="198" r="20" fill="#8A5A3B"/><path d="M253 196 a20 20 0 0 1 40 0 l0 -4 a20 14 0 0 0 -40 0 Z" fill="#2E2118"/>
+          <ellipse cx="266" cy="199" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="280" cy="199" rx="5.5" ry="7" fill="#FFF"/><circle cx="266" cy="200" r="3" fill="#2E1408"/><circle cx="280" cy="200" r="3" fill="#2E1408"/>
+          <path d="M267 209 Q273 214 279 209" stroke="#3E1E0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <rect x="258" y="228" width="30" height="20" rx="3" fill="#FFFFFF" stroke="#D9B96A" stroke-width="2"/>
+        </g></g>
+        <g class="bob">
+          <rect x="36" y="212" width="46" height="52" rx="15" fill="#5B84B8"/>
+          <circle cx="59" cy="192" r="22" fill="url(#skinG)"/><path d="M37 188 a22 22 0 0 1 44 0 l-4 0 a18 13 0 0 0 -36 0 Z" fill="#3E5E8A"/><rect x="34" y="182" width="50" height="9" rx="4.5" fill="#7FB2D9"/>
+          <ellipse cx="52" cy="193" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="66" cy="193" rx="5.5" ry="7" fill="#FFF"/><circle cx="52" cy="194" r="3" fill="#7A3B12"/><circle cx="66" cy="194" r="3" fill="#7A3B12"/>
+          <path d="M53 203 Q59 208 65 203" stroke="#7A3B22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="86" cy="222" r="11" fill="none" stroke="#9A6B1E" stroke-width="4"/><line x1="94" y1="230" x2="106" y2="242" stroke="#9A6B1E" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <g class="bob2">
+          <rect x="118" y="212" width="46" height="52" rx="15" fill="#FFF6DC"/>
+          <circle cx="141" cy="192" r="22" fill="#C68863"/><path d="M119 190 a22 22 0 0 1 44 0 l0 -4 a22 15 0 0 0 -44 0 Z" fill="#2E2118"/>
+          <ellipse cx="134" cy="193" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="148" cy="193" rx="5.5" ry="7" fill="#FFF"/><circle cx="134" cy="194" r="3" fill="#2E1408"/><circle cx="148" cy="194" r="3" fill="#2E1408"/>
+          <path d="M135 203 Q141 208 147 203" stroke="#3E1E0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M118 224 q23 -10 46 0 l0 12 q-23 -10 -46 0 Z" fill="url(#butterG)"/>
+          <g transform="rotate(-5 141 240)"><rect x="122" y="230" width="38" height="9" rx="2" fill="#FFFFFF" stroke="#D9B96A" stroke-width="1.5"/><rect x="124" y="240" width="38" height="9" rx="2" fill="#F7D9C2" stroke="#D9B96A" stroke-width="1.5"/><rect x="122" y="250" width="38" height="9" rx="2" fill="#D9E4F2" stroke="#D9B96A" stroke-width="1.5"/></g>
+        </g>
+        
+        <g transform="translate(206,398) scale(0.66)"><g class="bob">
+          <!-- shoes: mint sneakers with stripes -->
+          <g><rect x="-30" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M-26 -8 h16 M-26 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/><rect x="6" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M10 -8 h16 M10 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/></g>
+          <!-- coral overalls with rolled cuffs -->
+          <path d="M-26 -96 h52 l4 44 h-18 l-3 -30 h-8 l-3 30 h-18 Z" fill="url(#coralG)"/>
+          <path d="M-30 -56 h18 v10 h-18 Z M12 -56 h18 v10 h-18 Z" fill="#F0907A"/>
+          <rect x="-24" y="-96" width="48" height="14" rx="4" fill="url(#coralG)"/>
+          <circle cx="-14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/><circle cx="14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/>
+          <rect x="-13" y="-72" width="26" height="16" rx="3" fill="none" stroke="#B95543" stroke-width="1.6" stroke-dasharray="3 3"/>
+          <!-- cream knit sleeves -->
+          <rect x="-44" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="-37" cy="-80" r="8" fill="#F2B98A"/>
+          <rect x="36" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="43" cy="-80" r="8" fill="#F2B98A"/>
+          <!-- butter scarf wrapped + knotted -->
+          <ellipse cx="0" cy="-104" rx="27" ry="12" fill="url(#butterG)"/>
+          <circle cx="20" cy="-100" r="8" fill="#E9B94E"/><path d="M24 -96 l10 12 l-9 3 l-5 -10 Z" fill="#F2C94C"/>
+          <!-- brass scroll key-badge on black cord: disc + spiral, no letter -->
+          <path d="M-12 -100 L0 -70 L12 -100" stroke="#2B2118" stroke-width="2.4" fill="none"/>
+          <circle cx="0" cy="-66" r="9" fill="url(#brassG)" stroke="#7A5518" stroke-width="1.8"/>
+          <path d="M0 -66 m-5 0 a5 5 0 1 1 5 5 a3.2 3.2 0 1 0 -3.2 -3.2" fill="none" stroke="#5C3D0E" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- head -->
+          <circle cx="0" cy="-142" r="34" fill="url(#skinG)"/>
+          <ellipse cx="-17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/><ellipse cx="17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/>
+          <!-- freckles across cheeks and nose -->
+          <g fill="#B06A3B" opacity=".85"><circle cx="-14" cy="-133" r="1.5"/><circle cx="-9" cy="-131" r="1.3"/><circle cx="-19" cy="-131" r="1.2"/><circle cx="14" cy="-133" r="1.5"/><circle cx="9" cy="-131" r="1.3"/><circle cx="19" cy="-131" r="1.2"/><circle cx="-2.5" cy="-136" r="1.2"/><circle cx="2.5" cy="-136" r="1.2"/></g>
+          <!-- very large amber-brown eyes with highlights -->
+          <ellipse cx="-13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/><ellipse cx="13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/>
+          <circle cx="-13" cy="-143" r="7" fill="#C46A1B"/><circle cx="13" cy="-143" r="7" fill="#C46A1B"/>
+          <circle cx="-13" cy="-142" r="4" fill="#1E140C"/><circle cx="13" cy="-142" r="4" fill="#1E140C"/>
+          <circle cx="-15.5" cy="-147" r="2.4" fill="#FFFFFF"/><circle cx="10.5" cy="-147" r="2.4" fill="#FFFFFF"/>
+          <circle cx="-10" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/><circle cx="16" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/>
+          <path d="M-21 -158 Q-13 -162 -6 -158 M7 -158 Q13 -162 20 -158" stroke="#4A2C12" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="0" cy="-135" rx="3.4" ry="2.4" fill="#D98A5F"/>
+          <path d="M-7 -126 Q0 -121 7 -126" stroke="#7A3B22" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- honey-brown hair: side-swept fringe + two scroll-puff buns with spirals -->
+          <path d="M-34 -142 a34 34 0 0 1 68 0 l0 -8 Q18 -168 -6 -160 Q-28 -154 -34 -134 Z" fill="url(#hairG)"/>
+          <path d="M-34 -150 Q-10 -172 20 -164 Q4 -156 -8 -152 Q-24 -147 -34 -138 Z" fill="#A06A33" opacity=".7"/>
+          <circle cx="-38" cy="-170" r="19" fill="url(#hairG)"/><circle cx="38" cy="-170" r="19" fill="url(#hairG)"/>
+          <path d="M-38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M-30 -118 q-6 10 2 16 M30 -118 q6 10 -2 16" stroke="url(#hairG)" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <g transform="translate(-52,-86) rotate(-18)"><rect x="-7" y="-26" width="14" height="52" rx="7" fill="#F7E3B8" stroke="#D9B96A" stroke-width="2"/><ellipse cx="0" cy="-26" rx="7" ry="3.5" fill="#E8C97E"/><path d="M-4 -26 a4 3 0 1 1 8 0" fill="none" stroke="#B98A1F" stroke-width="1.6"/></g>
+          <ellipse cx="0" cy="2" rx="34" ry="4" fill="#3A2350" opacity=".18"/>
+        </g>
+        </g>
+        <g fill="#FFD76E" class="glowPulse"><path d="M59 148 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/><path d="M141 148 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/><path d="M660 210 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/></g>
+        <text x="690" y="300" font-size="17" font-weight="bold" fill="#1E4A3A">far bank →</text>
+        <g fill="#FFE9A8"><circle cx="120" cy="120" r="3" class="mote"/><circle cx="300" cy="80" r="2.2" class="mote d2"/><circle cx="520" cy="140" r="2.6" class="mote d3"/><circle cx="660" cy="90" r="2" class="mote d2"/><circle cx="420" cy="200" r="1.8" class="mote d3"/><circle cx="200" cy="230" r="2" class="mote"/></g>
+      </svg>
+      </div>
+
+      <!-- ============ SCENE 5 : TOGETHER, JUST RIGHT ============ -->
+      <div class="scene" data-scene="4" role="img" aria-label="Scene 5: On the far bank, the crew sorts a big pile of forms together. Ledger becomes stairs so Bea can reach the top, where the tomato garden permit waits.">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        
+        <defs>
+          <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3A6E"/><stop offset=".45" stop-color="#B4658A"/><stop offset=".78" stop-color="#F2A65E"/><stop offset="1" stop-color="#FFD98A"/></linearGradient>
+          <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB2D9"/><stop offset=".55" stop-color="#C9E4F2"/><stop offset="1" stop-color="#FFE9B8"/></linearGradient>
+          <linearGradient id="skyEve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A2E5E"/><stop offset=".5" stop-color="#C46A7A"/><stop offset="1" stop-color="#FFC978"/></linearGradient>
+          <radialGradient id="goldGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset=".55" stop-color="#FFC94D" stop-opacity=".45"/><stop offset="1" stop-color="#FFC94D" stop-opacity="0"/></radialGradient>
+          <linearGradient id="scrollG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC0"/><stop offset=".5" stop-color="#FFD76E"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+          <linearGradient id="coralG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F28A72"/><stop offset="1" stop-color="#DE6A52"/></linearGradient>
+          <linearGradient id="knitG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6DC"/><stop offset="1" stop-color="#F0D9A8"/></linearGradient>
+          <linearGradient id="butterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD76E"/><stop offset="1" stop-color="#EFAF2E"/></linearGradient>
+          <radialGradient id="brassG" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFE9A8"/><stop offset=".55" stop-color="#D9A83E"/><stop offset="1" stop-color="#9A6B1E"/></radialGradient>
+          <linearGradient id="brassSurf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8BC5E"/><stop offset=".5" stop-color="#C08A2E"/><stop offset="1" stop-color="#8A5A1E"/></linearGradient>
+          <linearGradient id="woodG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A33"/><stop offset="1" stop-color="#5C3A1E"/></linearGradient>
+          <radialGradient id="skinG" cx=".5" cy=".35" r=".85"><stop offset="0" stop-color="#FFD9B0"/><stop offset="1" stop-color="#F0AC7E"/></radialGradient>
+          <radialGradient id="hairG" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#B07C3E"/><stop offset=".6" stop-color="#8A5A2A"/><stop offset="1" stop-color="#6B3F16"/></radialGradient>
+          <linearGradient id="tealG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E8A80"/><stop offset="1" stop-color="#175E58"/></linearGradient>
+          <linearGradient id="plumG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E4A7A"/><stop offset="1" stop-color="#3E2A52"/></linearGradient>
+          <pattern id="knitPat" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 Q2 0 4 4 Q6 8 8 4" fill="none" stroke="#D9B96A" stroke-width="1" opacity=".55"/></pattern>
+          <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <rect width="800" height="500" fill="url(#skyEve)"/>
+        <ellipse cx="420" cy="240" rx="330" ry="200" fill="url(#goldGlow)" opacity=".55" filter="url(#soft)"/>
+        <rect y="360" width="800" height="140" fill="#2E5E58"/>
+        <g stroke="#D9B96A" stroke-width="2">
+          <rect x="330" y="330" width="180" height="52" rx="6" fill="#FFFFFF" transform="rotate(-3 420 356)"/>
+          <rect x="345" y="292" width="160" height="48" rx="6" fill="#F7D9C2" transform="rotate(3 425 316)"/>
+          <rect x="360" y="256" width="140" height="44" rx="6" fill="#D9E4F2" transform="rotate(-2 430 278)"/>
+          <rect x="378" y="222" width="112" height="40" rx="6" fill="#FFFFFF" transform="rotate(2 434 242)"/>
+        </g>
+        <rect x="352" y="382" width="76" height="12" rx="6" fill="#E8C97E"/><rect x="362" y="372" width="66" height="14" rx="3" fill="#FFF3D6" transform="rotate(-3 395 379)"/>
+        <g class="permitTop"><g transform="rotate(-8 434 196)"><rect x="404" y="176" width="60" height="42" rx="5" fill="#FFFFFF" stroke="#D9B96A" stroke-width="2"/><circle cx="434" cy="197" r="11" fill="#DE6A52"/><path d="M434 186 q3 -7 10 -8" stroke="#4E9C6B" stroke-width="3.5" fill="none" stroke-linecap="round"/></g></g>
+        <!-- Ledger stairs: brass treads on wood frame, glowing 123 -->
+        <g>
+          <path d="M540 382 h52 v-34 h48 v-34 h48 v-34 h44 v102 Z" fill="url(#brassSurf)" stroke="#5C3A1E" stroke-width="3"/>
+          <path d="M540 382 h52 v-34 h48 v-34 h48 v-34 h44" fill="none" stroke="#FFE9A8" stroke-width="3.5" opacity=".75"/>
+          <rect x="540" y="382" width="192" height="12" fill="url(#woodG)"/>
+          <rect x="634" y="236" width="52" height="26" rx="6" fill="#2E2118"/>
+          <text x="660" y="254" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFE9A8" class="numGlow">123</text>
+          <g class="bob">
+            <rect x="628" y="168" width="40" height="44" rx="13" fill="#FFF6DC"/><path d="M628 190 h40 v12 a20 10 0 0 1 -40 0 Z" fill="#8FD0A0"/>
+            <circle cx="648" cy="150" r="19" fill="#8A5A3B"/><path d="M629 148 a19 19 0 0 1 38 0 l0 -4 a19 13 0 0 0 -38 0 Z" fill="#2E2118"/>
+            <ellipse cx="641" cy="151" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="655" cy="151" rx="5.5" ry="7" fill="#FFF"/><circle cx="641" cy="152" r="3" fill="#2E1408"/><circle cx="655" cy="152" r="3" fill="#2E1408"/>
+            <path d="M642 161 Q648 166 654 161" stroke="#3E1E0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <rect x="600" y="176" width="30" height="22" rx="3" fill="#FFFFFF" stroke="#D9B96A" stroke-width="2" transform="rotate(-16 615 187)"/>
+          </g>
+        </g>
+        <g class="bob">
+          <rect x="60" y="270" width="50" height="58" rx="16" fill="#5B84B8"/>
+          <circle cx="85" cy="246" r="24" fill="url(#skinG)"/><path d="M61 242 a24 24 0 0 1 48 0 l-4 0 a20 14 0 0 0 -40 0 Z" fill="#3E5E8A"/><rect x="58" y="236" width="54" height="10" rx="5" fill="#7FB2D9"/>
+          <ellipse cx="78" cy="247" rx="6" ry="7.5" fill="#FFF"/><ellipse cx="92" cy="247" rx="6" ry="7.5" fill="#FFF"/><circle cx="78" cy="248" r="3.2" fill="#7A3B12"/><circle cx="92" cy="248" r="3.2" fill="#7A3B12"/>
+          <path d="M79 258 Q85 263 91 258" stroke="#7A3B22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="116" cy="282" r="12" fill="none" stroke="#9A6B1E" stroke-width="4"/><line x1="125" y1="291" x2="138" y2="304" stroke="#9A6B1E" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <g class="bob2">
+          <rect x="170" y="270" width="50" height="58" rx="16" fill="#FFF6DC"/>
+          <circle cx="195" cy="246" r="24" fill="#C68863"/><path d="M171 244 a24 24 0 0 1 48 0 l0 -4 a24 16 0 0 0 -48 0 Z" fill="#2E2118"/>
+          <ellipse cx="188" cy="247" rx="6" ry="7.5" fill="#FFF"/><ellipse cx="202" cy="247" rx="6" ry="7.5" fill="#FFF"/><circle cx="188" cy="248" r="3.2" fill="#2E1408"/><circle cx="202" cy="248" r="3.2" fill="#2E1408"/>
+          <path d="M189 258 Q195 263 201 258" stroke="#3E1E0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M170 284 q25 -11 50 0 l0 13 q-25 -11 -50 0 Z" fill="url(#butterG)"/>
+        </g>
+        <g stroke="#D9B96A" stroke-width="2"><rect x="150" y="352" width="52" height="34" rx="4" fill="#F7D9C2"/><rect x="212" y="352" width="52" height="34" rx="4" fill="#FFFFFF"/><rect x="150" y="318" width="52" height="34" rx="4" fill="#D9E4F2"/></g>
+        
+        <g transform="translate(261,452) scale(0.6)"><g class="bob2">
+          <!-- shoes: mint sneakers with stripes -->
+          <g><rect x="-30" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M-26 -8 h16 M-26 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/><rect x="6" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M10 -8 h16 M10 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/></g>
+          <!-- coral overalls with rolled cuffs -->
+          <path d="M-26 -96 h52 l4 44 h-18 l-3 -30 h-8 l-3 30 h-18 Z" fill="url(#coralG)"/>
+          <path d="M-30 -56 h18 v10 h-18 Z M12 -56 h18 v10 h-18 Z" fill="#F0907A"/>
+          <rect x="-24" y="-96" width="48" height="14" rx="4" fill="url(#coralG)"/>
+          <circle cx="-14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/><circle cx="14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/>
+          <rect x="-13" y="-72" width="26" height="16" rx="3" fill="none" stroke="#B95543" stroke-width="1.6" stroke-dasharray="3 3"/>
+          <!-- cream knit sleeves -->
+          <rect x="-44" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="-37" cy="-80" r="8" fill="#F2B98A"/>
+          <rect x="36" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="43" cy="-80" r="8" fill="#F2B98A"/>
+          <!-- butter scarf wrapped + knotted -->
+          <ellipse cx="0" cy="-104" rx="27" ry="12" fill="url(#butterG)"/>
+          <circle cx="20" cy="-100" r="8" fill="#E9B94E"/><path d="M24 -96 l10 12 l-9 3 l-5 -10 Z" fill="#F2C94C"/>
+          <!-- brass scroll key-badge on black cord: disc + spiral, no letter -->
+          <path d="M-12 -100 L0 -70 L12 -100" stroke="#2B2118" stroke-width="2.4" fill="none"/>
+          <circle cx="0" cy="-66" r="9" fill="url(#brassG)" stroke="#7A5518" stroke-width="1.8"/>
+          <path d="M0 -66 m-5 0 a5 5 0 1 1 5 5 a3.2 3.2 0 1 0 -3.2 -3.2" fill="none" stroke="#5C3D0E" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- head -->
+          <circle cx="0" cy="-142" r="34" fill="url(#skinG)"/>
+          <ellipse cx="-17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/><ellipse cx="17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/>
+          <!-- freckles across cheeks and nose -->
+          <g fill="#B06A3B" opacity=".85"><circle cx="-14" cy="-133" r="1.5"/><circle cx="-9" cy="-131" r="1.3"/><circle cx="-19" cy="-131" r="1.2"/><circle cx="14" cy="-133" r="1.5"/><circle cx="9" cy="-131" r="1.3"/><circle cx="19" cy="-131" r="1.2"/><circle cx="-2.5" cy="-136" r="1.2"/><circle cx="2.5" cy="-136" r="1.2"/></g>
+          <!-- very large amber-brown eyes with highlights -->
+          <ellipse cx="-13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/><ellipse cx="13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/>
+          <circle cx="-13" cy="-143" r="7" fill="#C46A1B"/><circle cx="13" cy="-143" r="7" fill="#C46A1B"/>
+          <circle cx="-13" cy="-142" r="4" fill="#1E140C"/><circle cx="13" cy="-142" r="4" fill="#1E140C"/>
+          <circle cx="-15.5" cy="-147" r="2.4" fill="#FFFFFF"/><circle cx="10.5" cy="-147" r="2.4" fill="#FFFFFF"/>
+          <circle cx="-10" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/><circle cx="16" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/>
+          <path d="M-21 -158 Q-13 -162 -6 -158 M7 -158 Q13 -162 20 -158" stroke="#4A2C12" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="0" cy="-135" rx="3.4" ry="2.4" fill="#D98A5F"/>
+          <path d="M-7 -126 Q0 -121 7 -126" stroke="#7A3B22" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- honey-brown hair: side-swept fringe + two scroll-puff buns with spirals -->
+          <path d="M-34 -142 a34 34 0 0 1 68 0 l0 -8 Q18 -168 -6 -160 Q-28 -154 -34 -134 Z" fill="url(#hairG)"/>
+          <path d="M-34 -150 Q-10 -172 20 -164 Q4 -156 -8 -152 Q-24 -147 -34 -138 Z" fill="#A06A33" opacity=".7"/>
+          <circle cx="-38" cy="-170" r="19" fill="url(#hairG)"/><circle cx="38" cy="-170" r="19" fill="url(#hairG)"/>
+          <path d="M-38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M-30 -118 q-6 10 2 16 M30 -118 q6 10 -2 16" stroke="url(#hairG)" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <g transform="translate(-52,-86) rotate(-18)"><rect x="-7" y="-26" width="14" height="52" rx="7" fill="#F7E3B8" stroke="#D9B96A" stroke-width="2"/><ellipse cx="0" cy="-26" rx="7" ry="3.5" fill="#E8C97E"/><path d="M-4 -26 a4 3 0 1 1 8 0" fill="none" stroke="#B98A1F" stroke-width="1.6"/></g>
+          <ellipse cx="0" cy="2" rx="34" ry="4" fill="#3A2350" opacity=".18"/>
+        </g>
+        </g>
+        <g font-size="12" font-weight="bold" fill="#2B2118" text-anchor="middle">
+          <circle cx="120" cy="90" r="24" fill="#7FB2D9" class="badgeGlow"/><text x="120" y="94">FIND</text>
+          <circle cx="300" cy="90" r="24" fill="#FFD76E" class="badgeGlow b2"/><text x="300" y="94">SORT</text>
+          <circle cx="480" cy="90" r="24" fill="#8FD0A0" class="badgeGlow b3"/><text x="480" y="94">CARRY</text>
+          <circle cx="660" cy="90" r="24" fill="#F28A72" class="badgeGlow b4"/><text x="660" y="94">KEEP</text>
+        </g>
+        <g fill="#FFE9A8"><circle cx="120" cy="120" r="3" class="mote"/><circle cx="300" cy="80" r="2.2" class="mote d2"/><circle cx="520" cy="140" r="2.6" class="mote d3"/><circle cx="660" cy="90" r="2" class="mote d2"/><circle cx="420" cy="200" r="1.8" class="mote d3"/><circle cx="200" cy="230" r="2" class="mote"/></g>
+      </svg>
+      </div>
+
+      <!-- ============ SCENE 6 : THE READING TREE ============ -->
+      <div class="scene" data-scene="5" role="img" aria-label="Scene 6: Golden evening under the Reading Tree. Mrs. Hen holds her permit, Grandpa joins the crew, and the number-cart's numbers glow like fireflies.">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        
+        <defs>
+          <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B3A6E"/><stop offset=".45" stop-color="#B4658A"/><stop offset=".78" stop-color="#F2A65E"/><stop offset="1" stop-color="#FFD98A"/></linearGradient>
+          <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB2D9"/><stop offset=".55" stop-color="#C9E4F2"/><stop offset="1" stop-color="#FFE9B8"/></linearGradient>
+          <linearGradient id="skyEve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A2E5E"/><stop offset=".5" stop-color="#C46A7A"/><stop offset="1" stop-color="#FFC978"/></linearGradient>
+          <radialGradient id="goldGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset=".55" stop-color="#FFC94D" stop-opacity=".45"/><stop offset="1" stop-color="#FFC94D" stop-opacity="0"/></radialGradient>
+          <linearGradient id="scrollG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC0"/><stop offset=".5" stop-color="#FFD76E"/><stop offset="1" stop-color="#F2A93B"/></linearGradient>
+          <linearGradient id="coralG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F28A72"/><stop offset="1" stop-color="#DE6A52"/></linearGradient>
+          <linearGradient id="knitG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6DC"/><stop offset="1" stop-color="#F0D9A8"/></linearGradient>
+          <linearGradient id="butterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD76E"/><stop offset="1" stop-color="#EFAF2E"/></linearGradient>
+          <radialGradient id="brassG" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFE9A8"/><stop offset=".55" stop-color="#D9A83E"/><stop offset="1" stop-color="#9A6B1E"/></radialGradient>
+          <linearGradient id="brassSurf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8BC5E"/><stop offset=".5" stop-color="#C08A2E"/><stop offset="1" stop-color="#8A5A1E"/></linearGradient>
+          <linearGradient id="woodG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A33"/><stop offset="1" stop-color="#5C3A1E"/></linearGradient>
+          <radialGradient id="skinG" cx=".5" cy=".35" r=".85"><stop offset="0" stop-color="#FFD9B0"/><stop offset="1" stop-color="#F0AC7E"/></radialGradient>
+          <radialGradient id="hairG" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#B07C3E"/><stop offset=".6" stop-color="#8A5A2A"/><stop offset="1" stop-color="#6B3F16"/></radialGradient>
+          <linearGradient id="tealG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E8A80"/><stop offset="1" stop-color="#175E58"/></linearGradient>
+          <linearGradient id="plumG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E4A7A"/><stop offset="1" stop-color="#3E2A52"/></linearGradient>
+          <pattern id="knitPat" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 4 Q2 0 4 4 Q6 8 8 4" fill="none" stroke="#D9B96A" stroke-width="1" opacity=".55"/></pattern>
+          <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <rect width="800" height="500" fill="url(#skyEve)"/>
+        <ellipse cx="330" cy="300" rx="380" ry="190" fill="url(#goldGlow)" opacity=".5" filter="url(#soft)"/>
+        <circle cx="110" cy="86" r="40" fill="#FFD76E"/><circle cx="110" cy="86" r="58" fill="#FFD76E" opacity=".3"/>
+        <rect y="370" width="800" height="130" fill="#2E5E58"/>
+        <g>
+          <path d="M560 380 q10 -90 -6 -160 l34 0 q-14 70 -2 160 Z" fill="url(#woodG)"/>
+          <circle cx="570" cy="150" r="105" fill="#3E7A52"/><circle cx="490" cy="185" r="70" fill="#4E9C6B"/><circle cx="655" cy="180" r="72" fill="#35704A"/><circle cx="570" cy="100" r="62" fill="#5EAE74"/>
+          <circle cx="520" cy="130" r="10" fill="#FFD76E" class="winGlow"/><circle cx="620" cy="165" r="8" fill="#FFD76E" class="winGlow"/><circle cx="565" cy="200" r="7" fill="#FFE9A8" class="winGlow"/>
+        </g>
+        <g fill="#FFD76E"><path class="leafFall" d="M470 120 q14 -6 20 8 q-14 6 -20 -8Z"/><path class="leafFall d2" d="M640 90 q14 -6 20 8 q-14 6 -20 -8Z" fill="#F28A72"/><path class="leafFall d3" d="M540 60 q14 -6 20 8 q-14 6 -20 -8Z" fill="#8FD0A0"/></g>
+        <g class="bob2">
+          <rect x="96" y="300" width="54" height="66" rx="16" fill="#A9C6E8"/><path d="M96 322 h54 M96 340 h54" stroke="#5B84B8" stroke-width="5"/>
+          <circle cx="123" cy="276" r="25" fill="url(#skinG)"/><path d="M98 272 a25 25 0 0 1 50 0 l0 8 q-25 10 -50 0 Z" fill="#F2EEE2"/><path d="M108 292 q15 12 30 0 l0 10 q-15 8 -30 0 Z" fill="#F2EEE2"/>
+          <ellipse cx="115" cy="276" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="131" cy="276" rx="5.5" ry="7" fill="#FFF"/><circle cx="115" cy="277" r="3" fill="#7A3B12"/><circle cx="131" cy="277" r="3" fill="#7A3B12"/>
+          <path d="M114 287 Q123 293 132 287" stroke="#7A3B22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="152" y1="330" x2="168" y2="392" stroke="url(#woodG)" stroke-width="5" stroke-linecap="round"/>
+          <rect x="106" y="330" width="36" height="26" rx="3" fill="#FFF3D6" stroke="#D9B96A" stroke-width="2"/>
+        </g>
+        <g class="bob">
+          <ellipse cx="238" cy="338" rx="33" ry="27" fill="#FFF6DC"/><circle cx="264" cy="316" r="17" fill="#FFF6DC"/>
+          <path d="M276 314 l15 5 l-15 6 Z" fill="#E9B94E"/><circle cx="266" cy="313" r="4.2" fill="#FFF"/><circle cx="267" cy="314" r="2.2" fill="#1E140C"/>
+          <path d="M250 292 Q264 279 280 290 L286 298 Q264 288 244 300 Z" fill="#4E9C6B"/>
+          <g transform="rotate(10 214 296)"><rect x="188" y="278" width="52" height="36" rx="4" fill="#FFFFFF" stroke="#D9B96A" stroke-width="2"/><circle cx="214" cy="296" r="9" fill="#DE6A52"/><path d="M214 287 q2 -6 8 -7" stroke="#4E9C6B" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+        </g>
+        
+        <g transform="translate(356,388) scale(0.68)"><g class="bob">
+          <!-- shoes: mint sneakers with stripes -->
+          <g><rect x="-30" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M-26 -8 h16 M-26 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/><rect x="6" y="-14" width="26" height="13" rx="6" fill="#7FD8B4" stroke="#4FAE86" stroke-width="1.5"/><path d="M10 -8 h16 M10 -4.5 h16" stroke="#EFFFF7" stroke-width="2"/></g>
+          <!-- coral overalls with rolled cuffs -->
+          <path d="M-26 -96 h52 l4 44 h-18 l-3 -30 h-8 l-3 30 h-18 Z" fill="url(#coralG)"/>
+          <path d="M-30 -56 h18 v10 h-18 Z M12 -56 h18 v10 h-18 Z" fill="#F0907A"/>
+          <rect x="-24" y="-96" width="48" height="14" rx="4" fill="url(#coralG)"/>
+          <circle cx="-14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/><circle cx="14" cy="-90" r="4" fill="#E9B94E" stroke="#9A6B1E" stroke-width="1.5"/>
+          <rect x="-13" y="-72" width="26" height="16" rx="3" fill="none" stroke="#B95543" stroke-width="1.6" stroke-dasharray="3 3"/>
+          <!-- cream knit sleeves -->
+          <rect x="-44" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="-37" cy="-80" r="8" fill="#F2B98A"/>
+          <rect x="36" y="-118" width="14" height="38" rx="7" fill="url(#knitG)"/><circle cx="43" cy="-80" r="8" fill="#F2B98A"/>
+          <!-- butter scarf wrapped + knotted -->
+          <ellipse cx="0" cy="-104" rx="27" ry="12" fill="url(#butterG)"/>
+          <circle cx="20" cy="-100" r="8" fill="#E9B94E"/><path d="M24 -96 l10 12 l-9 3 l-5 -10 Z" fill="#F2C94C"/>
+          <!-- brass scroll key-badge on black cord: disc + spiral, no letter -->
+          <path d="M-12 -100 L0 -70 L12 -100" stroke="#2B2118" stroke-width="2.4" fill="none"/>
+          <circle cx="0" cy="-66" r="9" fill="url(#brassG)" stroke="#7A5518" stroke-width="1.8"/>
+          <path d="M0 -66 m-5 0 a5 5 0 1 1 5 5 a3.2 3.2 0 1 0 -3.2 -3.2" fill="none" stroke="#5C3D0E" stroke-width="1.7" stroke-linecap="round"/>
+          <!-- head -->
+          <circle cx="0" cy="-142" r="34" fill="url(#skinG)"/>
+          <ellipse cx="-17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/><ellipse cx="17" cy="-130" rx="8" ry="5" fill="#E88A6B" opacity=".55"/>
+          <!-- freckles across cheeks and nose -->
+          <g fill="#B06A3B" opacity=".85"><circle cx="-14" cy="-133" r="1.5"/><circle cx="-9" cy="-131" r="1.3"/><circle cx="-19" cy="-131" r="1.2"/><circle cx="14" cy="-133" r="1.5"/><circle cx="9" cy="-131" r="1.3"/><circle cx="19" cy="-131" r="1.2"/><circle cx="-2.5" cy="-136" r="1.2"/><circle cx="2.5" cy="-136" r="1.2"/></g>
+          <!-- very large amber-brown eyes with highlights -->
+          <ellipse cx="-13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/><ellipse cx="13" cy="-144" rx="9.5" ry="11" fill="#FFFFFF"/>
+          <circle cx="-13" cy="-143" r="7" fill="#C46A1B"/><circle cx="13" cy="-143" r="7" fill="#C46A1B"/>
+          <circle cx="-13" cy="-142" r="4" fill="#1E140C"/><circle cx="13" cy="-142" r="4" fill="#1E140C"/>
+          <circle cx="-15.5" cy="-147" r="2.4" fill="#FFFFFF"/><circle cx="10.5" cy="-147" r="2.4" fill="#FFFFFF"/>
+          <circle cx="-10" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/><circle cx="16" cy="-138" r="1.2" fill="#FFFFFF" opacity=".9"/>
+          <path d="M-21 -158 Q-13 -162 -6 -158 M7 -158 Q13 -162 20 -158" stroke="#4A2C12" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="0" cy="-135" rx="3.4" ry="2.4" fill="#D98A5F"/>
+          <path d="M-7 -126 Q0 -121 7 -126" stroke="#7A3B22" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- honey-brown hair: side-swept fringe + two scroll-puff buns with spirals -->
+          <path d="M-34 -142 a34 34 0 0 1 68 0 l0 -8 Q18 -168 -6 -160 Q-28 -154 -34 -134 Z" fill="url(#hairG)"/>
+          <path d="M-34 -150 Q-10 -172 20 -164 Q4 -156 -8 -152 Q-24 -147 -34 -138 Z" fill="#A06A33" opacity=".7"/>
+          <circle cx="-38" cy="-170" r="19" fill="url(#hairG)"/><circle cx="38" cy="-170" r="19" fill="url(#hairG)"/>
+          <path d="M-38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M38 -170 m-11 0 a11 11 0 1 1 11 11 a7 7 0 1 0 -7 -7 a3.5 3.5 0 1 1 3.5 -3.5" fill="none" stroke="#5C3A16" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M-30 -118 q-6 10 2 16 M30 -118 q6 10 -2 16" stroke="url(#hairG)" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <g transform="translate(-52,-86) rotate(-18)"><rect x="-7" y="-26" width="14" height="52" rx="7" fill="#F7E3B8" stroke="#D9B96A" stroke-width="2"/><ellipse cx="0" cy="-26" rx="7" ry="3.5" fill="#E8C97E"/><path d="M-4 -26 a4 3 0 1 1 8 0" fill="none" stroke="#B98A1F" stroke-width="1.6"/></g>
+          <ellipse cx="0" cy="2" rx="34" ry="4" fill="#3A2350" opacity=".18"/>
+        </g>
+        </g>
+        <!-- Fern's open story book -->
+        <g transform="translate(356,376)"><rect x="-27" y="-24" width="54" height="30" rx="4" fill="#FFF3D6" stroke="#D9B96A" stroke-width="2"/><line x1="0" y1="-24" x2="0" y2="6" stroke="#D9B96A" stroke-width="2"/><line x1="-20" y1="-14" x2="-5" y2="-14" stroke="#C9A85E" stroke-width="2.5"/><line x1="-20" y1="-6" x2="-7" y2="-6" stroke="#C9A85E" stroke-width="2.5"/><line x1="5" y1="-14" x2="20" y2="-14" stroke="#C9A85E" stroke-width="2.5"/><line x1="7" y1="-6" x2="20" y2="-6" stroke="#C9A85E" stroke-width="2.5"/></g>
+        <g class="bob2">
+          <rect x="404" y="330" width="44" height="48" rx="14" fill="#5B84B8"/>
+          <circle cx="426" cy="310" r="21" fill="url(#skinG)"/><path d="M405 306 a21 21 0 0 1 42 0 l-4 0 a17 12 0 0 0 -34 0 Z" fill="#3E5E8A"/><rect x="402" y="300" width="48" height="9" rx="4.5" fill="#7FB2D9"/>
+          <ellipse cx="419" cy="311" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="433" cy="311" rx="5.5" ry="7" fill="#FFF"/><circle cx="419" cy="312" r="3" fill="#7A3B12"/><circle cx="433" cy="312" r="3" fill="#7A3B12"/>
+          <path d="M420 321 Q426 326 432 321" stroke="#7A3B22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </g>
+        <g class="bob">
+          <rect x="462" y="330" width="44" height="48" rx="14" fill="#FFF6DC"/>
+          <circle cx="484" cy="310" r="21" fill="#C68863"/><path d="M463 308 a21 21 0 0 1 42 0 l0 -4 a21 14 0 0 0 -42 0 Z" fill="#2E2118"/>
+          <ellipse cx="477" cy="311" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="491" cy="311" rx="5.5" ry="7" fill="#FFF"/><circle cx="477" cy="312" r="3" fill="#2E1408"/><circle cx="491" cy="312" r="3" fill="#2E1408"/>
+          <path d="M478 321 Q484 326 490 321" stroke="#3E1E0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M462 344 q22 -10 44 0 l0 11 q-22 -10 -44 0 Z" fill="url(#butterG)"/>
+        </g>
+        <g class="bob2">
+          <rect x="520" y="330" width="44" height="48" rx="14" fill="#FFF6DC"/><path d="M520 352 h44 v10 a22 10 0 0 1 -44 0 Z" fill="#8FD0A0"/>
+          <circle cx="542" cy="310" r="21" fill="#8A5A3B"/><path d="M521 308 a21 21 0 0 1 42 0 l0 -4 a21 14 0 0 0 -42 0 Z" fill="#2E2118"/>
+          <ellipse cx="535" cy="311" rx="5.5" ry="7" fill="#FFF"/><ellipse cx="549" cy="311" rx="5.5" ry="7" fill="#FFF"/><circle cx="535" cy="312" r="3" fill="#2E1408"/><circle cx="549" cy="312" r="3" fill="#2E1408"/>
+          <path d="M536 321 Q542 326 548 321" stroke="#3E1E0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </g>
+        <g>
+          <rect x="636" y="356" width="118" height="16" rx="8" fill="url(#woodG)"/>
+          <rect x="642" y="340" width="8" height="18" fill="url(#woodG)"/><rect x="740" y="340" width="8" height="18" fill="url(#woodG)"/>
+          <circle cx="654" cy="382" r="13" fill="#3A2A1A"/><circle cx="654" cy="382" r="5" fill="#FFE9A8"/><circle cx="736" cy="382" r="13" fill="#3A2A1A"/><circle cx="736" cy="382" r="5" fill="#FFE9A8"/>
+          <text x="695" y="368" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFF6E3">1 · 1 · 1</text>
+          <g fill="#FFE9A8" class="glowPulse"><circle cx="660" cy="322" r="4"/><circle cx="695" cy="308" r="5"/><circle cx="730" cy="324" r="4"/><circle cx="678" cy="292" r="3"/><circle cx="714" cy="290" r="3.5"/></g>
+        </g>
+        <!-- Ledger parked, resting: brass-and-wood -->
+        <g>
+          <rect x="46" y="388" width="72" height="48" rx="12" fill="url(#brassSurf)" stroke="#5C3A1E" stroke-width="2.5"/>
+          <rect x="46" y="388" width="72" height="10" rx="5" fill="url(#woodG)"/>
+          <rect x="62" y="404" width="40" height="20" rx="5" fill="#2E2118"/>
+          <text x="82" y="418" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFE9A8">Z z</text>
+          <circle cx="62" cy="444" r="9" fill="#3A2A1A"/><circle cx="102" cy="444" r="9" fill="#3A2A1A"/>
+        </g>
+        <g fill="#FFE9A8"><circle cx="120" cy="120" r="3" class="mote"/><circle cx="300" cy="80" r="2.2" class="mote d2"/><circle cx="520" cy="140" r="2.6" class="mote d3"/><circle cx="660" cy="90" r="2" class="mote d2"/><circle cx="420" cy="200" r="1.8" class="mote d3"/><circle cx="200" cy="230" r="2" class="mote"/></g>
+      </svg>
+      </div>
+
+    </div><!-- /stage -->
+
+    <div class="scene-label">
+      <span class="sname" id="sceneName">Scene 1 · Hi, Neighbor</span>
+      <span class="scount" id="lineCount"></span>
+    </div>
+    <div class="progress" role="progressbar" aria-label="Story progress" id="progressBar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div id="progressFill"></div>
+    </div>
+
+    <div class="caption" aria-live="polite">
+      <span class="chip" id="speakerChip">FERN</span>
+      <p class="line" id="captionLine"></p>
+    </div>
+
+    <div class="controls">
+      <button id="prevBtn" type="button" aria-label="Previous line">◀ Prev</button>
+      <button id="playBtn" type="button" aria-label="Play or pause autoplay">▶ Play</button>
+      <button id="nextBtn" type="button" aria-label="Next line">Next ▶</button>
+      <button id="replayBtn" type="button" aria-label="Replay the cartoon from the beginning">↻ Replay</button>
+    </div>
+
+    <nav class="pills" id="scenePills" aria-label="Choose a scene"></nav>
+  </main>
+
+  <p class="about"><strong>About this cartoon:</strong> every line of dialogue is captioned on screen, so the whole story can be watched muted — there is no sound to miss. Use the Play button and sit back, tap through line by line, or jump to any scene with the buttons above. Arrow keys work too.</p>
+
+  <footer>Roads to the Future · free forever · MIT · © Will Bickford · Exocortex</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var SCENES = [
+    { title:"Hi, Neighbor", lines:[
+      ["FERN","Hi, neighbor. I'm Fern. I'm eight, and this is my town."],
+      ["FERN","We live inside the Great Scroll. It's called Scrolltown."],
+      ["FERN","See this little house? It's my house-scroll. My stories live here. My drawings live here. My important papers live here."],
+      ["FERN","Every neighbor has their own house-scroll. And every door only opens for the key-badge that belongs to it."],
+      ["FERN","Want to see the town? Hop on the number-cart. Hold on to your hat!"]
+    ]},
+    { title:"The Number-Cart Tour", lines:[
+      ["FERN","The number-cart rides the numbers. Listen — it counts as it rolls!"],
+      ["EVERYONE","One… one… one… rolling home!"],
+      ["FERN","First stop: 1.2.1 — the Records Desk! The library that can find ANY paper."],
+      ["MS. FOLIO","Lost a paper? Tell me its name. I'll find where it lives."],
+      ["FERN","Next stop: the Minutes Tower!"],
+      ["MR. BELL","When the town decides something, I ring the bell and write it down — so nobody ever has to forget."],
+      ["FERN","The Ledger Counting House!"],
+      ["LEDGER","I count every token. Out loud. Fair and square. Beep."],
+      ["FERN","The Catalog Map Room!"],
+      ["MS. ATLAS","My map shows where everything in town lives. Everything!"],
+      ["FERN","And the Forms Router Post Tower!"],
+      ["MR. ROUTE","Every form that comes to my tower, I send it to the right house. Every single one."],
+      ["FERN","Five places, one town, and every paper in its own home. That's Scrolltown!"]
+    ]},
+    { title:"Ah… Ah… Achoo!", lines:[
+      ["FERN","But today… today was a mixed-up day."],
+      ["MR. ROUTE","Ah… ah… ah-CHOO!"],
+      ["FERN","The Post Tower sneezed! And all the forms flew EVERYWHERE!"],
+      ["MRS. HEN","Oh dear, oh dear. My garden permit! It was supposed to come to MY house. Has anyone seen it?"],
+      ["FERN","Don't worry, Mrs. Hen. Mixed-up is a feeling, and feelings are okay. We'll find it."],
+      ["FERN","But I was worried too. Grandpa's story page was in the mail today. His best story. If it lands in the wrong house… nobody will know whose it is."],
+      ["FERN","Crew! We have a case!"]
+    ]},
+    { title:"The Crew and the River of Pages", lines:[
+      ["FERN","When a neighbor has a problem, the crew comes. Wren finds things."],
+      ["WREN","If it's hiding, I'll spot it. Finder — that's me!"],
+      ["FERN","Theo sorts things."],
+      ["THEO","Give me a messy pile. I love a messy pile."],
+      ["FERN","Bea carries things, safe and sound."],
+      ["BEA","Nothing drops on my watch. Nothing."],
+      ["FERN","And me? I'm the Keeper. I check the key-badges, so every paper goes only to its own house."],
+      ["WREN","Uh-oh. The loose pages are a river today. The Scroll Valley stream is too wide to jump."],
+      ["LEDGER","Beep. A bridge would help. I can help."],
+      ["FERN","Ledger! You turned into a bridge!"],
+      ["LEDGER","Counting House bots help neighbors. That is the whole job. Beep."],
+      ["FERN","Slow and steady, friends. One page at a time."]
+    ]},
+    { title:"Together, Just Right", lines:[
+      ["WREN","Finder eyes on! I see… a birthday card… a bus pass… and — there! A garden permit with a little tomato on it!"],
+      ["THEO","Sorter hands ready! Permits here, stories there, letters in the middle. Pile by pile, home by home."],
+      ["BEA","Carrier coming through! Arms wide, papers safe. Nothing drops!"],
+      ["FERN","Keeper check! Mrs. Hen's badge — tomato stamp, Garden Street. This permit is hers. Badge matches!"],
+      ["WREN","Wait. One more page, under the pile. It's old. And soft. And it smells like Grandpa's soup."],
+      ["FERN","It's Grandpa's story. The page about the night the stars fell into the lake."],
+      ["THEO","Should we read it? Just a peek?"],
+      ["FERN","We never peek. It's not our house. Stories belong to their own house-scroll — we just carry them home."],
+      ["EVERYONE","Finder finds! Sorter sorts! Carrier carries! Keeper keeps!"],
+      ["FERN","Alone, our gifts are little. Together? Together they're just right."]
+    ]},
+    { title:"See You Tomorrow", lines:[
+      ["MRS. HEN","My permit! My tomatoes thank you, crew."],
+      ["FERN","And look — Grandpa, we found your story. We didn't peek. We carried it home."],
+      ["GRANDPA","That's the way. Read it out loud, Fern. Stories are for sharing — when the owner says so."],
+      ["FERN","The night the stars fell into the lake, we didn't catch a single one. We just watched, together — and that was the whole treasure."],
+      ["FERN","We found every paper. We fixed the mix-up. And you know what? It's okay to feel mixed-up sometimes. Grown-ups feel mixed-up too. What matters is: neighbors help, one page at a time."],
+      ["FERN","The scroll is yours, neighbor. See you tomorrow."],
+      ["CART","One… one… one…"]
+    ]}
+  ];
+
+  var CHIP_COLORS = {
+    "FERN":      ["#F2A08E","#3E3A34"],
+    "EVERYONE": ["#6FA877","#FFF8EC"],
+    "MS. FOLIO":["#6E97CC","#FFF8EC"],
+    "MR. BELL": ["#DEB33C","#3E3A34"],
+    "LEDGER":   ["#4FB3A9","#123B36"],
+    "MS. ATLAS":["#8FB0D9","#22344A"],
+    "MR. ROUTE":["#6FA877","#FFF8EC"],
+    "MRS. HEN": ["#F6C65C","#3E3A34"],
+    "WREN":     ["#6E97CC","#FFF8EC"],
+    "THEO":     ["#DEB33C","#3E3A34"],
+    "BEA":      ["#A8D8B0","#23402A"],
+    "GRANDPA":  ["#A9C6E8","#22344A"],
+    "CART":     ["#D8C9AC","#3E3A34"]
+  };
+
+  var totalLines = SCENES.reduce(function(n,s){ return n + s.lines.length; }, 0);
+  var offsets = []; (function(){ var acc=0; SCENES.forEach(function(s){ offsets.push(acc); acc += s.lines.length; }); })();
+
+  var sceneEls = Array.prototype.slice.call(document.querySelectorAll(".scene"));
+  var chipEl = document.getElementById("speakerChip");
+  var lineEl = document.getElementById("captionLine");
+  var sceneNameEl = document.getElementById("sceneName");
+  var lineCountEl = document.getElementById("lineCount");
+  var fillEl = document.getElementById("progressFill");
+  var barEl = document.getElementById("progressBar");
+  var playBtn = document.getElementById("playBtn");
+  var prevBtn = document.getElementById("prevBtn");
+  var nextBtn = document.getElementById("nextBtn");
+  var replayBtn = document.getElementById("replayBtn");
+  var pillsEl = document.getElementById("scenePills");
+
+  var sceneIdx = 0, lineIdx = 0, playing = false, timer = null, ended = false;
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  SCENES.forEach(function(s, i){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.innerHTML = "";
+    var dot = document.createElement("span"); dot.className = "dot";
+    var label = document.createElement("span"); label.textContent = (i+1) + ". " + s.title;
+    b.appendChild(dot); b.appendChild(label);
+    b.setAttribute("aria-label", "Go to scene " + (i+1) + ": " + s.title);
+    b.addEventListener("click", function(){ pause(); goTo(i, 0); });
+    pillsEl.appendChild(b);
+  });
+  var pillBtns = Array.prototype.slice.call(pillsEl.children);
+
+  function lineDuration(text){
+    var ms = 2600 + text.length * 28;
+    if (ms < 4000) ms = 4000;
+    if (ms > 6500) ms = 6500;
+    return ms;
+  }
+
+  function render(){
+    sceneEls.forEach(function(el, i){ el.classList.toggle("active", i === sceneIdx); });
+    pillBtns.forEach(function(b, i){
+      if (i === sceneIdx) b.setAttribute("aria-current","true"); else b.removeAttribute("aria-current");
+    });
+    var scene = SCENES[sceneIdx];
+    var line = scene.lines[lineIdx];
+    sceneNameEl.textContent = "Scene " + (sceneIdx+1) + " · " + scene.title;
+    lineCountEl.textContent = "Line " + (lineIdx+1) + " of " + scene.lines.length;
+    var colors = CHIP_COLORS[line[0]] || ["#FCF0BE","#3E3A34"];
+    chipEl.textContent = line[0];
+    chipEl.style.background = colors[0];
+    chipEl.style.color = colors[1];
+    lineEl.textContent = line[1];
+    var done = offsets[sceneIdx] + lineIdx + 1;
+    var pct = Math.round(done / totalLines * 100);
+    fillEl.style.width = pct + "%";
+    barEl.setAttribute("aria-valuenow", String(pct));
+    replayBtn.classList.toggle("show", ended);
+    playBtn.textContent = playing ? "⏸ Pause" : "▶ Play";
+  }
+
+  function clearTimer(){ if (timer !== null){ clearTimeout(timer); timer = null; } }
+
+  function schedule(){
+    clearTimer();
+    if (!playing) return;
+    var text = SCENES[sceneIdx].lines[lineIdx][1];
+    timer = setTimeout(function(){
+      if (!advance()){ stopAtEnd(); }
+      else { render(); schedule(); }
+    }, lineDuration(text));
+  }
+
+  function advance(){
+    if (lineIdx < SCENES[sceneIdx].lines.length - 1){ lineIdx++; return true; }
+    if (sceneIdx < SCENES.length - 1){ sceneIdx++; lineIdx = 0; return true; }
+    return false;
+  }
+  function retreat(){
+    if (lineIdx > 0){ lineIdx--; return true; }
+    if (sceneIdx > 0){ sceneIdx--; lineIdx = SCENES[sceneIdx].lines.length - 1; return true; }
+    return false;
+  }
+
+  function stopAtEnd(){
+    playing = false; ended = true; clearTimer(); render();
+  }
+  function pause(){ playing = false; clearTimer(); render(); }
+  function goTo(s, l){ sceneIdx = s; lineIdx = l; ended = false; render(); }
+
+  playBtn.addEventListener("click", function(){
+    if (playing){ pause(); return; }
+    if (ended){ goTo(0,0); }
+    playing = true; render(); schedule();
+  });
+  nextBtn.addEventListener("click", function(){
+    pause();
+    if (ended) return;
+    if (!advance()){ ended = true; render(); } else { ended = false; render(); }
+  });
+  prevBtn.addEventListener("click", function(){
+    pause();
+    ended = false;
+    retreat(); render();
+  });
+  replayBtn.addEventListener("click", function(){
+    goTo(0,0);
+    playing = !reduced;
+    render(); schedule();
+  });
+  pillBtns.forEach(function(b){ /* listeners attached above */ });
+
+  document.addEventListener("keydown", function(e){
+    if (e.key === "ArrowRight"){ pause(); if (!ended){ if (!advance()){ ended = true; } else { ended = false; } render(); } }
+    else if (e.key === "ArrowLeft"){ pause(); ended = false; retreat(); render(); }
+  });
+
+  render();
+  if (!reduced){
+    playing = true; render(); schedule();
+  }
+})();
+</script>
+</body>
+</html>
