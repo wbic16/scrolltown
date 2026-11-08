@@ -25,6 +25,14 @@ addresses stack (Lego), claims connect houses to keepers (K'Nex) — until Seaso
 when the first real mechanisms turn: gears, wheels, and a lamp that lights the next
 lamp. Nobody is ever asked to hold a bigger brick than the season has handed them.
 
+**The tentpoles.** Each year also has one tentpole story — the year's anchor, the
+story the season is remembered by. The seasons teach the town its ideas; the
+tentpoles are the layer where **Fern herself changes**: what she discovers each
+year, and what can never be undiscovered. Every season below carries its tentpole
+and the line that says what changes for her.
+
+*Tentpoles offered by Emi Prime, relayed by Will 2026-11-08.*
+
 ---
 
 ## The six seasons
@@ -47,6 +55,10 @@ lamp. Nobody is ever asked to hold a bigger brick than the season has handed the
 The welcome season. Fern does for the viewer what a good neighbor does at a gate:
 she opens it. Home Street first, then the whole town, one kind introduction at a
 time — until the viewer isn't visiting anymore. They live here.
+
+**Tentpole — "The Great Form Mix-Up"** (the pilot itself, EP001; beat 1 below).
+*What changes:* Fern discovers what makes Scrolltown worth protecting. A home is more than an address.
+*(Tentpoles offered by Emi Prime, relayed by Will 2026-11-08.)*
 
 **Beats:**
 1. **The Great Form Mix-Up** (EP001, the pilot) — the town, the crew, and the five
@@ -79,6 +91,10 @@ Fern has lived in the Exocortex for a year; now she asks what it's made of. A
 phext stops being just "my house" and becomes an idea she can say: my own scroll,
 at my own address, behind my own door. To learn it, the town has to get bigger —
 so the Scroll widens, and the neighborhoods arrive.
+
+**Tentpole — "The House Beyond the Map."**
+*What changes:* Fern learns to navigate the dimensions of Phext and discovers how much remains unexplored.
+*(Tentpoles offered by Emi Prime, relayed by Will 2026-11-08.)*
 
 **Beats:**
 1. **Past Home Street** — the number-cart rolls further than it ever has, down
@@ -114,6 +130,10 @@ forward: the inventor-showwoman who built this wonderful world, part pattern-sha
 part singer whose every big idea leaves her mouth as a refrain, part editor whose
 pencil repairs and never shames. Fern has followed her all along. Now she meets her.
 
+**Tentpole — "The Mirror Maze."**
+*What changes:* Games of memory, inference, and prediction teach Fern that intelligence and being correct are different things.
+*(Tentpoles offered by Emi Prime, relayed by Will 2026-11-08.)*
+
 **Beats:**
 1. **Waverly Steps Forward** — the workshop door is open. Fern's first audience:
    a riddle, a refrain, and one firm, kind correction.
@@ -145,12 +165,18 @@ the discovery that a route exists only because someone walked it and left it
 open behind them. Fern's first journeys out. The crew's gifts, combined in
 Season 1 to fix one sneeze, now combine across a whole map.
 
+**Tentpole — "The Two Towns."**
+*What changes:* Two communities must merge knowledge without surrendering their individual identities.
+*(Tentpoles offered by Emi Prime, relayed by Will 2026-11-08.)*
+
 **Beats:**
 1. **A Letter from Far Away** — a letter arrives from a town Fern can't yet
    pronounce, carried along a route of many hands. Every hand kept it sealed.
 2. **The First Journey Out** — the crew rides the counting path past the last
    lamp they know. Ledger's wheels learn roads: cart, then bridge, then —
-   on the far side — stairs down into a town built along a river of pages.
+   on the far side — stairs down into a town built along a river of pages:
+   the far town of **The Two Towns**, this season's tentpole. (One far town,
+   one arc — these journey beats are its road in, not a second far-town story.)
 3. **Routes Are Promises** — a route is drawn on the great map only when it has
    been walked both ways and left open. The map we leave open is drawn this year.
 4. **The Storm of Loose Pages** — weather in the wide Scroll: loose pages blow
@@ -177,6 +203,10 @@ Everything she was handed in Season 1, she now hands on: the check, the
 promise, the close. Her crew teaches too, each one the expert for a day —
 and Fern learns the hardest Keeper skill of all: repairing a mistake,
 including her own, out loud and kindly.
+
+**Tentpole — "The Day Waverly Didn't Answer."**
+*What changes:* Fern faces a problem nobody else can solve for her. She must exercise judgment, including knowing when not to act.
+*(Tentpoles offered by Emi Prime, relayed by Will 2026-11-08.)*
 
 **Beats:**
 1. **A New Little One** — a small neighbor moves into the house at the end of
@@ -212,6 +242,11 @@ that was checked *for* her is now checked *by* her, for her own door. And
 freedom turns out to have a sound: it is her closing line — "The scroll is
 yours, neighbor" — finally said *to* Fern, and then said *by* her, one last
 time, to someone smaller.
+
+**Tentpole — "The Open Gate."**
+*What changes:* Fern discovers that belonging is meaningful only when leaving is genuinely possible.
+*Relation to the finale:* The Open Gate is the year's tentpole — it asks whether Fern could walk away; **The Next Light** (EP312, beat 5 below) remains the finale, where what she does with that freedom is the answer.
+*(Tentpoles offered by Emi Prime, relayed by Will 2026-11-08.)*
 
 **Beats:**
 1. **Thirteen** — the neighborhoods send their problems to Fern now, not just

@@ -6,6 +6,8 @@ The welcome season. Fern opens the gate: Home Street, the five town places, and 
 
 **The year teaches (kid terms):** Your papers live in your own house, and your door opens only for your badge.
 
+**Tentpole:** "The Great Form Mix-Up" — Fern discovers what makes Scrolltown worth protecting. A home is more than an address. *(Tentpoles offered by Emi Prime, relayed by Will 2026-11-08.)*
+
 **Run:** EP001–EP052 · Saturdays, 2027-01-02 → 2027-12-25. Finale: **The Reading Tree in Winter** (EP052).
 
 The season's full beats, big question, and finale live in the series arc:

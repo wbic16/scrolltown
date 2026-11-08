@@ -6,6 +6,8 @@ The together season. Scrolltown is not the only town in the Great Scroll: letter
 
 **The year teaches (kid terms):** Towns keep their own scrolls and pass letters along open routes.
 
+**Tentpole:** "The Two Towns" — Two communities must merge knowledge without surrendering their individual identities.
+
 **Run:** EP157–EP208 · Saturdays, 2029-12-29 → 2030-12-21. Finale: **The Far Town's Lamp** (EP208).
 
 The season's full beats, big question, and finale live in the series arc:
