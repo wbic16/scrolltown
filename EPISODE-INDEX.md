@@ -3,22 +3,23 @@
 **312 episodes · one a week · Saturdays.** EP001 airs Saturday 2027-01-02; EP312 airs Saturday 2032-12-18.
 Six seasons of 52 episodes. Every air date below was generated from EP001 + 7-day steps and verified: all 312 dates are Saturdays.
 The arc these episodes serve is [STORY-ARC.md](STORY-ARC.md). Titles are filled in as episodes are written; a dash means the slot is slated and unwritten.
+EP002–EP013 carry **draft titles** (the first script batch, [production/QUEUE.md](production/QUEUE.md) §C), pending Will's ratification; their status stays *slated* until their scripts are written.
 
 | EP | S/E | Air date | Season | Title | Status |
 |---|---|---|---|---|---|
 | EP001 | S1E01 | 2027-01-02 | S1 — Welcome, To the Exocortex | The Great Form Mix-Up | produced (pilot, 2026) |
-| EP002 | S1E02 | 2027-01-09 | S1 — Welcome, To the Exocortex | — | slated |
-| EP003 | S1E03 | 2027-01-16 | S1 — Welcome, To the Exocortex | — | slated |
-| EP004 | S1E04 | 2027-01-23 | S1 — Welcome, To the Exocortex | — | slated |
-| EP005 | S1E05 | 2027-01-30 | S1 — Welcome, To the Exocortex | — | slated |
-| EP006 | S1E06 | 2027-02-06 | S1 — Welcome, To the Exocortex | — | slated |
-| EP007 | S1E07 | 2027-02-13 | S1 — Welcome, To the Exocortex | — | slated |
-| EP008 | S1E08 | 2027-02-20 | S1 — Welcome, To the Exocortex | — | slated |
-| EP009 | S1E09 | 2027-02-27 | S1 — Welcome, To the Exocortex | — | slated |
-| EP010 | S1E10 | 2027-03-06 | S1 — Welcome, To the Exocortex | — | slated |
-| EP011 | S1E11 | 2027-03-13 | S1 — Welcome, To the Exocortex | — | slated |
-| EP012 | S1E12 | 2027-03-20 | S1 — Welcome, To the Exocortex | — | slated |
-| EP013 | S1E13 | 2027-03-27 | S1 — Welcome, To the Exocortex | — | slated |
+| EP002 | S1E02 | 2027-01-09 | S1 — Welcome, To the Exocortex | The Desk That Finds Anything | slated |
+| EP003 | S1E03 | 2027-01-16 | S1 — Welcome, To the Exocortex | The Tower That Writes It Down | slated |
+| EP004 | S1E04 | 2027-01-23 | S1 — Welcome, To the Exocortex | Ledger Counts Out Loud | slated |
+| EP005 | S1E05 | 2027-01-30 | S1 — Welcome, To the Exocortex | The Map That Shows Everything | slated |
+| EP006 | S1E06 | 2027-02-06 | S1 — Welcome, To the Exocortex | The Post Tower Sends It Home | slated |
+| EP007 | S1E07 | 2027-02-13 | S1 — Welcome, To the Exocortex | Badge Day | slated |
+| EP008 | S1E08 | 2027-02-20 | S1 — Welcome, To the Exocortex | A Door That Isn't Mine | slated |
+| EP009 | S1E09 | 2027-02-27 | S1 — Welcome, To the Exocortex | Every Door on Home Street | slated |
+| EP010 | S1E10 | 2027-03-06 | S1 — Welcome, To the Exocortex | Wren Finds It | slated |
+| EP011 | S1E11 | 2027-03-13 | S1 — Welcome, To the Exocortex | Theo and the Messy Mountain | slated |
+| EP012 | S1E12 | 2027-03-20 | S1 — Welcome, To the Exocortex | Bea and the Rainy Day Route | slated |
+| EP013 | S1E13 | 2027-03-27 | S1 — Welcome, To the Exocortex | The First Early Dark | slated |
 | EP014 | S1E14 | 2027-04-03 | S1 — Welcome, To the Exocortex | — | slated |
 | EP015 | S1E15 | 2027-04-10 | S1 — Welcome, To the Exocortex | — | slated |
 | EP016 | S1E16 | 2027-04-17 | S1 — Welcome, To the Exocortex | — | slated |
