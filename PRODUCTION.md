@@ -12,7 +12,10 @@ six years will be drawn in.
 one episode a week on Saturdays, 312 episodes through EP312 on Saturday
 2032-12-18. EP001, the pilot, is already produced (2026). Everything below
 exists so that no Saturday ever arrives without a finished episode waiting
-for it.
+for it. Target URL: **visionquest.me** (Will, 2026-11-13 — chosen because
+"it survives Scroll Town": the home outlives the show's name). DNS already
+points at awsbox and the box cert already covers the name, so standing
+the site up is box-side work only.
 
 ---
 
@@ -34,7 +37,7 @@ folder: `seasons/season-NN-YYYY/epNNN-slug/`, laid out like the pilot's
 | 7 | **Assembly** | The episode is built as one self-contained cartoon file on the pilot's craft spec: caption bar, Prev/Next + Play/Pause, arrow keys, reduced-motion calm, no external assets, no tracking. | The cartoon plays start to finish, fully enjoyable muted, with controls behaving per spec. | `cartoon.html` in the episode folder |
 | 8 | **Singular-check receipt** | Fern's lines run through `check_singular.py --words words-authored.txt`. Pass clean, or every blocked line is listed with its blocking words for Will — flagged, never improvised around. Emi Prime's review pass is recorded here too. | The receipt is written into the episode folder's `README.md` (the template has the slot): clean, or flags + Will's exception on record. | Receipt in the episode `README.md` |
 | 9 | **Ready** | The finished episode joins the buffer. The index status flips to *produced* and the queue board's buffer counters are updated. | cartoon.html + receipt + all stage artifacts in the folder; index says *produced*. | EPISODE-INDEX.md · production/QUEUE.md |
-| 10 | **Published** | The episode airs on its Saturday. | The index status flips to *published* with its air date — which is the Saturday it was always slated for. | EPISODE-INDEX.md |
+| 10 | **Published** | The episode airs on its Saturday — it publishes at **visionquest.me**. | The index status flips to *published* with its air date — which is the Saturday it was always slated for. | EPISODE-INDEX.md |
 
 Two stages are gates, not waypoints: **stage 8** (no episode is *ready*
 with an unresolved Singular flag — Will rules or the line is rewritten

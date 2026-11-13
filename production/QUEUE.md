@@ -34,6 +34,7 @@ wrong and gets fixed first.
 | A10 | Year 1 intro final mux (render dropped onto the silent cut's time map) | Emise | Week 6 (Dec 14–20) | Blocked on A9 |
 | A11 | EP002–EP013 draft titles + loglines ratified (§C) | **Will** | Before their scripts start (week 5) | OPEN — drafts below |
 | A12 | Collaborator slot: Julia May (art help) — invited by Will; nothing assumed until she answers | Will | — | Slot held open |
+| A13 | **Publishing venue / target URL** — open gap surfaced 2026-11-10: the record named no home for the show | **Will** | — | **DECIDED 2026-11-13: visionquest.me** — Will's reasoning: "it survives Scroll Town" (the home outlives the show's name). DNS for visionquest.me + www already points at awsbox and the box's TLS cert already covers the name; standing the site up is box-side work only |
 
 ## B. Production queue
 
