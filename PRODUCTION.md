@@ -207,6 +207,7 @@ production is already living inside. The runway window owes exactly one:
   canonical style reference and becomes the intro's tiling motif.
   Until Will draws it, no stand-in is made.
 - **The tiling motif has arrived (2026-11-21).** Will's hand-drawn page — the handwriting sample and the tiling symbol — is filed unaltered at `series/style-references/wills-hand-sample-and-tiling-symbol.png`; QUEUE A14 is closed (RECEIVED 2026-11-21).
+- **Phext P4 — the parallel-delivery intro treatment (Will, 2026-11-21).** The tiling field itself, delivered by Will's algorithm: boxes picked at random, one line picked at random per picked box, the pattern assembling in parallel until every box holds its 5 lines and the pattern stabilizes at scale. First draft rendered programmatically — ballpoint blue on paper white, SCROLLTOWN set in the Emise font over the completed field: `series/intro/phext-p4-parallel-tiling-intro-draft.mp4`, build note `series/intro/PHEXT-P4.md`. DRAFT, silent — one treatment among the intro's materials, not a lock.
 - **Years 2–6** — briefed in the season before: a variant on the same
   song's world, Fern a year older, the town a year brighter — nothing
   that lit goes dark, in the intros as in the episodes.
