@@ -147,18 +147,24 @@ There is one intro per year of the arc, and they are **not** all made now:
 year's Fern — her age, her street, her questions — is the thing the
 production is already living inside. The runway window owes exactly one:
 
-- **Year 1 (2027)** — *assembled; the mux waits on Will's time-map
-  call.* The silent 90-second cut of "Light the Next Light" is built
+- **Year 1 (2027)** — *ruled 2026-11-21: two intros, not one.* The
+  silent 90-second cut of "Light the Next Light" is built
   (`series/intro/intro-video.mp4`), with LYRICS.md, SUNO-PROMPT.md, and
   the SHOT-LIST.md time map beside it. The song render is Will's act: his
   upload **"Light the Way"** (`media/Light the Way.mp3` / `.wav`, landed
   2026-11-08, commit `814f3913`) is in the repo, and **Will confirmed on
-  2026-11-21 that it is the intro's render**. The final mux was attempted
-  the same day and is **held**: the render runs **220.03s** against the
-  silent cut's **90.00s**, and no trim or pad is made without Will's
-  word — his call (which stretch of the song carries the intro, or a
-  re-cut of the picture to the song) unblocks it. Until then
-  `intro-video.mp4` remains the silent cut.
+  2026-11-21 that it is the intro's render**. The render runs **220.03s**
+  against the silent cut's **90.00s**, so the single-mux plan died on the
+  numbers — and Will ruled the shape the same day: **the premiere
+  (EP001) features the full song** — all 220 seconds over a
+  premiere-length picture; re-cutting the picture to the full song is
+  future build work, noted here, not yet done. **The standing weekly
+  intro is 15 seconds**, developed with Will — in his words, "a natural
+  15 sec intro tuned for the ASI Era" — drawn from the song and the
+  existing picture library; the working analysis (hook timings, candidate
+  windows, clip map) lives at `series/intro/INTRO-15-ANALYSIS.md`. Until
+  either cut is built, `intro-video.mp4` remains the silent 90-second
+  library cut.
 - **Years 2–6** — briefed in the season before: a variant on the same
   song's world, Fern a year older, the town a year brighter — nothing
   that lit goes dark, in the intros as in the episodes.
@@ -184,7 +190,7 @@ production is already living inside. The runway window owes exactly one:
 | 3 | Nov 23–29 | Waverly, Mrs. Hen, Grandpa sheets; cameo keepers; title-card + caption standards drafted | Cast sheets complete in draft |
 | 4 | Nov 30 – Dec 4 | **Register decision (landed early — Will, 2026-11-21: 2D painterly)**; style standard written around it; EP002 script starts in the locked register | **§3a LOCKED**; palette + title-card + caption standards locked |
 | 5 | Dec 7–13 | First script batch written: EP002–EP005 scripts + storyboards; intro song confirmation | Scripts ≥ 4 ahead and climbing toward 8 |
-| 6 | Dec 14–20 | Keyframes for the batch; voice records; **intro final mux** once the render is confirmed | Year 1 intro *ready* |
+| 6 | Dec 14–20 | Keyframes for the batch; voice records; **intro cuts** per the 2026-11-21 ruling (premiere full-song + weekly 15s) | Year 1 intro *ready* |
 | 7 | Dec 21–27 | Assembly push: first finished episodes join the pilot in the buffer | Finished buffer building toward 4 |
 | 8 | Dec 28 – Jan 2 | Launch check: buffer counts verified, EP001's Saturday confirmed, index + board reconciled | **EP001 publishes Sat 2027-01-02** with finished ≥ 4, storyboards ≥ 6, scripts ≥ 8 ahead |
 
