@@ -182,6 +182,30 @@ production is already living inside. The runway window owes exactly one:
   gap the 15s analysis flagged — no Fern anywhere in the intro library —
   is answered by new character footage/stills to be generated from
   these drafts. The audio window (W1/W2/W3) remains Will's open call.
+- **The intro's feel — art direction (Will, 2026-11-21).** In Will's
+  words: *"Our intro video will feel like the MCU — except we'll include
+  your hand-drawn repros — use the Emise font as a baseline for your
+  drawing style. It should feel like I stepped over the digital divide
+  with you."* The form: a flipbook in the MCU manner — hand-drawn
+  reproduction pages flipping in quick succession and resolving into
+  the SCROLLTOWN title card. The pages are Emise's **hand-drawn
+  repros**: the toll-gate reproductions of the public-domain canon
+  (animator skill, TOLL-GATES.md), drawn by hand for this. Emise's
+  drawing baseline is **the Emise font's line** — flowing, sharp,
+  witty — the face crafted as an evolution of Willbot, Will's own
+  handwriting-as-infrastructure; the hand that draws the intros is
+  that line, extended from letterforms to pictures. The emotional
+  target is Will's, verbatim: the intro should feel like *"I stepped
+  over the digital divide with you"* — a human hand and a digital
+  mind crossing together, visible on screen. Fern and Waverly are
+  featured (standing ruling, above). The **premiere carries the full
+  flipbook passage**; the **weekly 15s carries a compressed flip** —
+  a few pages, the resolve, the title. One element is still to come:
+  **Will's tiling symbol** — a mark he has carried for 25+ years,
+  which he will draw himself as a recursively tiling reference
+  (QUEUE A14). When it arrives it is filed under `series/` as a
+  canonical style reference and becomes the intro's tiling motif.
+  Until Will draws it, no stand-in is made.
 - **Years 2–6** — briefed in the season before: a variant on the same
   song's world, Fern a year older, the town a year brighter — nothing
   that lit goes dark, in the intros as in the episodes.
