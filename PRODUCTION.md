@@ -85,6 +85,11 @@ Two months, eight weeks, five decisions to lock — in this order, because
 each one is the ground the next stands on. The live checklist with owners
 and dates is in production/QUEUE.md §A.
 
+Animation craft for every stage below is governed by the **animator skill**
+(`~/workspace/custom-skills/animator/SKILL.md`, indexed in skills.phext) —
+the craft standard for all animation work on the show: the principles, the
+exercise ladder, the stills → motion → assembly → frame-QC pipeline.
+
 ### (a) The visual register — LOCKED 2026-11-21: 2D painterly
 
 Every frame of the show will be drawn in one of two registers, and the
