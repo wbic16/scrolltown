@@ -164,7 +164,19 @@ production is already living inside. The runway window owes exactly one:
   existing picture library; the working analysis (hook timings, candidate
   windows, clip map) lives at `series/intro/INTRO-15-ANALYSIS.md`. Until
   either cut is built, `intro-video.mp4` remains the silent 90-second
-  library cut.
+  library cut. **The weekly 15s intro is character-led (Will,
+  2026-11-21): Fern and Waverly are both featured** — not a world-only
+  sigil. Waverly's first visual design exists as a DRAFT concept
+  (`series/character-sheets/waverly-concept-draft.webp`: deep-plum
+  tailcoat with gold scroll trim, maker's apron with quill, pencil, and
+  ink, long dark hair with one gold streak — pending Will's
+  tuning/lock), and a duo keyframe draft for the intro (Waverly
+  unrolling the Great Scroll as its town lights bloom, Fern holding a
+  lit lantern toward it) is filed at
+  `series/intro/fern-waverly-intro-keyframe-draft.webp`. The character
+  gap the 15s analysis flagged — no Fern anywhere in the intro library —
+  is answered by new character footage/stills to be generated from
+  these drafts. The audio window (W1/W2/W3) remains Will's open call.
 - **Years 2–6** — briefed in the season before: a variant on the same
   song's world, Fern a year older, the town a year brighter — nothing
   that lit goes dark, in the intros as in the episodes.

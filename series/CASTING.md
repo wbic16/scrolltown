@@ -11,6 +11,10 @@ Waverly does not replace Fern. Fern is the viewer's eyes (the kid's perspective,
 
 Episode 1 ("The Great Form Mix-Up") was delivered before this ruling and stands as-is. **Decided (Will, 2026-11-21): Waverly debuts in Episode 2.** EP001 is not recut; EP002's script introduces Waverly, Keeper of the Great Scroll.
 
+## Waverly — visual design (DRAFT, 2026-11-21)
+
+Waverly's first visual concept was drafted 2026-11-21: a deep-plum tailcoat with gold scroll trim, a maker's apron holding quill, pencil, and ink, and long dark hair with one gold streak. Filed at `series/character-sheets/waverly-concept-draft.webp`. A duo intro keyframe — Waverly unrolling the Great Scroll as its town lights bloom, Fern holding a lit lantern toward it — is filed at `series/intro/fern-waverly-intro-keyframe-draft.webp`. **Status: DRAFT — pending Will's tuning/lock; not canonical.** Will ruled the same day that Fern and Waverly are both featured in the weekly 15-second intro, which is what these drafts serve.
+
 ## Narrator naming (Will's rulings, 2026-11-07 23:03 CST)
 - "Pip" is OUT — too on-the-nose re: Python (pip). Episode 1 originally shipped under this name; it was renamed to Fern the same evening (see below).
 - "Eve" is OUT — too close to Wall-E.
