@@ -206,6 +206,7 @@ production is already living inside. The runway window owes exactly one:
   (QUEUE A14). When it arrives it is filed under `series/` as a
   canonical style reference and becomes the intro's tiling motif.
   Until Will draws it, no stand-in is made.
+- **The tiling motif has arrived (2026-11-21).** Will's hand-drawn page — the handwriting sample and the tiling symbol — is filed unaltered at `series/style-references/wills-hand-sample-and-tiling-symbol.png`; QUEUE A14 is closed (RECEIVED 2026-11-21).
 - **Years 2–6** — briefed in the season before: a variant on the same
   song's world, Fern a year older, the town a year brighter — nothing
   that lit goes dark, in the intros as in the episodes.
