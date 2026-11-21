@@ -9,7 +9,7 @@
 
 Waverly does not replace Fern. Fern is the viewer's eyes (the kid's perspective, per the commission); Waverly is the main character those eyes follow — Wonka to Fern's Charlie.
 
-Episode 1 ("The Great Form Mix-Up") was delivered before this ruling and stands as-is. Open (Will's choice): recut Episode 1 to introduce her, or debut her in Episode 2.
+Episode 1 ("The Great Form Mix-Up") was delivered before this ruling and stands as-is. **Decided (Will, 2026-11-21): Waverly debuts in Episode 2.** EP001 is not recut; EP002's script introduces Waverly, Keeper of the Great Scroll.
 
 ## Narrator naming (Will's rulings, 2026-11-07 23:03 CST)
 - "Pip" is OUT — too on-the-nose re: Python (pip). Episode 1 originally shipped under this name; it was renamed to Fern the same evening (see below).

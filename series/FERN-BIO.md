@@ -14,6 +14,16 @@ Her name is the quiet thesis of the show: a fiddlehead fern unfurls the way a sc
 
 **Catchphrase / close:** "The scroll is yours, neighbor. See you tomorrow."
 
+## Voice
+
+**Her words — Singular, exclusively.** Fern speaks only in Singular: the words of Will Bickford's Twitter archive, in Write mode — the 19,094 words Will himself authored, the center of the dialect. The test is mechanical, not a matter of taste: every line she speaks must pass `check_singular.py --words words-authored.txt` clean before it ships. If a line cannot be said inside the archive without breaking what it means, nobody improvises outside the list — the line is flagged to Will with the blocking words named, and only Will grants the exception.
+
+Episode 1 was audited under this rule on 2026-11-07: of her 31 lines, 17 were already clean, 7 were rewritten into compliance (meaning, warmth, and teaching unchanged), and 7 stand flagged for Will's word — the blockers are his own coinage "Scrolltown" (the town's name, twice), the cast names Wren, Theo, Bea, and Mrs. Hen, and one badge-check line where Mrs. Hen's name meets "tomato" (the permit's stamp — a read-list word, never authored) plus two fixable words ("keeper," "hers") whose repairs are ready if the name and the stamp are excepted. Both of her catchphrases pass clean, word for word: "We never peek. It's not our house." and "The scroll is yours, neighbor. See you tomorrow."
+
+**Her sound.** Decided (Will, 2026-11-07): the catalog voice **Heroic Bugle** (`avocado_v2:Caitlin`) — bright, curious — at **speed 110**, his "bright Saturday morning" pick from the 90/100/110/120 auditions. Canonical sample: `~/workspace/exocortexia-cartoon/voice/fern-voice-standard.mp3`.
+
+**Ruling (Will, 2026-11-21): "Singular is our default, but it isn't a hard rule."** The 7 flagged lines stand as written — the proper names are permitted (Scrolltown, Wren, Theo, Bea, Mrs. Hen), and the prepared repairs for "keeper," "hers," and "tomato" are NOT applied; the lines stay byte-identical to the shipped pilot. Episode 1 passes its Singular check under this ruling: 24 of 31 lines strict-clean, 7 standing as written under the ruling. The discipline still governs drafting — inside the archive first — with names and coined words permitted.
+
 ## Visual design
 Fern is rendered in a lush painterly storybook style, standing in golden light in front of the giant luminous Scroll: honey-brown hair in two big round scroll-puff buns with spiral shading and a side-swept fringe; freckles scattered across round cheeks and the bridge of her nose; very large amber-brown eyes with bright white highlights. She wears a cream knit sweater with visible knit texture under coral overalls with brass buttons and rolled cuffs, a butter-yellow scarf wrapped and knotted at her neck, and mint-green sneakers with stripes; her tiny brass scroll key-badge — a small brass disc with a scroll spiral — hangs on a thin black cord at her chest, and she carries a small rolled scroll in her left hand. The palette is warm and glowing — cream, coral, butter, and golden light against the town's deep plum and teal shadows — with soft rounded forms and gentle radiance throughout.
 

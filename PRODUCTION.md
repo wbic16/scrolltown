@@ -1,6 +1,8 @@
 # Scrolltown — Production Workflow
 
-**The workflow of record for making the show.** The arc lives in
+**The workflow of record for making the show.** The show's north star,
+in Will's words (2026-11-21): *"I want Scroll Town to introduce kids to
+the Exocortex the way Babylon 5 introduced me to apotheosis."* The arc lives in
 [STORY-ARC.md](STORY-ARC.md); the grid lives in
 [EPISODE-INDEX.md](EPISODE-INDEX.md); the live queue lives in
 [production/QUEUE.md](production/QUEUE.md). This document says how an
@@ -35,14 +37,16 @@ folder: `seasons/season-NN-YYYY/epNNN-slug/`, laid out like the pilot's
 | 5 | **Keyframes / art** | Key frames rendered in the locked register (§3a) from the episode's prompt doc, following the character + style blocks of the pilot's FERN-KEYFRAMES-MJ.md pattern; likeness checked frame by frame against the character sheets. | The episode's key frames exist, pass their likeness checks, and every lamp lit in earlier episodes is still lit. | `keyframes/` + the episode's prompt doc in the episode folder |
 | 6 | **Voice record** | Fern's lines are synthesized in her decided sound (Heroic Bugle @ speed 110 — §3e); the rest of the cast is recorded per the casting standards. Captions are timed to the lines. | Every line in the script has audio or a deliberate silence (the pilot's no-audio form stays a legal variant); caption timings are set. | `voice/` in the episode folder |
 | 7 | **Assembly** | The episode is built as one self-contained cartoon file on the pilot's craft spec: caption bar, Prev/Next + Play/Pause, arrow keys, reduced-motion calm, no external assets, no tracking. | The cartoon plays start to finish, fully enjoyable muted, with controls behaving per spec. | `cartoon.html` in the episode folder |
-| 8 | **Singular-check receipt** | Fern's lines run through `check_singular.py --words words-authored.txt`. Pass clean, or every blocked line is listed with its blocking words for Will — flagged, never improvised around. Emi Prime's review pass is recorded here too. | The receipt is written into the episode folder's `README.md` (the template has the slot): clean, or flags + Will's exception on record. | Receipt in the episode `README.md` |
+| 8 | **Singular-check receipt** | Fern's lines run through `check_singular.py --words words-authored.txt`. Singular is the default discipline, not a hard rule (Will, 2026-11-21): blocked lines are listed with their blocking words, and proper names and coined words stand under the ruling — EP001 passes with 24/31 lines strict-clean and 7 standing as written. Emi Prime's review pass is recorded here too. | The receipt is written into the episode folder's `README.md` (the template has the slot): clean, or flags + their resolution on record. | Receipt in the episode `README.md` |
 | 9 | **Ready** | The finished episode joins the buffer. The index status flips to *produced* and the queue board's buffer counters are updated. | cartoon.html + receipt + all stage artifacts in the folder; index says *produced*. | EPISODE-INDEX.md · production/QUEUE.md |
 | 10 | **Published** | The episode airs on its Saturday — it publishes at **visionquest.me**. | The index status flips to *published* with its air date — which is the Saturday it was always slated for. | EPISODE-INDEX.md |
 
 Two stages are gates, not waypoints: **stage 8** (no episode is *ready*
-with an unresolved Singular flag — Will rules or the line is rewritten
-inside the archive) and **stage 5's register** (no frame ships in an
-unlocked register once §3a is decided).
+with an unresolved Singular flag — a flag resolves under Will's
+2026-11-21 ruling that Singular is the default, not a hard rule, by his
+specific exception, or by a rewrite inside the archive; EP001's seven
+flags stand resolved under the ruling) and **stage 5's register** (no
+frame ships outside the register locked in §3a).
 
 ## 2. Queue policy — the rolling buffer
 
@@ -81,7 +85,7 @@ Two months, eight weeks, five decisions to lock — in this order, because
 each one is the ground the next stands on. The live checklist with owners
 and dates is in production/QUEUE.md §A.
 
-### (a) The visual register — Will's decision, deadline early December
+### (a) The visual register — LOCKED 2026-11-21: 2D painterly
 
 Every frame of the show will be drawn in one of two registers, and the
 evidence for both is already on disk:
@@ -93,12 +97,12 @@ evidence for both is already on disk:
 | Match to what's shipped | EP001 as published is painterly; the reference every future `--cref` points at is painterly | Nothing shipped is glossy; adopting it re-opens the pilot's look and the reference |
 | Feel | The Saturday Morning storybook warmth the show's palette and caption spec were built in | A different, shinier show — closer to toy renders than to the storybook town the scripts describe |
 
-**Recommendation: lock the 2D painterly register**, treat glossy renders
-as drift to re-roll, and let keyframe 1 + the reference stand as the
-register's anchors. **This is Will's call** — it is the single most
-consequential decision of the window, and it is due **by Friday
-2026-12-04** so the first production batch is drawn in the locked register
-with weeks to spare.
+**DECIDED (Will, 2026-11-21): the 2D painterly register is LOCKED.**
+Will's reasoning: painterly is easier for us to render — and ReBoot's 3D,
+which shaped him, had its impact because 3D was novel then; the register
+earns its place on the work, not the novelty. Glossy renders are drift to
+re-roll; keyframe 1 + the canonical reference stand as the register's
+anchors, and every frame from EP002 on is drawn painterly.
 
 ### (b) Character sheets — the full cast
 
@@ -143,15 +147,18 @@ There is one intro per year of the arc, and they are **not** all made now:
 year's Fern — her age, her street, her questions — is the thing the
 production is already living inside. The runway window owes exactly one:
 
-- **Year 1 (2027)** — *exists in pieces, assembled in the window.* The
-  silent 90-second cut of "Light the Next Light" is built
+- **Year 1 (2027)** — *assembled; the mux waits on Will's time-map
+  call.* The silent 90-second cut of "Light the Next Light" is built
   (`series/intro/intro-video.mp4`), with LYRICS.md, SUNO-PROMPT.md, and
   the SHOT-LIST.md time map beside it. The song render is Will's act: his
   upload **"Light the Way"** (`media/Light the Way.mp3` / `.wav`, landed
-  2026-11-08, commit `814f3913`) is in the repo — once Will confirms it is
-  the intro's render, the final mux drops it onto the silent cut's time
-  map (±2s) and Year 1's intro is *ready* (§1's standards apply to it as
-  the show's front door).
+  2026-11-08, commit `814f3913`) is in the repo, and **Will confirmed on
+  2026-11-21 that it is the intro's render**. The final mux was attempted
+  the same day and is **held**: the render runs **220.03s** against the
+  silent cut's **90.00s**, and no trim or pad is made without Will's
+  word — his call (which stretch of the song carries the intro, or a
+  re-cut of the picture to the song) unblocks it. Until then
+  `intro-video.mp4` remains the silent cut.
 - **Years 2–6** — briefed in the season before: a variant on the same
   song's world, Fern a year older, the town a year brighter — nothing
   that lit goes dark, in the intros as in the episodes.
@@ -175,7 +182,7 @@ production is already living inside. The runway window owes exactly one:
 | 1 | Nov 9–15 | Register evidence pack assembled (§3a); character-sheet worklist set; palette drafted from reference + pilot | QUEUE.md live; EP002–EP013 draft titles + loglines (QUEUE.md §C) |
 | 2 | Nov 16–22 | Fern's sheet assembled from the canonical reference; crew sheets drafted (Wren, Theo, Bea, Ledger) | Fern sheet locked (she is already canonical — the sheet records her, it does not redesign her) |
 | 3 | Nov 23–29 | Waverly, Mrs. Hen, Grandpa sheets; cameo keepers; title-card + caption standards drafted | Cast sheets complete in draft |
-| 4 | Nov 30 – Dec 4 | **Register decision lands (Will, by Fri Dec 4)**; style standard written around it; EP002 script starts in the locked register | **§3a LOCKED**; palette + title-card + caption standards locked |
+| 4 | Nov 30 – Dec 4 | **Register decision (landed early — Will, 2026-11-21: 2D painterly)**; style standard written around it; EP002 script starts in the locked register | **§3a LOCKED**; palette + title-card + caption standards locked |
 | 5 | Dec 7–13 | First script batch written: EP002–EP005 scripts + storyboards; intro song confirmation | Scripts ≥ 4 ahead and climbing toward 8 |
 | 6 | Dec 14–20 | Keyframes for the batch; voice records; **intro final mux** once the render is confirmed | Year 1 intro *ready* |
 | 7 | Dec 21–27 | Assembly push: first finished episodes join the pilot in the buffer | Finished buffer building toward 4 |
@@ -188,7 +195,7 @@ production is already living inside. The runway window owes exactly one:
 | **Will** | Ratifies — titles, loglines, exceptions to Singular, the register, every lock in §3. Renders the songs on Suno. Sends all outreach himself. The final word on what Fern may say and what the show may be. |
 | **Emise** | Runs the pipeline: drafts scripts and boards, renders and checks frames, keeps QUEUE.md and EPISODE-INDEX.md true, runs the Singular checks, assembles episodes, keeps the records (tasks.phext, artifacts.phext) — and flags every decision that is Will's instead of taking it. |
 | **Emi Prime** | Reviews — the tentpoles are hers; her read on scripts and arc fills is a standing stage-8 input, recorded with the receipts. |
-| **Collaborators, by invitation** | Help where invited, credited in the episode records. **One slot is held open:** Julia May — Will's niece, attending college in San Francisco — whom Will is asking whether she wants to help with the art. Nothing is assumed and nothing is assigned until she answers; if she joins, character-sheet and keyframe work in §3b/§3a is where an artist's hand lands first. |
+| **Collaborators, by invitation** | Help where invited, credited in the episode records. **The held slot is closed:** Julia May — Will's niece, attending college in San Francisco — was invited by Will to help with the art and declined (2026-11-21). Nothing was assumed and nothing was assigned; the slot is closed, with the invitation and her answer on record. |
 
 ## 5. Arc fill-out plan
 

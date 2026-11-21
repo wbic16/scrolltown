@@ -4,6 +4,9 @@
 **312 episodes, EP001 on Saturday 2027-01-02 through EP312 on Saturday 2032-12-18.**
 Six seasons of 52. The full grid lives in [EPISODE-INDEX.md](EPISODE-INDEX.md).
 
+**The aim, in Will's words (2026-11-21):** *"I want Scroll Town to introduce kids to
+the Exocortex the way Babylon 5 introduced me to apotheosis."*
+
 ---
 
 ## The premise spine

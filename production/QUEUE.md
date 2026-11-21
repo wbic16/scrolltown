@@ -22,7 +22,7 @@ wrong and gets fixed first.
 
 | # | Decision | Owner | Due | Status |
 |---|---|---|---|---|
-| A1 | **Visual register: 2D painterly vs glossy 3D** (evidence + recommendation in PRODUCTION.md §3a) | **Will** | **Fri 2026-12-04** | OPEN — recommendation on record: lock 2D painterly |
+| A1 | **Visual register: 2D painterly vs glossy 3D** (evidence + recommendation in PRODUCTION.md §3a) | **Will** | **Fri 2026-12-04** | **DECIDED 2026-11-21: 2D painterly LOCKED** — Will: painterly is easier for us to render; ReBoot's 3D impact was its novelty. Glossy renders are drift to re-roll |
 | A2 | Fern character sheet (assembled from the canonical reference; records her, does not redesign her) | Emise | Week 2 (Nov 16–22) | Not started |
 | A3 | Crew character sheets — Wren, Theo, Bea, Ledger (three forms, one character) | Emise | Week 2 (Nov 16–22) | Not started |
 | A4 | Waverly character sheet (Wonka × Emi × Elestria × Joi — CASTING.md) | Emise | Week 3 (Nov 23–29) | Not started |
@@ -30,10 +30,10 @@ wrong and gets fixed first.
 | A6 | Palette standard — named swatches from reference + pilot | Emise | Week 4 (Nov 30–Dec 4) | Draft in PRODUCTION.md §3c |
 | A7 | Title-card standard (the SCROLLTOWN card, fixed across years) | Emise | Week 4 (Nov 30–Dec 4) | Draft in PRODUCTION.md §3c |
 | A8 | Caption typography standard | Emise | Week 4 (Nov 30–Dec 4) | Draft in PRODUCTION.md §3c |
-| A9 | Intro song confirmation — is `media/Light the Way.mp3` (Will's upload, 2026-11-08) the "Light the Next Light" render? | **Will** | Week 5 (Dec 7–13) | OPEN — file is in the repo; confirmation unblocks the final mux |
-| A10 | Year 1 intro final mux (render dropped onto the silent cut's time map) | Emise | Week 6 (Dec 14–20) | Blocked on A9 |
-| A11 | EP002–EP013 draft titles + loglines ratified (§C) | **Will** | Before their scripts start (week 5) | OPEN — drafts below |
-| A12 | Collaborator slot: Julia May (art help) — invited by Will; nothing assumed until she answers | Will | — | Slot held open |
+| A9 | Intro song confirmation — is `media/Light the Way.mp3` (Will's upload, 2026-11-08) the "Light the Next Light" render? | **Will** | Week 5 (Dec 7–13) | **CONFIRMED 2026-11-21** — Will: yes, it is the render. (The mux itself is held on duration — see A10.) |
+| A10 | Year 1 intro final mux (render dropped onto the silent cut's time map) | Emise | Week 6 (Dec 14–20) | Blocked — duration mismatch found 2026-11-21: the render runs **220.03s** against the silent cut's **90.00s**. No trim or pad without Will's word; his call on the time map (which stretch of the song, or a re-cut) unblocks the mux |
+| A11 | EP002–EP013 draft titles + loglines ratified (§C) | **Will** | Before their scripts start (week 5) | **PROVISIONAL (Will, 2026-11-21)** — titles presented in chat; Will's word: "provisional." Working titles: usable for drafting, revisable, NOT ratified |
+| A12 | Collaborator slot: Julia May (art help) — invited by Will; nothing assumed until she answers | Will | — | **CLOSED 2026-11-21** — Julia May was invited by Will and declined; slot closed |
 | A13 | **Publishing venue / target URL** — open gap surfaced 2026-11-10: the record named no home for the show | **Will** | — | **DECIDED 2026-11-13: visionquest.me** — Will's reasoning: "it survives Scroll Town" (the home outlives the show's name). DNS for visionquest.me + www already points at awsbox and the box's TLS cert already covers the name; standing the site up is box-side work only |
 
 ## B. Production queue
@@ -41,7 +41,7 @@ wrong and gets fixed first.
 | EP | Air date | Title | Stage | Owner | Notes |
 |---|---|---|---|---|---|
 | EP001 | 2027-01-02 | The Great Form Mix-Up | 9 — ready (produced, pilot 2026) | — | Season 1 tentpole. Publishes first, Sat 2027-01-02. |
-| EP002–EP013 | 2027-01-09 → 2027-03-27 | (draft batch, §C) | 2 — logline | Emise drafting · Will ratifies | Titles + loglines drafted from S1 beats; scripts start week 5 in the locked register |
+| EP002–EP013 | 2027-01-09 → 2027-03-27 | (draft batch, §C) | 2 — logline | Emise drafting · Will ratifies | Titles + loglines drafted from S1 beats; scripts start week 5 in the locked register. EP002's script introduces Waverly, Keeper of the Great Scroll — her debut is EP002 (Will, 2026-11-21); EP001 is not recut |
 | EP014–EP052 | 2027-04-03 → 2027-12-25 | — | 1 — arc beat | Emise | Season 1 fill, blocks 2–3, inside the window (PRODUCTION.md §5) |
 
 ## C. First script batch — EP002–EP013 (DRAFT, pending Will's ratification)
@@ -53,7 +53,8 @@ Dimming, is the season's deep-winter movement; this batch plants its first
 lamp early, because ignitions only accumulate). Fern is 8; Duplo posture:
 one idea per episode. No villains — mix-ups, weather, and growing. Every
 episode ends with her close: *"The scroll is yours, neighbor. See you
-tomorrow."* **All twelve are DRAFT until Will ratifies (checklist A11).**
+tomorrow."* **All twelve are PROVISIONAL working titles (Will, 2026-11-21,
+checklist A11): usable for drafting, revisable, not ratified.**
 
 | EP | Air date | Draft title | Logline | From the arc |
 |---|---|---|---|---|
