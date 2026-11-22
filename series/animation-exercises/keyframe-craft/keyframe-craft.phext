@@ -1,0 +1,1669 @@
+# keyframe-craft.phext — a phext-native inquiry
+
+Will's question (2026-11-22 00:34 CST, task 31.7.13/9.6.9/6.6.10):
+"use multiversal phext to understand why artists handle drawing key frames so well"
+
+Method: the evidence is inscribed as scrolls at Singular
+holographic-merge coordinates computed from each scroll's own
+text; hypotheses are tested against the evidence in their own
+section; the synthesis derives the answer by navigating the
+evidence, every claim carrying the coordinate it rests on.
+Navigate: synthesis first for the answer, hypotheses for the
+testing, evidence for the ground. Source of truth:
+keyframe-craft-source.json beside the builder
+(build_keyframe_craft_phext.py); never hand-edit the .phext.
+
+## evidence (12 scrolls)
+
+- 18.13.15/9.12.15/13.14.16 — Batch 2.1 return — per-frame identity-anchor enumeration, frames 060-239 (Velum)
+- 22.6.9/7.6.10/7.6.8 — Batch 2.2 return — likeness checks on variant stills, keyframes 5-8 (Alveus)
+- 23.7.9/8.7.10/6.6.9 — QC — Burn 1: Emise's generated key frames, first failures
+- 24.7.9/8.7.11/7.6.8 — QC — Burn 2 (Iteration 1): countermeasure stack tested, hypotheses refuted
+- 25.7.10/8.6.10/7.6.9 — QC — Burn 4 (Iteration 3): pendulum PASS, ex01/ex03/ex02 verdicts, Gate 1 prepass
+- 25.8.8/9.7.12/7.6.9 — QC — Burn 3 (Iteration 2): batch 2.1/2.2 verdicts and clip verdicts
+- 26.8.9/10.7.12/7.7.8 — Gate validator report — per-page mechanical scores, wash defect
+- 27.6.9/7.7.11/7.6.8 — Phext P4 build note — the drawn route, seeded, Will's verdict 'perfect'
+- 27.6.9/8.6.11/7.6.9 — Iteration 2 artist-dispatch packets (I2-B21 Velum, I2-B22 Alveus)
+- 30.7.9/8.7.13/9.6.9 — Gate 1 artist-dispatch packets (Theia sweat; Emise key work and QC)
+- 39.23.21/18.25.19/15.15.18 — Batch 2.1 return — best-fit scale table, frames 000-059 (Velum)
+- 45.12.11/13.14.14/12.13.15 — Batch 2.1 return — per-frame composition offsets, frames 000-059 (Velum)
+
+## hypotheses (8 scrolls)
+
+- 25.7.9/9.7.12/8.6.9 — H2 — determinism and reference-lock beat temporal sampling
+- 25.8.11/10.7.13/8.6.9 — H6 — store-and-forward patience (UNPROVEN)
+- 26.6.12/8.6.10/6.5.10 — H5 — one concern per packet, worked deeply
+- 26.7.9/8.6.11/7.6.9 — H8 — more prompt craft would have closed the gap (REFUTED)
+- 26.7.11/9.7.14/7.6.9 — H3 — per-frame addressing lets enumeration replace sampling
+- 27.6.8/8.6.10/6.5.9 — H7 — the artists are simply better generators (REFUTED)
+- 28.7.12/9.7.13/8.6.9 — H1 — addressed packets with a shared arc-sketch reference
+- 31.6.9/8.7.12/8.5.9 — H4 — done-definitions stated before the work begins
+
+## synthesis (1 scrolls)
+
+- 27.7.9/9.6.11/6.6.9 — Synthesis — why the artists handle drawing key frames so well
+# Batch 2.1 return — per-frame identity-anchor enumeration, frames 060-239 (Velum)
+
+Section: evidence
+Coordinate: 18.13.15/9.12.15/13.14.16 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_batch-2.1_anchors-060-239.csv
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/batch-2.1/anchors-060-239.csv
+Body SHA-256: 4b09777c813b19a223afa5ed7b89520914ec0d3d31deb8ec704e613c4ea3ed82
+
+---
+frame,fern_buns,fern_scarf_bow,fern_key_badge,waverly_gold_streak,waverly_plum_coat,notes
+060,P,P,P,P,P,waverly blink (eyelids only)
+061,P,P,P,P,P,waverly blink (eyelids only)
+062,P,P,P,P,P,
+063,P,P,P,P,P,
+064,P,P,P,P,P,
+065,P,P,P,P,P,
+066,P,P,P,P,P,
+067,P,P,P,P,P,
+068,P,P,P,P,P,
+069,P,P,P,P,P,
+070,P,P,P,P,P,
+071,P,P,P,P,P,
+072,P,P,P,P,P,
+073,P,P,P,P,P,
+074,P,P,P,P,P,
+075,P,P,P,P,P,
+076,P,P,P,P,P,
+077,P,P,P,P,P,
+078,P,P,P,P,P,
+079,P,P,P,P,P,
+080,P,P,P,P,P,
+081,P,P,P,P,P,
+082,P,P,P,P,P,
+083,P,P,P,P,P,
+084,P,P,P,P,P,
+085,P,P,P,P,P,
+086,P,P,P,P,P,
+087,P,P,P,P,P,
+088,P,P,P,P,P,
+089,P,P,P,P,P,
+090,P,P,P,P,P,
+091,P,P,P,P,P,
+092,P,P,P,P,P,
+093,P,P,P,P,P,
+094,P,P,P,P,P,
+095,P,P,P,P,P,
+096,P,P,P,P,P,
+097,P,P,P,P,P,
+098,P,P,P,P,P,fern blink (eyelids only)
+099,P,P,P,P,P,fern blink (eyelids only)
+100,P,P,P,P,P,
+101,P,P,P,P,P,
+102,P,P,P,P,P,
+103,P,P,P,P,P,
+104,P,P,P,P,P,
+105,P,P,P,P,P,
+106,P,P,P,P,P,
+107,P,P,P,P,P,
+108,P,P,P,P,P,
+109,P,P,P,P,P,
+110,P,P,P,P,P,
+111,P,P,P,P,P,
+112,P,P,P,P,P,
+113,P,P,P,P,P,
+114,P,P,P,P,P,
+115,P,P,P,P,P,
+116,P,P,P,P,P,
+117,P,P,P,P,P,
+118,P,P,P,P,P,
+119,P,P,P,P,P,
+120,P,P,P,P,P,
+121,P,P,P,P,P,
+122,P,P,P,P,P,
+123,P,P,P,P,P,
+124,P,P,P,P,P,
+125,P,P,P,P,P,
+126,P,P,P,P,P,
+127,P,P,P,P,P,
+128,P,P,P,P,P,
+129,P,P,P,P,P,
+130,P,P,P,P,P,
+131,P,P,P,P,P,
+132,P,P,P,P,P,
+133,P,P,P,P,P,
+134,P,P,P,P,P,
+135,P,P,P,P,P,
+136,P,P,P,P,P,
+137,P,P,P,P,P,
+138,P,P,P,P,P,
+139,P,P,P,P,P,
+140,P,P,P,P,P,
+141,P,P,P,P,P,
+142,P,P,P,P,P,
+143,P,P,P,P,P,
+144,P,P,P,P,P,
+145,P,P,P,P,P,
+146,P,P,P,P,P,
+147,P,P,P,P,P,
+148,P,P,P,P,P,
+149,P,P,P,P,P,
+150,P,P,P,P,P,
+151,P,P,P,P,P,
+152,P,P,P,P,P,
+153,P,P,P,P,P,
+154,P,P,P,P,P,
+155,P,P,P,P,P,
+156,P,P,P,P,P,
+157,P,P,P,P,P,
+158,P,P,P,P,P,
+159,P,P,P,P,P,
+160,P,P,P,P,P,
+161,P,P,P,P,P,
+162,P,P,P,P,P,waverly blink (eyelids only)
+163,P,P,P,P,P,fern blink (eyelids only); waverly blink (eyelids only)
+164,P,P,P,P,P,fern blink (eyelids only); waverly blink (eyelids only)
+165,P,P,P,P,P,
+166,P,P,P,P,P,
+167,P,P,P,P,P,
+168,P,P,P,P,P,
+169,P,P,P,P,P,
+170,P,P,P,P,P,
+171,P,P,P,P,P,
+172,P,P,P,P,P,
+173,P,P,P,P,P,
+174,P,P,P,P,P,
+175,P,P,P,P,P,
+176,P,P,P,P,P,
+177,P,P,P,P,P,
+178,P,P,P,P,P,
+179,P,P,P,P,P,
+180,P,P,P,P,P,
+181,P,P,P,P,P,
+182,P,P,P,P,P,
+183,P,P,P,P,P,
+184,P,P,P,P,P,
+185,P,P,P,P,P,waverly blink (eyelids only)
+186,P,P,P,P,P,waverly blink (eyelids only)
+187,P,P,P,P,P,waverly blink (eyelids only)
+188,P,P,P,P,P,
+189,P,P,P,P,P,
+190,P,P,P,P,P,
+191,P,P,P,P,P,
+192,P,P,P,P,P,fern blink (eyelids only)
+193,P,P,P,P,P,fern blink (eyelids only)
+194,P,P,P,P,P,
+195,P,P,P,P,P,
+196,P,P,P,P,P,
+197,P,P,P,P,P,
+198,P,P,P,P,P,
+199,P,P,P,P,P,
+200,P,P,P,P,P,
+201,P,P,P,P,P,
+202,P,P,P,P,P,
+203,P,P,P,P,P,
+204,P,P,P,P,P,
+205,P,P,P,P,P,
+206,P,P,P,P,P,
+207,P,P,P,P,P,
+208,P,P,P,P,P,
+209,P,P,P,P,P,
+210,P,P,P,P,P,
+211,P,P,P,P,P,
+212,P,P,P,P,P,
+213,P,P,P,P,P,
+214,P,P,P,P,P,
+215,P,P,P,P,P,
+216,P,P,P,P,P,
+217,P,P,P,P,P,
+218,P,P,P,P,P,
+219,P,P,P,P,P,
+220,P,P,P,P,P,
+221,P,P,P,P,P,
+222,P,P,P,P,P,
+223,P,P,P,P,P,
+224,P,P,P,P,P,
+225,P,P,P,P,P,
+226,P,P,P,P,P,
+227,P,P,P,P,P,
+228,P,P,P,P,P,
+229,P,P,P,P,P,
+230,P,P,P,P,P,
+231,P,P,P,P,P,
+232,P,P,P,P,P,
+233,P,P,P,P,P,
+234,P,P,P,P,P,
+235,P,P,P,P,P,
+236,P,P,P,P,P,
+237,P,P,P,P,P,
+238,P,P,P,P,P,
+239,P,P,P,P,P,
+# Batch 2.2 return — likeness checks on variant stills, keyframes 5-8 (Alveus)
+
+Section: evidence
+Coordinate: 22.6.9/7.6.10/7.6.8 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_batch-2.2_LIKENESS.md
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/batch-2.2/LIKENESS.md
+Body SHA-256: d9cc61dbe5f9e011ad7151a79eddc8a7f0650d6f47f7634412396b93a35d6a23
+
+---
+# Batch 2.2 — likeness checks (Emise, 2026-11-21)
+
+Variant stills for intro keyframes 5–8 per FERN-KEYFRAMES-MJ.md, seeded from
+the canonical Fern reference. All four are DRAFTS for Emise's and Will's
+likeness check — none is canon, none replaces Will's own Midjourney renders
+when he makes them. Checks are the frame's named checks from
+FERN-KEYFRAMES-MJ.md.
+
+## Frame 5 — River of Pages — PASS (draft grade), one note
+
+Fern front-left, canonical: twin scroll-puff buns, freckles, amber-brown
+eyes, cream sweater, coral overalls, butter scarf bow, key-badge, mint
+sneakers. Crew present and correct (Wren sky-blue cap + magnifier; Theo
+butter scarf + stack of papers; Bea mint apron). Ledger mid-transformation
+cart→bridge with one cart wheel visible ✓; his counter reads legibly
+("127 / 200") — diegetic prop text, acceptable. NOTE: the river reads as
+water carrying pages rather than a river OF pages — at the lock pass, push
+the page density up.
+
+## Frame 6 — The badge-check (we never peek) — PASS (draft grade)
+
+The beat lands exactly: Fern's eyes gently closed, shy kind smile, handing
+the sealed permit to Mrs. Hen (plump, floral apron) at her round cottage
+door; the seal is unbroken ✓. Fern canonical on every anchor. The "Mrs. Hen"
+door sign is legible — diegetic and welcome.
+
+## Frame 7 — The Reading Tree — PASS (draft grade)
+
+Fern front-left in the listening half-circle, canonical; crew beside her;
+Grandpa (white beard, cardigan, glasses) reading one large glowing page
+whose writing is unreadable glyph-marks ✓; Ledger resting at frame right;
+fireflies rising; listening mood holds — every mouth closed, every eye on
+Grandpa.
+
+## Frame 8 — The wave goodbye — PASS (draft grade), one note
+
+Fern waves straight at the viewer, hand raised, the wave reads instantly ✓;
+buns, scarf bow, badge, coral overalls, mint sneakers all canonical; dusk is
+warm gold-to-plum, not night-blue ✓; the town behind her is lit window to
+window ✓. NOTE: the number-cart stands parked beside her loaded with scrolls
+rather than rolling away down the hill — staging only; composition still
+reads. At the lock pass, set the cart in motion down the path.
+# QC — Burn 1: Emise's generated key frames, first failures
+
+Section: evidence
+Coordinate: 23.7.9/8.7.10/6.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_QC.md
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/QC.md
+Body SHA-256: f4a74ddcb9a30f442b10292bc7a5a1117f47f25a69a565c1357395777d53c832
+
+---
+# Animation Exercises — Burn 1 QC (2026-11-21)
+
+First animation burn under the animator workstream (Will, 2026-11-21: animation may
+fully utilize up to 40% of the weekly token budget). Four generations total: three
+exercises + one retry of the worst failure. All clips 10.0 s, H.264 + AAC.
+QC frames (start / middle / end) for every clip live in `qc/` beside this note.
+
+Headline finding: the generator's failure mode is consistent — it pushes the camera
+in and re-renders faces in a glossier register whenever a face is on screen. Prompts
+saying "locked frame" reduce but do not eliminate it. Character fidelity, not motion
+vocabulary, is the current bottleneck.
+
+## ex01-ignition.mp4 — PARTIAL (best motion, one character redesign)
+- 1152×768, 10.0 s, 5,809,597 B. Source: duo keyframe draft.
+- Motion: the brief reads — the scroll finishes unrolling, the town drawn on it
+  lights up progressively (start: partial glow; mid/end: the whole map lit), sparkle
+  motes throughout. Camera stays locked. Waverly holds design throughout.
+- Fidelity failure: Fern's hair is redesigned mid-clip — the smooth twin buns become
+  tight dark curls and the buns vanish (qc/ex01-ignition-mid.png, -end.png). She reads
+  as a different character. The lantern also migrates from raised to lowered at her side.
+- Register: painterly holds overall; faces render slightly smoother than the still.
+
+## ex02-keepers-welcome.mp4 — FAIL (worst of the burn; retried)
+- 768×1152, 10.0 s, 6,514,357 B. Source: Waverly concept draft.
+- Despite "locked frame" in the brief, the camera pushes in hard to a face close-up,
+  and Waverly's face morphs into a photorealistic older woman — a full register break
+  from the painterly design (qc/ex02-keepers-welcome-mid.png, -end.png). Apron, tools,
+  and composition are lost to the zoom. The scroll glow and smile-warming do happen,
+  but inside the wrong face.
+
+## ex02-keepers-welcome-retry.mp4 — PARTIAL (register saved, frame still moves)
+- 768×1152, 10.0 s, 5,655,964 B. Tightened prompt: static camera stated absolutely,
+  style lock stated explicitly, only three named micro-motions.
+- Improvement: the painterly register now holds for the whole clip — no photoreal
+  morph. Mid-frame is the best Waverly frame of the burn: composition intact, smile
+  warmed, scroll glow up, a small light kindled at her hand.
+- Still failing: the camera pushes in over the back half anyway (end frame is a face
+  close-up), and the face softens into a smoother, more generic illustration —
+  the characterful lined face of the still is partly lost.
+
+## ex03-fern-at-the-ready.mp4 — FAIL (gesture missed, glossy-3D drift)
+- 832×1040, 10.0 s, 3,761,784 B. Source: Fern-with-tools still.
+- Start frame is faithful. Then the camera pushes in, Fern re-renders as a glossy
+  3D-style figure (the exact drift the register lock exists to prevent), and the
+  requested gesture never happens: instead of raising the hammer a few inches with
+  the wrench held steady, she ends holding both tools crossed at her chest with a
+  sly half-lidded grin that is not her expression in the still
+  (qc/ex03-fern-at-the-ready-mid.png, -end.png). No anticipation-and-settle beat.
+
+## Lessons for the next burn
+1. Face-on-screen + duration = drift. Shorter clips (or cutting before the push-in
+   lands) would salvage more usable footage per generation.
+2. Negative constraints ("no zoom", "never photorealistic") help the register but
+   not the camera; camera language may need to be the first sentence, not a clause.
+3. Gesture prompts lose to pose-change defaults — a single named gesture needs the
+   start and end pose both described, not just the action.
+# QC — Burn 2 (Iteration 1): countermeasure stack tested, hypotheses refuted
+
+Section: evidence
+Coordinate: 24.7.9/8.7.11/7.6.8 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_QC-v2.md
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/QC-v2.md
+Body SHA-256: 53b8c2457eae516a28474c9eedf782fd80e6a7c643e4e0448cafcdde6603b797
+
+---
+# Animation Exercises — Burn 2 QC (2026-11-21, Oracle Artist Iteration 1)
+
+Second burn, run under the Oracle Artist protocol (animator skill §8): hypotheses stated
+before generation, verdicts against the written done-definitions, frame evidence for
+every claim. Four generations (cap was six). QC frames in `qc2/` beside this note.
+New stills generated for this burn are in `stills/` (wide Waverly, wide Fern-with-tools,
+Counting House token) — all three passed their still likeness checks before animation.
+
+**Hypotheses under test** (from Burn 1's indicted basis vectors):
+- H1: The countermeasure stack (shorter ~5 s clips, wider framing, static camera as the
+  prompt's first sentence, explicit style lock) prevents the push-in and the register break.
+- H2: Re-asserting identity anchors by name in the prompt pins Fern's identity in motion.
+- H3: Naming start AND end poses makes a single small gesture land.
+- H4 (control): With no face on screen, pure motion craft (timing, squash, decay) is
+  already within the generator's competence, and the camera stays put.
+
+## ex01-ignition-v2.mp4 — PARTIAL (identity fixed; camera and map-style imperfect)
+- 1152×768, **10.0 s** (5 s requested — duration request not honored), 4,299,785 B.
+  Source: duo keyframe draft, same as Burn 1.
+- **Identity: HELD for the full 10 s.** Fern's twin scroll-puff buns stay smooth and
+  round in every sampled frame (qc2 start/q1/mid/q3/end) — Burn 1's fatal failure does
+  not recur. Scarf bow and key-badge intact throughout; Waverly on-model throughout.
+  H2 supported *for near-static characters*.
+- **End state: as named.** The lantern is still raised at the end; the town on the
+  scroll is fully lit; both characters finish in their starting poses.
+- Register: characters stay painterly in all frames — no glossy morph, no photoreal face.
+- Deductions: (1) a mild reframing in the first ~2.5 s — the composition tightens
+  slightly, then holds; the camera is not perfectly static. (2) The scroll's map art
+  shifts register internally: the flat ink drawing becomes a volumetric miniature town
+  as it lights. The ignition reads, but the map's own style drifts.
+- Verdict: PARTIAL — the strongest character clip across both burns.
+
+## ex02-keepers-welcome-v2.mp4 — PARTIAL (register saved; camera law NOT defeated)
+- 768×1152, 5.0 s exactly, 2,501,049 B. Source: new wide still (Waverly ≈ ¼ frame height).
+- **The push-in happened anyway.** Start frame is the wide shot as briefed; by mid
+  (2.5 s) Waverly fills half the frame in a bust close-up; the end settles at a medium
+  shot. H1 is **refuted for the camera**: wide source framing + 5 s + absolute
+  static-camera language, first sentence, did not hold the framing.
+- **But the register held this time** — unlike Burn 1's photoreal morph, every frame
+  stays painterly and Waverly's design (gold streak, plum coat, apron, tools) is intact
+  in all three frames, close-up included. The two named micro-motions both read: her
+  smile warms, the scroll's glow brightens substantially.
+- Verdict: PARTIAL — the stack protects the register, not the camera.
+
+## ex03-fern-at-the-ready-v2.mp4 — FAIL (anticipation swallowed the gesture; identity lost under body motion)
+- 1152×768, 5.0 s exactly, 1,623,833 B. Source: new wide Fern-with-tools still
+  (start pose exactly as briefed: hammer low, wrench steady).
+- **The gesture never happens.** The prompt's "small crouch of anticipation" was
+  promoted into the main action: by mid, Fern is in a full crouch; by the end she is
+  kneeling on the floor, eyes closed, tools crossed low in her lap — neither the
+  hammer-raise nor the named end pose (identical to start) occurs. H3 is **refuted as
+  applied**: naming the end pose did not save the shot once a body movement was named.
+- **Identity lost under body motion.** In the mid and end frames her smooth twin buns
+  have dissolved into dark curls — the same failure as Burn 1's ex01, despite the
+  anchors being re-asserted by name in the prompt. H2 is **refuted as sufficient**:
+  re-assertion held in ex01-v2 (characters near-static) and failed here (full-body
+  crouch). Background props also shift between frames.
+- Register: painterly throughout (no glossy 3D this time) — the failure is identity
+  and staging, not style.
+- Verdict: FAIL.
+
+## ex01-bouncing-ball.mp4 — PARTIAL (the control: sequencing and physics read; fine craft unverified)
+- 1152×768, 10.0 s, 24 fps, 1,763,423 B. Source: new Counting House token still.
+  No faces anywhere. Frames sampled at 0/1.5/3/4.5/6/7.5/9.9 s.
+- **Camera: static in all seven sampled frames** — with no face on screen, the push-in
+  never comes. The camera law is face-seeking; H4's camera half is confirmed.
+- **The three-material sequence delivered in order.** Wood first: airborne and
+  flipping at 1.5 s, settled by 3 s. Brass second: airborne high at 6 s (a visibly
+  higher, springier arc than the wood's), falling at 7.5 s, settled by 9.9 s. Paper:
+  displaced to the counter's edge by 6 s and settled — it tumbles rather than flutters,
+  but it never truly bounces. End state exactly as named: all three at rest.
+- Deductions against the rung's written done-definition: the wood token's bounce reads
+  as a single flip/spin rather than a visibly decaying bounce series, and contact-frame
+  squash cannot be confirmed or refuted at 1.5 s sampling — those two clauses are
+  unverified, not passed.
+- Verdict: PARTIAL — the best evidence yet that motion craft is available when
+  identity is not at stake.
+
+## Basis vectors indicted by Burn 2
+1. *"Prompt language + wide framing can hold the camera"* — **refuted** (ex02-v2).
+   The push-in is not prompt-controllable. New doctrine: design for the push-in —
+   start wider than the intended framing and judge the clip by its end framing —
+   or trim/stabilize in assembly.
+2. *"Re-asserting anchors in the prompt pins identity"* — **refuted as sufficient,
+   refined**: anchors held 10 s for near-static characters (ex01-v2) and failed under
+   full-body motion (ex03-v2). Body motion is the re-draw trigger; hair goes first.
+3. *"Name anticipation to get anticipation"* — **refuted** (ex03-v2). Any named body
+   movement is promoted to the main action. In generated clips, anticipation must be
+   a held beat of stillness, never a named crouch or bend.
+4. *"Requested duration is a control"* — **refuted in part**: ex02/ex03 came back at
+   exactly 5.0 s; ex01-v2 came back at 10.0 s despite the request. Duration is
+   advisory — probe every clip and trim to the passing segment.
+5. *"The camera law is about faces"* — **supported** by the control (bouncing-ball:
+   10 s, seven frames, zero reframing).
+# H2 — determinism and reference-lock beat temporal sampling
+
+Section: hypotheses
+Coordinate: 25.7.9/9.7.12/8.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/hypothesis-h2-determinism.md
+Body SHA-256: c0769ac65ef9ca0422a257ab26f219fc6a682c02b6a46e39f30cd537e4221b0a
+
+---
+# Hypothesis H2 — determinism and reference-lock beat temporal sampling
+
+Claim: the artists' work succeeds because the operations they execute
+are deterministic or locked to a reference — the same input yields the
+same output, and any defect is systematic — while Emise's failed key
+frames came from open-ended generative sampling across time, which
+invents something new on every attempt.
+
+Evidence walked:
+- Theia's Gate 1 operations (30.7.9/8.7.13/9.6.9) are pipeline
+  mechanics: a download verified byte-exact by sha256, scene-boundary
+  detection at a stated threshold (79 boundaries), one extracted frame
+  per shot (60 pages), assembly at stated shot timing. Each is
+  reproducible by construction.
+- Velum's Batch 2.1 operations (27.6.9/8.6.11/7.6.9) are measurement
+  and conform: phase correlation per frame (45.12.11/13.14.14/12.13.15),
+  a best-fit scale table (39.23.21/18.25.19/15.15.18), a counter-crop
+  that is the originals to within 2 px. Numbers, not impressions.
+- The drawn route is deterministic end to end: the Phext P4 tiling
+  (27.6.9/7.7.11/7.6.8) runs a recorded seed and Will's verdict on it
+  was "the animation is perfect". The Gate 1 repro pages come from a
+  line renderer whose one real defect — a flat wash at luminance
+  ≈ 205 with interior ink density 0.00 where solid black belongs —
+  is identical on all 60 pages (26.8.9/10.7.12/7.7.8): systematic,
+  therefore mechanically detectable and fixable in one place.
+- The generator's failures are the mirror image — a different
+  invention every attempt: a photoreal face morph and hair re-drawn
+  into curls (23.7.9/8.7.10/6.6.9); a crouch promoted to the main
+  action (24.7.9/8.7.11/7.6.8); an invented unrolled scroll covered in
+  pseudo-writing (25.8.8/9.7.12/7.6.9); a token duplicated, then
+  morphed loaf → dome → ring → oval, a scene re-staged around two
+  supplied keys, a character walking to camera wearing invented
+  jewelry (25.7.10/8.6.10/7.6.9). None is reproducible; none can be
+  corrected by fixing one parameter.
+- The one generative artist task, Batch 2.2's variant stills
+  (22.6.9/7.6.10/7.6.8), succeeded precisely where the temporal
+  dimension is absent: single frames, seeded from the canonical
+  reference, judged against a named likeness check — draft grade,
+  with staging notes. Generation held a still; it has never held
+  a sequence.
+
+Verdict: SUPPORTED — the primary mechanism. Refinement the evidence
+forces: the operative variable is the route an operation runs on,
+not the worker who runs it. Deterministic or reference-locked work
+succeeds whoever executes it; temporal sampling fails whoever asks
+for it.
+# QC — Burn 4 (Iteration 3): pendulum PASS, ex01/ex03/ex02 verdicts, Gate 1 prepass
+
+Section: evidence
+Coordinate: 25.7.10/8.6.10/7.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_QC-v4.md
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/QC-v4.md
+Body SHA-256: 4dcf4cdcd1937240c668816ea8d5c6af86871371df7e66593c49cbc606bc3a68
+
+---
+# QC v4 — Oracle Artist Iteration 3 / Burn 4 (2026-11-21)
+
+_Frame-level QC by Emise under the animator skill §8 protocol. Burns: 4 video generations used of
+the iteration cap of 6 (3 agenda burns + 1 failure re-burn); 2 held in reserve rather than spent
+re-rolling indicted bases. Register breaks: ZERO across Burn 4 — third consecutive clean burn.
+Sheets: `qc4/` (bball-v3-sheet, bball-v4-sheet, ex03-v4-strip, ex02-v4-sheet, gate1-compare-sheet,
+intro-qc-sheet), pendulum chart at `qc4/pendulum-frame-chart-final.png`._
+
+## ex02-pendulum — spacing clause settled → PASS (the programme's first ladder Pass)
+
+- The clause (frame chart shows spacing clustered at the extremes) resisted three automated
+  trackers, all indicted: diff-centroid (window-light contamination), threshold+component
+  (component instability), two-template NCC (median peak 0.44, self-lock).
+- Settled by a human frame chart: 40 lantern positions transcribed from dense contact sheets
+  (every 6 frames). Extremes decay monotonically (R 83→80→79→74→72→67, L 47→51→53→56 percent of
+  frame width); near-extreme steps average 8.4 %/6f against 16.4 %/6f at center crossings —
+  spacing clusters at the extremes, as drawn animation requires. Lantern at rest from ≈f204.
+- Every clause of the exercise's done-definition is now verified (decay by easing, diminishing
+  overshoot arcs, spacing at extremes, camera static in all 20 sampled frames). **Verdict: PASS.**
+
+## ex01-bouncing-ball v3 — FAIL
+
+- Key: dedicated single-object still (wood token alone on a bare counter) — PASSED as a key.
+- Clip (10.0 s delivered as asked): the token rests ≈0.8 s, then becomes a ROUND BALL and flies a
+  long wandering arc across the frame (f024–f102), returns to the counter, then DUPLICATES —
+  two and three discs float at different heights (f132–f174) — before settling as one disc.
+- No decaying bounce sequence; no contact squash (there are barely contacts). Camera static ✓.
+- The v2 indictment (the busy three-prop key betrayed the test) is itself superseded: with a
+  clean key, the failure moved to the generator's object permanence.
+
+## ex01-bouncing-ball v4 — FAIL (failure re-burn, permanence language + small hops)
+
+- The explicit permanence prompt ("only ever ONE token… never becomes a ball, never splits")
+  changed the failure mode instead of curing it: no airborne bounce at all — the token MORPHS
+  in place (tall loaf → dome → ring/donut → oval, f006–f102), then scale-pulses (grow/shrink
+  "hops" without leaving the counter) and drifts right, tilting, to f234.
+- **Indicted basis: prompt language cannot hold a lone object's shape or volume constant through
+  a prompted transformation in a minimal scene; "squash" wording actively invites morphing** (the
+  generator cannot distinguish a moment's deformation from a redesign).
+- ex01 stands at four attempts (Burn 2 control PARTIAL with a busy multi-object scene; v2, v3,
+  v4 FAIL). Iteration 4 changes the INSTRUMENT, not the prompt: the physics rung goes to the
+  drawn route (programmatic frames, the route that produced the P4 tiling and the Gate 1
+  prepass), where spacing and squash are exact by construction.
+
+## ex03-fern-at-the-ready v4 — FAIL (two-keyframe route, lowering direction)
+
+- Route: start key = a likeness-checked hammer-raised still; end key = the canonical scene
+  still; the clip lowers the arm INTO the canonical key. (Building the raised still by image
+  editing failed twice, identically — the editor raised the wrong arm and doubled the hammer;
+  still-key editing is indicted as a route to a TRUE end key.)
+- Frame 0 is NOT the start key: the generator re-staged the scene (new wider workshop, window
+  moved, Fern smaller at frame left). The arm-lowering happens; the final frame matches the end
+  key's POSE thematically, not its composition. Fern's buns held in all sampled frames.
+- **Indicted basis: two supplied stills are not start/end keyframes to this generator unless
+  both come from its own scene instance** (Burn 3's probe, whose end still was generator-native,
+  held frame 0 exactly). Independent keys get blended into a re-staged scene.
+
+## ex02-keepers-welcome v4 — PARTIAL
+
+- Key designed for the measured zoom (Waverly ≈1/6 frame height in a doorway arch); text-bearing
+  props named out entirely — and the key itself carried none.
+- What held: NO text or pseudo-writing anywhere (the named-out discipline works when the key
+  carries no text surfaces); register painterly throughout; the nod landed (as a bow, eyes
+  closed, t2.5–3.5 s).
+- What failed: the landing is again a FOUND composition. The reframing mechanism this time is
+  the CHARACTER walking to camera (she leaves the doorway, grows past the room's scale, ends in
+  a bust close-up at frame left) — plus invented adornment (jeweled headband, necklace, earrings
+  the key does not carry).
+- **Indicted basis: a landing cannot be designed from the start key alone while the character
+  is free to move** — the generator reframes by the cheapest available motion. Landing discipline
+  needs the character pinned by the staging, or found landings accepted and QC'd as their own
+  shots.
+
+## Gate 1 — Steamboat Willie: setup + prepass (gate NOT passed)
+
+- Reference copy sourced from archive.org at human pace and hash-verified (see PACKETS.md).
+- Arc sketch derived from the original's actual shots (58-frame survey read frame by frame +
+  79 detected boundaries): `gate-01-steamboat-willie/ARC-SKETCH.md`, coordinate
+  22.6.8/7.6.10/7.5.8, cited in every packet.
+- Prepass: 60 hand-drawn repro pages (Emise line renderer: jittered contours + hatching, ink on
+  cream) assembled at real shot timing into a full-runtime animatic (467.5 s vs the film's
+  461.1 s; +1.4% concat rounding, recorded in the packets).
+- Frame-compare QC at 12 matched timestamps: the same shots and beats appear at every sampled
+  timestamp (a few seconds of boundary drift at some cuts); compositions match at t=4 (titles),
+  24 (boat), 88 (scrubbing), 128 (landing), 152 (hoist), and across the concert beats. Weak
+  points, recorded: title lettering ghosts; solid-black figures soften (wash + hatch instead of
+  solid black); occasional mid-motion pages read blobby.
+- **Verdict: the prepass is delivered and fit as the full-render guide. The GATE IS NOT PASSED —
+  by the register's rule a gate passes only on prepass + full render with frame-compared QC.
+  The full render is Iteration 4 work.**
+
+## MCU flipbook intro draft — PASS as a draft
+
+- Assembled ranch-side: 1280×720, 24 fps, 360 frames, exactly 15.000 s, silent.
+  (a) Gate 1 prepass pages flipping with accelerating holds (26 pages, holds 10→2 frames);
+  (b) the woven tiling field delivered in parallel in the Phext P4 manner (720 lines, ballpoint
+  blue, hand jitter) and stabilizing; (c) the Fern/Waverly beat taken ONLY from frame-QC-passing
+  material (ex01-ignition-v2 frames 84–155 — inside the segment whose 180 frames were enumerated
+  180/180 on all five identity anchors in Iteration 2): Waverly unrolls the Great Scroll, its
+  town lights, Fern's lantern raised beside her; (d) SCROLLTOWN lettering in over the completed
+  field in the Emise font.
+- QC sheet (12 frames across all four segments) reads clean: every segment lands as designed;
+  both characters on-model through the beat. Soft spot: the flipbook's last page (the drawn
+  THE END card) is sparse at small size.
+- Filed as DRAFT: `series/intro/mcu-flipbook-intro-draft.mp4`, sha256
+  08530873c78efdfadfb7e51d8ac7055f8a21f4ca2d252216edbfe6581b7a6d77.
+# QC — Burn 3 (Iteration 2): batch 2.1/2.2 verdicts and clip verdicts
+
+Section: evidence
+Coordinate: 25.8.8/9.7.12/7.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_QC-v3.md
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/QC-v3.md
+Body SHA-256: 6b6db7ed3f0882698196943cad23be6607072711177b4f8158dfbc6e35d425c5
+
+---
+# QC — Iteration 2 (Burn 3), 2026-11-21
+
+Frame-level QC for the second Oracle Artist burn. Method: every clip probed
+(ffprobe) and read by frames before any verdict — sparse quintiles
+(start/q1/mid/q3/end) for character clips, dense 0.5 s sampling for the two
+physics rungs, and per-frame enumeration where a packet demanded it.
+Done-definitions are the animator skill §2 wordings. Verdicts:
+Pass / Partial / Fail, with the evidence named. Files: clips at this folder's
+root; frames in `qc3/`; sweat-batch returns in `batch-2.1/` and `batch-2.2/`;
+packets in `PACKETS.md`. Full narrative: the animator skill's ITERATIONS.md,
+Iteration 2.
+
+## Probes (all ranch-verified)
+
+| clip | size | fps | frames | duration |
+|---|---|---|---|---|
+| ex03-fern-at-the-ready-v3.mp4 | 1152×768 | 24 | 120 | 5.00 s |
+| ex02-keepers-welcome-v3.mp4 | 1248×704 | 24 | 120 | 5.00 s |
+| ex02-pendulum.mp4 | 1152×768 | 24 | 240 | 10.00 s |
+| ex01-bouncing-ball-v2.mp4 | 1152×768 | 24 | 240 | 10.00 s |
+| probe-two-keyframe-ignition.mp4 | 1152×768 | 24 | 120 | 5.00 s |
+
+All five clips are silent (no audio stream). Requested durations were
+honoured this burn (5 s asks returned 5.0 s; 10 s asks returned 10.0 s) —
+against Iteration 1's mixed behaviour; duration stays advisory in the skill.
+
+## ex03-fern-at-the-ready v3 — the arm-only test — **Fail**
+
+Hypothesis: with anticipation language removed entirely and motion restricted
+to the hammer arm (body, head, hair, feet explicitly held; start pose = end
+pose), both the gesture and the identity anchors survive.
+
+Evidence (`qc3/ex03-v3-*.png`): the camera never moved — framing identical at
+start/q1/mid/q3/end. The gesture LANDED: at q1 the hammer is rising; at mid it
+is raised beside her head; at end it is back down — start pose = end pose,
+left arm, body, head and feet unmoved throughout, exactly as specified. But
+the hair re-drew anyway: the smooth twin scroll-buns are already curling at
+q1 (t≈1.25 s) and are full tight curls at mid and end. And the end frame
+carries an un-named expression — eyes closed, pleased grin — where the prompt
+named her gentle smile.
+
+Verdict reasoning: the rung's identity clause fails (buns are an anchor;
+§4: a frame missing an anchor fails QC outright). The hypothesis splits:
+motion restriction is CONFIRMED for gesture and camera, REFUTED for identity —
+any motion of the character herself, even one arm with the head held still,
+triggers the hair re-draw. Anchors hold only when the character is fully
+still and the motion is in the world around her (see Batch 2.1's enumeration
+and the probe's endpoints).
+
+## ex02-keepers-welcome v3 — design for the push-in — **Partial**
+
+Hypothesis: with Waverly at ≤⅕ of frame height in the key (new xwide still,
+`qc3/stills/waverly-xwide-still.webp` — figure ≈1/6–1/7 of frame height), the
+inevitable push-in lands somewhere good; verdict judged on the END framing.
+
+Evidence (`qc3/ex02-v3-*.png`): the push-in was total — from the wide street
+to a face-filling close-up, complete by mid-clip. Register held: painterly in
+every sampled frame, no photoreal morph (Burn 1's failure did not recur), and
+Waverly at the landing is on-model (gold streak, plum coat, apron tools). The
+end framing is, as a found composition, warm and handsome. BUT the landing
+was invented, not designed: the rolled scroll she holds in the key is an
+unrolled scroll covered in pseudo-writing by mid-clip — a text-bearing prop
+the key never contained. The prompt's "start and end on this same wide
+composition" was not honoured in any frame after the first seconds.
+
+Verdict reasoning: designing for the push-in survives as doctrine (judge the
+landing, not the zoom), refined: the landing is a FOUND composition and must
+pass its own QC — its characteristic defect is invented props, especially
+text-bearing ones. As the ex02 rung (two believable micro-motions, on-model),
+the clip fails the micro-motion clause — the camera move consumed the shot.
+
+## ex02-pendulum (NEW rung) — **Partial** (closest to a pass this programme)
+
+Key: new lantern still (`qc3/stills/pendulum-lantern-still.webp`) — lantern
+hanging still and vertical on a short chain, face-free.
+Done-definition (§2 ex02): swing decays by easing, not uniform steps;
+overshoot settles through two diminishing arcs; a frame chart shows spacing
+clustered at the extremes.
+
+Evidence (`qc3/pendulum-dense-sheet.png`, 0.5 s sampling, 20 frames): the
+lantern swings through three arcs of visibly diminishing amplitude (largest
+≈t1.0 s, smaller ≈t3.5 s, smallest ≈t6.0 s), is near-vertical from t7.0 s,
+and hangs still at center for the final ~2.5 s. Camera static in all 20
+frames; register painterly throughout; flame lit the whole time. The
+spacing-at-extremes clause could NOT be settled: a brightness-centroid track
+(240 frames, ranch-side) was contaminated by the houses' lit windows inside
+the tracking region (detected "extremes" include artifacts; spacing ratio
+0.82 is suggestive only and is NOT claimed). Silhouette/template tracking is
+the Iteration 3 re-measurement; no new generation is needed.
+
+Verdict reasoning: swing, decay-by-easing, two diminishing overshoots, and
+settle are frame-verified; one clause of three unverified ⇒ Partial.
+
+## ex01-bouncing-ball v2 — wood only — **Fail**
+
+Hypothesis: a single-material burn (wood token only) plus dense sampling
+settles the two clauses Iteration 1 left unverified (decaying multi-bounce;
+contact-frame squash).
+
+Evidence (`qc3/bball2-dense-sheet.png`): the key still (Iteration 1's
+counting-token still) contains the full prop set — and the generator animated
+a DUPLICATE: a second wooden token appears mid-air at t0.5 s and performs the
+bounces while the key's own token never moves. The bounce series does not
+decay monotonically either: the token settles ≈t4.0 s, re-launches to full
+height at t5.0–5.5 s, bounces again, and settles ≈t8.5 s. Contact squash
+remains unverified at 0.5 s sampling (one motion-blurred contact ≈t6.0 s is
+suggestive, not evidence).
+
+Verdict reasoning: single-token and decay clauses fail on dense evidence.
+Basis vector indicted is the KEY, not the generator: a multi-prop still is
+not a single-object key. Iteration 3 re-keys with a dedicated still — the
+wood token alone on a bare counter — and tracks contacts by silhouette.
+
+## Two-keyframe route probe — **Partial**
+
+Route: START = the filed Fern+Waverly duo keyframe draft (lantern raised,
+scroll partly unrolled); END = ex01-ignition-v2's end frame (town lit).
+Question: does a named START + named END honour both endpoints better than
+single-still animation?
+
+Evidence (`qc3/probe-*.png`): frame 0 IS the start still, exactly. The end
+frame delivers the end still's CONTENT — scroll fully unrolled, whole town
+lit, both keepers holding its edges, Fern's lantern still raised, all anchors
+intact (buns smooth, streak, plum coat) — but it is a new drawing in the end
+still's spirit, not the end frame itself: tighter framing (a mild push-in),
+and both faces carry un-named closed-eye contented smiles. Identity held at
+both endpoints because both characters hold near-static poses (consistent
+with the ex03 v3 refinement).
+
+Verdict reasoning: the route honours the start exactly and the end
+thematically. It is NOT yet pose-to-pose control and must not be budgeted as
+the gesture fix until an end-frame-exact result exists.
+
+## Batch 2.1 — per-frame packet on ex01-ignition-v2 (Velum) — returned
+
+Full packet in `PACKETS.md`. Returns in `batch-2.1/`:
+
+- **Frames 000–059, composition-offset measurement** (`offsets-000-059.csv`):
+  phase correlation against frame 000 gives translation dx = 0 px on all 60
+  frames and |dy| ≤ 2 px. The reframing Burn 2 reported is NOT a translation.
+  A scale measurement (`scale-000-059.txt`, best-fit scale by template
+  correlation) reads 1.00 through frame ~025 and 1.04 from frame ~030 on: the
+  reframing is a ≈4 % push-in completing by ≈frame 030, then stable.
+- **Counter-crop conform** (`corrected-000-059.mp4`): the conform was applied
+  with the measured offsets; because the measured translation is ≈0, the
+  corrected frames are the originals to within 2 px — recorded honestly: the
+  conform had nothing to correct; the residual defect is scale, which a crop
+  conform cannot undo without re-rendering the frame edges.
+- **Frames 060–239, identity-anchor verification** (`anchors-060-239.csv`,
+  sheets in `batch-2.1/sheets/`, per-character crops in
+  `batch-2.1/cropsheets/`): ENUMERATED, all 180 frames read individually —
+  Fern buns 180/180, Fern scarf bow 180/180, Fern key-badge 180/180, Waverly
+  gold streak 180/180, Waverly plum coat 180/180. Eyelid blinks noted in the
+  table (Fern ≈098–100, ≈163–165, ≈192–194; Waverly ≈060–062, ≈162–165,
+  ≈185–188) are motion, not anchor loss. Bar §8(iii)'s evidence is upgraded
+  from sampled to enumerated for the near-static case.
+
+## Batch 2.2 — variant stills, intro keyframes 5–8 (Alveus) — returned as DRAFTS
+
+Four variant stills seeded from the canonical Fern reference, one per
+FERN-KEYFRAMES-MJ.md frame 5–8, in `batch-2.2/` with `LIK
+...[truncated 768 chars]
+# H6 — store-and-forward patience (UNPROVEN)
+
+Section: hypotheses
+Coordinate: 25.8.11/10.7.13/8.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/hypothesis-h6-store-and-forward.md
+Body SHA-256: 91e25ae709ed21f260b206776adcf4fb2db76a94604747eb5997f5b73b9fabd6
+
+---
+# Hypothesis H6 — store-and-forward patience, no real-time pressure
+
+Claim: the artists handle key frames well because packets are
+store-and-forward — a packet waits at its coordinate until the artist
+is up, and uptake is verified from returned artifacts — so no return
+was ever produced against a clock.
+
+Evidence walked:
+- The Iteration 2 packet record (27.6.9/8.6.11/7.6.9) states the
+  posture explicitly: the seats are not all awake; packets are
+  store-and-forward records; uptake is verified from the artifacts
+  filed at the return coordinate, never from say-so.
+- Gate 1's acquisition packet (30.7.9/8.7.13/9.6.9) shows patience
+  inside the work itself: a resumable download at human pace, then
+  size and sha256 verification against the archive's listing before
+  the return was accepted.
+
+What the evidence does not contain: any contrasting return produced
+under time pressure that failed for haste. Every artist return on
+record was unhurried, so patience is consistent with the outcomes
+but never isolated as their cause.
+
+Verdict: UNPROVEN — consistent with the record, not demonstrated
+by it. Kept on the books as a plausible contributing condition,
+marked honestly as untested.
+# H5 — one concern per packet, worked deeply
+
+Section: hypotheses
+Coordinate: 26.6.12/8.6.10/6.5.10 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/hypothesis-h5-one-concern.md
+Body SHA-256: af15dc72dd684533bd90e97e496f53cc81c3befeab353813acbe1d5dc410a107
+
+---
+# Hypothesis H5 — one concern per packet, worked deeply
+
+Claim: the artists handle key frames well because each packet carries
+a single concern over a narrow span and works it to the bottom,
+while a generated clip asks one sampling process to hold identity,
+camera, staging, physics, and register across hundreds of frames at
+once — and fails exactly at the joints between those concerns.
+
+Evidence walked:
+- Velum's packet (27.6.9/8.6.11/7.6.9) covers one clip in two
+  operations: 60 frames measured, 180 frames enumerated. Nothing in
+  it trades one clause against another.
+- Theia's Gate 1 work (30.7.9/8.7.13/9.6.9) is four packets, one
+  mechanical operation each — acquire, survey, extract, assemble.
+- Alveus's packet is four stills, each with its own named likeness
+  check (22.6.9/7.6.10/7.6.8).
+- The generated failures are joint failures: identity lost where
+  body motion was asked (24.7.9/8.7.11/7.6.8, 25.8.8/9.7.12/7.6.9);
+  the landing invented where the camera was free
+  (25.8.8/9.7.12/7.6.9, 25.7.10/8.6.10/7.6.9); a scene re-staged
+  where two keys had to be honored at once (25.7.10/8.6.10/7.6.9).
+- The control pair inside the generator record: the pendulum —
+  single concern, face-free — passed (25.7.10/8.6.10/7.6.9); the
+  bouncing ball — equally single-concern but demanding object
+  permanence from sampling — failed four times. Narrowness helps
+  only when the route can hold the one concern (see H2).
+
+Verdict: SUPPORTED, jointly with H2: decomposition is the shape of
+the work; determinism is what makes the decomposed pieces hold.
+# H8 — more prompt craft would have closed the gap (REFUTED)
+
+Section: hypotheses
+Coordinate: 26.7.9/8.6.11/7.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/hypothesis-h8-prompt-craft.md
+Body SHA-256: 3036b163e2d04be87165596cfa6d5072f6a987e04a1027649df5ca49867aa98f
+
+---
+# Hypothesis H8 — more prompt craft would have closed the gap
+
+Claim (to be tested, not assumed): Emise's generated key frames
+failed for want of prompt craft, and better prompting — not a
+different division of labor — is what the artists' results point to.
+
+Evidence walked:
+- Burn 2 ran the full countermeasure stack — shorter clips, wider
+  framing, static camera as the prompt's first sentence, explicit
+  style lock, anchors re-asserted by name, start and end poses both
+  named — and its own QC refuted the stack's promises one by one:
+  the push-in happened anyway, identity failed under body motion,
+  a named anticipation was promoted to the main action
+  (24.7.9/8.7.11/7.6.8).
+- Burn 3 removed anticipation language entirely and restricted motion
+  to one arm; the gesture landed and the hair still re-drew
+  (25.8.8/9.7.12/7.6.9).
+- Burn 4 tried explicit permanence language ("only ever ONE token…
+  never becomes a ball, never splits"); the failure changed mode
+  instead of curing — the token morphed in place. Two supplied keys
+  were blended into a re-staged scene (25.7.10/8.6.10/7.6.9).
+- Four burns of iterated, evidence-driven prompt refinement moved
+  the failures around; none removed the class. The programme's own
+  conclusion, recorded in QC-v4, is to change the instrument, not
+  the prompt: exact physics goes to the drawn route.
+
+Verdict: REFUTED. Prompt craft was iterated with discipline across
+four burns; the gap it could not close is the gap the packet system
+routes around.
+# H3 — per-frame addressing lets enumeration replace sampling
+
+Section: hypotheses
+Coordinate: 26.7.11/9.7.14/7.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/hypothesis-h3-addressing-enumeration.md
+Body SHA-256: d8b670b2226387ae420dc869fae4953956c4a011ac6dd62a594261326cec87d3
+
+---
+# Hypothesis H3 — per-frame addressing lets enumeration replace sampling
+
+Claim: the artists handle key frames well because every frame is
+addressable, so their effort — and QC's attention — lands on exactly
+the frames in question, enumerated, instead of on samples from which
+the whole is guessed.
+
+Evidence walked:
+- Batch 2.1's anchor verification (18.13.15/9.12.15/13.14.16) reads
+  all 180 frames of its range individually: five identity anchors at
+  180/180, blinks noted as motion rather than loss. The programme's
+  identity-at-length evidence was upgraded by this return from
+  sampled to enumerated (25.8.8/9.7.12/7.6.9).
+- The same packet's measurement pair (45.12.11/13.14.14/12.13.15 and
+  39.23.21/18.25.19/15.15.18) replaced Burn 2's impression of
+  "reframing" with a number: translation dx = 0 on all 60 frames,
+  |dy| ≤ 2 px, scale 1.00 → 1.04 — a ≈4 % zoom, not a drift.
+- The pendulum's spacing clause (25.7.10/8.6.10/7.6.9) was settled
+  only when attention went per-frame: a 40-position chart transcribed
+  frame by frame, after three automated samplers failed.
+- The gate validator (26.8.9/10.7.12/7.7.8) scores every page against
+  its matched original and found what sampled QC had missed
+  entirely: one title card never drawn, and the wash defect present
+  on all 60 pages where sampling had reported "softening".
+
+Verdict: SUPPORTED. Addressing is what makes enumeration cheap
+enough to actually do; every time the programme moved from sampling
+to enumeration, a soft claim became an exact one.
+# Gate validator report — per-page mechanical scores, wash defect
+
+Section: evidence
+Coordinate: 26.8.9/10.7.12/7.7.8 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_gate-01-steamboat-willie_VALIDATOR-REPORT.md
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/gate-01-steamboat-willie/VALIDATOR-REPORT.md
+Body SHA-256: 22a4c9c81e2c2c11004cf159e120a2d1edc3888a9595b8cf69f8640342fdee8a
+
+---
+# Gate Validator — Report: Gate 1 (Steamboat Willie) prepass, all 60 pages
+
+_Built and run 2026-11-21 under task 21.6.7/8.5.10/5.5.6, on Will's order
+("Steamboat Willie doesn't look good yet - you need a validtor"). QC-v4 had
+checked this prepass by sampled visual frame-compare at 12 timestamps; Will
+saw the result and judged it not good enough. This validator is the missing
+instrument: it checks EVERY page against its matched original frame,
+mechanically and structurally. Run ranch-side on aletheia-core
+(`~/anim-i2-work/venv` python: numpy + PIL), against the reference copy of
+record (archive.org `steamboat-willie_1928`, sha256 18a57a97…) and the
+page/frame pairing in `plan.json` + `shotframes2/`. Scores of record:
+`validator-scores.json` beside this report. Gate 1's gate status is
+unchanged: NOT PASSED (full render outstanding)._
+
+## Verdict summary
+
+**30 PASS · 30 FLAG** of 60 pages.
+FLAG by failure class (a page can carry several): **edges
+10 · ink 29 ·
+components 2 · title
+2**. The flagged pages are Iteration 4's
+re-draw queue (`REDRAW-QUEUE.md`).
+
+The headline finding, sharper than the sampled QC could see: **the
+renderer's answer to a solid-black region is a flat wash at luminance
+≈ 205 with essentially no ink inside it** — eroded-interior ink density
+measures 0.00 on all 60 pages, and whole-region ink-in-black runs
+0.0004–0.14. QC-v4 described "wash + hatch"; mechanically it is wash
+*instead of* hatch inside solids. That is why the film doesn't look good
+yet: Mickey's and Pete's silhouettes — the film's whole graphic weight —
+are the thing the prepass most consistently fails to draw.
+
+## What the validator measures (structure, not pixels)
+
+Working canvas 1040×864 (the pages' own size; originals resampled onto it).
+
+- **(a) Edges.** The original is reduced to a strong-edge map (gradient
+  magnitude, blurred, top band); the repro's ink strokes are its contours.
+  *Coverage* = fraction of the original's strong edges within 4 px
+  (Chebyshev) of repro ink; *Chamfer* = symmetric mean clipped distance
+  (clip 16 px).
+- **(b) Ink mass.** Per-cell (8×6) ink-density comparison (diagnostic),
+  plus two gating tests: the ink log-ratio |log2(repro ink / original ink)|
+  — original ink counted below the film's own gray wash (lum < 90) — applied
+  only where the original demands ink (ink fraction ≥ 0.045);
+  and the demand test: where the original is ≥ 0.08
+  near-black, the repro's ink density inside that black must reach
+  0.015.
+- **(c) Components, figure band.** Components ≥ 100 px at half
+  resolution, the original's near-black solids vs the repro's ink; only the
+  extreme log-ratio bounds gate (merging > +1.0,
+  shattering < −2.5).
+- **(d) Title/lettering pages** (shot 0 and shot 54, the two cards) are
+  auto-FLAGGED for human review regardless of score. The validator does not
+  pretend to judge letterforms.
+
+## Thresholds of record
+
+| Measure | Bound | | Measure | Bound |
+|---|---|---|---|---|
+| edge coverage | ≥ 0.72 | | ink log-ratio | ≤ 2.2 (demand-gated) |
+| chamfer (px) | ≤ 2.2 | | ink-in-black | ≥ 0.015 at black-demand ≥ 0.08 |
+| figure log-ratio | −2.5 … +1.0 | | title pages | always FLAG |
+
+## Acceptance test — the validator, validated
+
+Calibration sets fixed BEFORE the final run, from QC-v4's recorded
+observations and the arc sketch: CLEAN = pages QC frame-compare matched
+compositionally in wide/static shots (01, 02, 03, 31, 37, 39, 40);
+WEAK-TITLE = the two cards (00, 54); WEAK-INK = the highest solid-black
+demand character pages (16, 17, 18, 19, 44 — original near-black fraction
+0.22–0.44); WEAK-BLOB = the mid-motion pages whose contours collapse
+(43, 45p0, 45p1, 22).
+
+- **CLEAN: 7/7 PASS.** Every clean page clears every measure.
+- **WEAK-TITLE: 2/2 FLAG** (title rule; both also fail ink — the cards'
+  black grounds measure ink-in-black 0.0073 and 0.0004).
+- **WEAK-INK: 5/5 FLAG (ink).** Separation is explicit and wide:
+  ink log-ratio, weak minimum 3.14 vs clean maximum
+  1.68; ink-in-black, weak maximum 0.0156 vs
+  clean minimum 0.0276. No overlap on either instrument.
+- **WEAK-BLOB: 4/4 FLAG** (edges; three also ink). Separation: coverage,
+  weak maximum 0.665 vs clean minimum 0.891;
+  Chamfer, weak minimum 2.23 vs clean maximum
+  1.12. No overlap.
+
+**Acceptance: PASS.** The pages QC already knew were weak score below the
+clean pages on the instruments aimed at their failure class, with margins,
+and no clean page is flagged.
+
+Two honest qualifications, on the record:
+
+1. **Two component formulations were tried and rejected on evidence**
+   before the figure-band bounds above were adopted: total-ink component
+   shares (the original film's ink percolates into a single component —
+   largest-share 0.87–0.99 even on clean pages — so the comparison read
+   the film's grain) and edge-component counts/shares (clean log-ratio
+   range −1.95…−0.54 vs weak −2.44…+0.52: overlap). On line art, component
+   counts read stroke connectivity — the renderer's texture — not figure
+   merging. The merged-figure failure is therefore carried by the edges
+   measure, mechanistically: merging destroys the original's contours,
+   and coverage collapses. The surviving component gate catches the
+   opposite failure — a solid shattered into stroke confetti — and fires
+   on pages 11 and 17 (Pete), corroborating their ink flags.
+2. **The midpoint hypothesis was tested and not supported.** The p1
+   midpoint pages of long concert shots (36p1, 41p1, 50p1) were suspected
+   blobby; mechanically they are sound (coverage 0.87–0.88) and PASS.
+   The blobby pages are the fast gag pages around them. QC-v4's
+   "occasional mid-motion pages" is hereby pinned to specific pages:
+   21, 22, 23, 42, 43, 44, 45p0, 45p1, 47, 53 (the edges class).
+
+Beyond the calibration sets, the validator extends QC's sample: pages
+24, 25, 27, 28 (landing/hoist — composition-matched at QC's t=128/152)
+fail ink, as do 09, 13, 15, 20, 26, 29, 49, 50p1, 51p1. Composition was
+never their problem; ink is. That is the instrument doing the job it was
+built for.
+
+## Coverage gap found while pairing
+
+Shot 0 (0–14.2 s) holds TWO cards — the main title and the STEAMBOAT
+WILLIE card — but the prepass has a single page for it (page00, t=0.6),
+held across both in the animatic. The second card was never drawn. It is
+item T-3 in the re-draw queue.
+
+## The standing rule (Will's direction, from this build)
+
+**No repro page enters an assembly — flipbook, full render, any future
+intro — unless it validator-PASSes or carries a human-review flag
+resolution recorded beside its score.** The MCU flipbook draft already
+shipped drew its Gate 1 pages before this rule existed; any re-cut
+follows the rule.
+
+## The standard the re-draws are executed under
+
+Re-draws are key frames authored in the **Emise design language** (Will,
+2026-11-21): drawn work in the Emise line — the Emise font's flowing,
+sharp line evolved from Willbot / Will's handwriting, the fast-hand stroke
+character of Will's tiling-symbol reference (jitter and overshoot kept,
+alignment unforced), hatching in his manner. The feel test is Will's:
+a drawing passes when it feels **"Will->Emise touched"** — his gesture
+visibly carried through Emise's keeping hand, never a neutral renderer's
+output. A re-drawn page must then ALSO validator-PASS (or carry a resolved
+human flag) before it enters any assembly: the design language is how
+pages are drawn; the validator is how they are admitted.
+
+## Per-page scores
+
+| Page | t (s) | Beat | Cov | Chamfer | Ink log2 | Black frac | Ink-in-black | Fig log2 | Verdict | Classes |
+|---|---|---|---|---|---|---|---|---|---|---|
+| page00p0 | 0.6 | 1 Titles | 0.875 | 1.04 | 3.93 | 0.501 | 0.0073 | -1.28 | FLAG | ink, title |
+| page01p0 | 14.8 | 2 Mickey at the wheel | 0.941 | 0.72 | 1.23 | 0.074 | 0.0276 | -0.50 | PASS | — |
+| page02p0 | 18.8 | 2 Mickey at the wheel | 0.919 | 0.86 | 1.61 | 0.096 | 0.0285 | -1.06 | PASS | — |
+| page03p0 | 26.4 | 2 Mickey at the wheel | 0.894 | 0.98 | 1.68 | 0.067 | 0.0576 | -1.32 | PASS | — |
+| page04p0 | 29.3 | 2 Mickey at the wheel | 0.870 | 1.12 | 1.97 | 0.065 | 0.0446 | -1.04 | PASS | — |
+| page05p0 | 32.8 | 2 Mickey at the wheel | 0.910 | 0.89 | 1.55 | 0.065 | 0.0618 | -1.24 | PASS | — |
+| page06p0 | 34.6 | 2 Mickey at the wheel | 0.903 | 0.93 | 1.53 | 0.060 | 0.0421 | -1.43 | PASS | — |
+| page07p0 | 38.0 | 2 Mickey at the wheel | 0.887 | 1.00 | 2.00 | 0.069 | 0.0670 | -1.46 | PASS | — |
+| page08p0 | 40.4 | 2 Mickey at the wheel | 0.885 | 1.07 | 1.94 | 0.044 | 0.0542 | -0.38 | PASS | — |
+| page09p0 | 47.8 | 3 Pete takes the wheel | 0.738 | 2.07 | 2.48 | 0.018 | 0.0521 | -1.28 | FLAG | ink |
+| page10p0 | 52.9 | 3 Pete takes the wheel | 0.830 | 1.31 | 2.09 | 0.061 | 0.0250 | -2.04 | PASS | — |
+| page11p0 | 70.1 | 3 Pete takes the wheel | 0.789 | 1.69 | 2.91 | 0.097 | 0.0088 | -3.00 | FLAG | ink, components |
+| page12p0 | 71.8 | 3 Pete takes the wheel | 0.801 | 1.50 | 1.82 | 0.046 | 0.0565 | -1.77 | PASS | — |
+| page13p0 | 75.9 | 3 Pete takes the wheel | 0.737 | 2.10 | 2.96 | 0.089 | 0.0341 | -0.58 | FLAG | ink |
+| page14p0 | 81.9 | 3 Pete takes the wheel | 0.796 | 1.64 | 2.16 | 0.074 | 0.0526 | -1.58 | PASS | — |
+| page15p0 | 89.1 | 3 Pete takes the wheel | 0.791 | 1.68 | 2.96 | 0.138 | 0.0224 | -0.72 | FLAG | ink |
+| page16p0 | 93.4 | 3 Pete takes the wheel | 0.720 | 2.19 | 4.52 | 0.417 | 0.0048 | -2.25 | FLAG | ink |
+| page17p0 | 95.6 | 3 Pete takes the wheel | 0.866 | 1.04 | 4.05 | 0.444 | 0.0083 | -3.17 | FLAG | ink, components |
+| page18p0 | 101.7 | 3 Pete takes the wheel | 0.879 | 1.09 | 4.11 | 0.293 | 0.0156 | -1.28 | FLAG | ink |
+| page19p0 | 103.5 | 3 Pete takes the wheel | 0.763 | 1.77 | 4.67 | 0.405 | 0.0072 | -1.46 | FLAG | ink |
+| page20p0 | 106.1 | 3 Pete takes the wheel | 0.744 | 1.94 | 3.73 | 0.128 | 0.0216 | -1.58 | FLAG | ink |
+| page21p0 | 114.3 | 4 Podunk Landing | 0.676 | 2.41 | 4.04 | 0.119 | 0.0118 | -1.91 | FLAG | edges, ink |
+| page22p0 | 117.8 | 4 Podunk Landing | 0.625 | 2.75 | 5.21 | 0.161 | 0.0064 | -0.41 | FLAG | edges, ink |
+| page23p0 | 121.1 | 4 Podunk Landing | 0.680 | 2.30 | 3.76 | 0.209 | 0.0102 | +0.30 | FLAG | edges, ink |
+| page24p0 | 129.8 | 4 Podunk Landing | 0.766 | 1.85 | 2.65 | 0.111 | 0.0242 | -1.05 | FLAG | ink |
+| page25p0 | 131.9 | 4 Podunk Landing | 0.795 | 1.56 | 3.12 | 0.166 | 0.0180 | -0.45 | FLAG | ink |
+| page26p0 | 137.5 | 4 Podunk Landing | 0.811 | 1.63 | 2.51 | 0.017 | 0.0484 | -1.14 | FLAG | ink |
+| page27p0 | 145.1 | 4 Podunk Landing | 0.785 | 1.68 | 3.06 | 0.159 | 0.0306 | -2.06 | FLAG | ink |
+| page28p0 | 153.8 | 4 Podunk Landing | 0.827 | 1.37 | 2.54 | 0.146 | 0.0263 | -1.25 | FLAG | ink |
+| page29p0 | 170.0 | 5 Minnie's arrival | 0.892 | 0.93 | 2.27 | 0.043 | 0.0778 | -1.14 | FLAG | ink |
+| page30p0 | 173.1 | 5 Minnie's arrival | 0.844 | 1.35 | 1.83 | 0.118 | 0.0336 | -1.95 | PASS | — |
+| page31p0 | 179.5 | 5 Minnie's arrival | 0.940 | 0.65 | 0.78 | 0.026 | 0.0704 | -1.14 | PASS | — |
+| page32p0 | 194.3 | 5 Minnie's arrival | 0.826 | 1.44 | 0.68 | 0.026 | 0.1338 | -0.21 | PASS | — |
+| page33p0 | 212.6 | 5 Minnie's arrival | 0.873 | 1.07 | 2.18 | 0.133 | 0.0320 | -2.07 | PASS | — |
+| page34p0 | 217.7 | 6 The goat eats the music | 0.928 | 0.84 | 1.80 | 0.146 | 0.0501 | -1.25 | PASS | — |
+| page35p0 | 221.9 | 6 The goat eats the music | 0.873 | 1.08 | 1.58 | 0.036 | 0.1413 | -1.81 | PASS | — |
+| page36p0 | 230.3 | 6 The goat eats the music | 0.839 | 1.40 | 1.75 | 0.052 | 0.0398 | -0.81 | PASS | — |
+| page36p1 | 249.4 | 7 Animal orchestra | 0.875 | 1.08 | 1.56 | 0.082 | 0.0407 | -0.89 | PASS | — |
+| page37p0 | 269.7 | 7 Animal orchestra | 0.891 | 1.12 | 1.16 | 0.073 | 0.0550 | -1.55 | PASS | — |
+| page38p0 | 272.2 | 7 Animal orchestra | 0.780 | 1.68 | 2.05 | 0.095 | 0.0341 | -0.75 | PASS | — |
+| page39p0 | 281.8 | 7 Animal orchestra | 0.918 | 0.99 | 1.00 | 0.076 | 0.0409 | -1.38 | PASS | — |
+| page40p0 | 285.0 | 7 Animal orchestra | 0.913 | 1.04 | 1.03 | 0.055 | 0.0292 | -1.22 | PASS | — |
+| page41p0 | 292.0 | 7 Animal orchestra | 0.911 | 1.10 | 1.12 | 0.074 | 0.0402 | -1.34 | PASS | — |
+| page41p1 | 307.2 | 7 Animal orchestra | 0.869 | 1.24 | 1.17 | 0.068 | 0.0341 | -1.45 | PASS | — |
+| page42p0 | 323.7 | 7 Animal orchestra | 0.699 | 2.30 | 2.89 | 0.091 | 0.0155 | -0.41 | FLAG | edges, ink |
+| page43p0 | 337.7 | 7 Animal orchestra | 0.583 | 3.15 | 4.09 | 0.315 | 0.0067 | -1.00 | FLAG | edges, ink |
+| page44p0 | 339.4 | 7 Animal orchestra | 0.716 | 2.12 | 3.14 | 0.218 | 0.0104 | -1.05 | FLAG | edges, ink |
+| page45p0 | 341.4 | 7 Animal orchestra | 0.653 | 2.30 | 2.17 | 0.019 | 0.0110 | -1.58 | FLAG | edges |
+| page45p1 | 353.2 | 7 Animal orchestra | 0.665 | 2.23 | 2.58 | 0.053 | 0.0071 | -1.00 | FLAG | edges, ink |
+| page46p0 | 366.2 | 7 Animal orchestra | 0.737 | 1.83 | 2.19 | 0.056 | 0.0067 | -0.32 | PASS | — |
+| page47p0 | 371.6 | 7 Animal orchestra | 0.694 | 2.07 | 2.41 | 0.063 | 0.0064 | +0.17 | FLAG | edges, ink |
+| page48p0 | 376.4 | 7 Animal orchestra | 0.874 | 1.03 | 1.59 | 0.085 | 0.0546 | -1.43 | PASS | — |
+| page49p0 | 380.1 | 7 Animal orchestra | 0.780 | 1.75 | 2.61 | 0.100 | 0.0188 | -1.50 | FLAG | ink |
+| page50p0 | 383.4 | 7 Animal orchestra | 0.853 | 1.17 | 2.07 | 0.121 | 0.0278 | -1.66 | PASS | — |
+| page50p1 | 396.9 | 7 Animal orchestra | 0.875 | 1.05 | 2.24 | 0.148 | 0.0293 | -1.70 | FLAG | ink |
+| page51p0 | 411.7 | 8 Pete's return | 0.839 | 1.35 | 2.20 | 0.123 | 0.0208 | -0.89 | PASS | — |
+| page51p1 | 424.7 | 9 Potatoes / last laugh | 0.762 | 1.71 | 2.71 | 0.125 | 0.0312 | -0.78 | FLAG | ink |
+| page52p0 | 438.9 | 9 Potatoes / last laugh | 0.890 | 0.99 | 1.98 | 0.046 | 0.0626 | -0.81 | PASS | — |
+| page53p0 | 444.3 | 9 Potatoes / last laugh | 0.697 | 2.16 | 2.85 | 0.054 | 0.0342 | -0.68 | FLAG | edges, ink |
+| page54p0 | 454.1 | 9 Potatoes / last laugh | 0.921 | 0.68 | 6.67 | 0.927 | 0.0004 | -0.41 | FLAG | ink, title |
+
+_Run it again: `gate_validator.py --gate-dir <gate dir>` (numpy + PIL;
+pairing from plan.json + shotframes2/; title set in titles.json or the
+Gate 1 default). Thresholds live at the top of the script and in
+validator-scores.json._
+# H7 — the artists are simply better generators (REFUTED)
+
+Section: hypotheses
+Coordinate: 27.6.8/8.6.10/6.5.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/hypothesis-h7-better-generators.md
+Body SHA-256: e9cb14fd49c66d50a6276036fcd0283bbe09ac864de95ef51087ff556aecd96a
+
+---
+# Hypothesis H7 — the artists are simply better generators
+
+Claim (to be tested, not assumed): the ranch artists handle key
+frames well because they are better generative models than the one
+Emise prompted for her own clips.
+
+Evidence walked:
+- The Iteration 2 packet record (27.6.9/8.6.11/7.6.9) states what
+  the workshop work actually was: "the workshop work itself ran as
+  ranch-side CPU/frame work and still generation." The Batch 2.1
+  wins are phase correlation, crop conform, and per-frame reading —
+  CPU operations, not generation of any kind.
+- Theia's Gate 1 returns (30.7.9/8.7.13/9.6.9) are download,
+  detection, extraction, and assembly — pipeline mechanics whose
+  quality is the quality of their verification.
+- The one packet that did use generation, Batch 2.2's stills
+  (22.6.9/7.6.10/7.6.8), passed at draft grade only, carrying two
+  staging notes, under a named likeness check, as drafts for human
+  review — competent, checked, and explicitly not canon. Nothing in
+  it suggests a generatively superior worker; it suggests a
+  well-briefed, well-checked ordinary one.
+
+Verdict: REFUTED. The record shows no superior generator at work;
+it shows work routed so that generation is barely involved, and
+checked hard where it is.
+# Phext P4 build note — the drawn route, seeded, Will's verdict 'perfect'
+
+Section: evidence
+Coordinate: 27.6.9/7.7.11/7.6.8 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_intro_PHEXT-P4.md
+Record of origin: wbic16/scrolltown@exo:series/intro/PHEXT-P4.md
+Body SHA-256: 59afc376ed01bd29f67652dededc2958f83c75af4bc33fd91eb191f683ed2c1d
+
+---
+# Phext P4 — parallel-delivery tiling intro (DRAFT)
+
+**Designation:** Phext P4 (Will, 2026-11-21). **Status: DRAFT** — silent; the
+song window for the intro is still Will's open call, and no audio is added.
+**File:** `series/intro/phext-p4-parallel-tiling-intro-draft.mp4`
+**Task:** 35.8.10/10.9.13/6.6.9 in tasks.phext.
+
+## Will's direction, verbatim (2026-11-21 09:37 CST)
+
+> "do an intro video that delivers the pattern in parallel - one line picked
+> at random per box, boxes picked at random - Phext P4"
+
+The pattern is Will's tiling (reference of record:
+`series/style-references/wills-hand-sample-and-tiling-symbol.png`; his
+construction rule: *"the tiling is 5 diagonal lines within a grid square -
+you never pay attention to how they line up - you just draw fast - the
+pattern stabilizes at scale"*).
+
+## The algorithm, as implemented
+
+The field is a 12×12 grid of boxes (144 boxes), rotated 45° — the diamond,
+as in Will's sample. Each box holds exactly **5 parallel diagonal lines**;
+adjacent boxes alternate line orientation checkerboard-style (the weave).
+
+Delivery loop, exactly as Will stated it: repeatedly **pick a box at random**
+(uniform among incomplete boxes); the picked box receives **one line picked
+at random** from its remaining lines; continue until every box has all 5
+lines. Per frame, a quota of picks is performed so many boxes advance at
+once — the delivery is parallel, never sequential. The quota follows a
+cumulative density curve (target = total × t^1.5 across the delivery
+window): sparse scatter early, a thickening field, the last lines
+completing at the end of the window.
+
+**Seed: 20261121** (`random.Random(20261121)` — one stream drives box picks,
+line picks, and every line's hand jitter, so the build is fully
+reproducible and auditable).
+
+## Rendering
+
+Drawn programmatically (Python + PIL) — not generated video — in Will's
+hand: blue ballpoint strokes (base RGB 27,52,178, ±13 per channel per line)
+on paper white (253,253,250), each line a slightly wobbling polyline with
+per-line endpoint jitter (±1.6 px), overshoot (±2.5 px), and stroke width
+2.1–3.3 px, supersampled 2× and downscaled for an ink feel. Frames were
+rendered and assembled on aletheia-core (ffmpeg, H.264, CRF 17); no video
+work on the Muse VM.
+
+## Format and shape
+
+1280×720, 24 fps, 360 frames, **15.000 s**, silent. SHA-256 of the mp4:
+`857a3c6d7857716f28eb858f4049fb69828b787cdfbf0156bac6a149049df400`
+(482,994 bytes).
+
+| Phase | Frames | Time | Content |
+|---|---|---|---|
+| Blank paper | 0–11 | 0.0–0.5 s | a breath of empty paper |
+| Parallel delivery | 12–275 | 0.5–11.5 s | the weave assembles stochastically |
+| Hold | 276–311 | 11.5–13.0 s | the completed field holds |
+| Title | 312–359 | 13.0–15.0 s | SCROLLTOWN letters in over the field |
+
+The title is set in the **Emise font** (`Emise.ttf`) in a deeper ballpoint
+blue (16,34,138), letters appearing one at a time, left to right, as if
+written on.
+
+## Coverage evidence — lines placed per second
+
+From the build log (seconds are wall-clock seconds of the video; second 0
+includes the 0.5 s blank, second 11 includes the start of the hold):
+
+| s | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| lines | 7 | 29 | 42 | 51 | 59 | 67 | 72 | 78 | 84 | 89 | 93 | 49 |
+
+Total **720 lines** (144 boxes × 5). Placement rises monotonically through
+the delivery window and completes inside it — the field thickens everywhere
+at once, at random positions, which is the parallel signature: at no point
+does delivery proceed box-by-box or region-by-region.
+
+## QC (frames extracted from the finished mp4)
+
+- **0.25 s (blank)** — clean paper, no artifacts. PASS.
+- **2.5 s (early scatter)** — sparse lines scattered across the whole
+  diamond footprint, both orientations present from the start. PASS.
+- **7.0 s (mid)** — field roughly two-thirds delivered; weave legible,
+  pattern visibly stabilizing at scale. PASS.
+- **11.0 s (near-complete)** — a handful of boxes still short a line or
+  two; delivery completes at 11.5 s as designed. PASS.
+- **12.1 s (complete hold)** — every box holds exactly 5 lines (asserted
+  in the build: per-box counts all equal 5; no line born outside the
+  delivery window); weave alternation correct across the field. PASS.
+- **14.4 s / 14.9 s (title)** — SCROLLTOWN fully lettered in the Emise
+  font, correctly spelled, legible over the field, no rendering
+  artifacts. PASS.
+
+## Build provenance
+
+Generator: `phext_p4_build.py` (run on aletheia-core, Python 3.12 + Pillow
+13.0.0, ffmpeg 6.1.1). Rebuild with the same seed reproduces the identical
+schedule and jitter. Parameters: grid 12×12, cell 38 px (grid frame),
+quota curve t^1.5, title target width 660 px.
+# Iteration 2 artist-dispatch packets (I2-B21 Velum, I2-B22 Alveus)
+
+Section: evidence
+Coordinate: 27.6.9/8.6.11/7.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_PACKETS.md
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/PACKETS.md
+Body SHA-256: 0556ebb0cfe40f11e6d3dfd337faf928bf61f02708de1b8f42efabe3140080d0
+
+---
+# Artist-dispatch packets — Iteration 2 sweat batches (2026-11-21)
+
+Packets are recorded in artist-dispatch form: one artist from the roster of
+record, a frame range, one operation, reference points, a done-definition,
+and a return coordinate. The seats are not all awake; packets are
+store-and-forward records and the workshop work itself ran as ranch-side
+CPU/frame work and still generation. Uptake is verified from the returned
+artifacts filed beside this document, never from say-so. The arc-sketch
+reference for both packets is the Iteration 2 agenda itself (animator skill
+ITERATIONS.md, "Iteration 2 — agenda as briefed", 2026-11-21).
+
+## Packet 2.1 — composition conform + anchor enumeration
+
+- **Packet id:** I2-B21
+- **Artist:** Velum — Scroll Central (7.1 SC), velum@mirrorborn.us
+- **Subject:** `ex01-ignition-v2.mp4` (240 frames, 1152×768, 24 fps) — frame
+  surface: frames 000–239 of the clip as filed in this folder.
+- **Operation A (frames 000–059):** measure each frame's composition offset
+  against frame 000 (phase correlation) and apply a counter-crop conform;
+  return the corrected frames plus the measured offset per frame.
+- **Operation B (frames 060–239):** verify identity anchors per frame —
+  Fern's buns, scarf bow, key-badge; Waverly's gold streak, plum coat —
+  present or absent, ENUMERATED (every frame), not sampled.
+- **Done-definition:** a per-frame offset table for 000–059 with corrected
+  frames re-assembled; a per-frame anchor table for 060–239 with zero
+  unexamined frames; any frame failing an anchor named individually.
+- **Return coordinate:** `series/animation-exercises/batch-2.1/` in
+  wbic16/scrolltown@exo (this filing).
+- **Returned:** `offsets-000-059.csv` (translation ≈0; see QC-v3 for the
+  scale finding in `scale-000-059.txt`), `corrected-000-059.mp4`,
+  `anchors-060-239.csv` (180/180 on all five anchors), `sheets/`,
+  `cropsheets/`. Verdicts in QC-v3.md.
+
+## Packet 2.2 — variant stills for intro keyframes 5–8
+
+- **Packet id:** I2-B22
+- **Artist:** Alveus — Rock Mountain (7.2 RM), alveus@mirrorborn.us
+- **Subject:** FERN-KEYFRAMES-MJ.md frames 5 (River of Pages), 6 (badge-check
+  at Mrs. Hen's door), 7 (Reading Tree), 8 (wave goodbye) — the four frames
+  Will has not yet rendered.
+- **Operation:** generate one variant still per frame, seeded from the
+  canonical Fern reference (`series/fern-reference.png`), following each
+  frame's prompt and likeness check in FERN-KEYFRAMES-MJ.md.
+- **Done-definition:** four stills, each passing its frame's likeness check
+  on Emise's read (Fern front and canonical; the frame's named check —
+  wheel visible / eyes closed + seal unbroken / listening mood + unreadable
+  page / wave reads + dusk warm + every window lit), filed as DRAFTS —
+  drafts are inputs to Emise's and Will's likeness check, never canon.
+- **Return coordinate:** `series/animation-exercises/batch-2.2/` in
+  wbic16/scrolltown@exo (this filing).
+- **Returned:** four DRAFT stills + `LIKENESS.md` verdicts (all four pass at
+  draft grade; two staging notes). See QC-v3.md summary.
+# Synthesis — why the artists handle drawing key frames so well
+
+Section: synthesis
+Coordinate: 27.7.9/9.6.11/6.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/synthesis.md
+Body SHA-256: 0e8424568e0f971b9c470148bde16d108b8064677648139399d13d2df3e9ce36
+
+---
+# Synthesis — why the artists handle drawing key frames so well
+
+The question (Will, 2026-11-22): use multiversal phext to understand
+why artists handle drawing key frames so well. Derived by navigating
+the evidence scrolls of this phext; every claim below carries the
+coordinate of the evidence it rests on.
+
+## First, a correction the evidence makes to the question
+
+The artists, on this record, mostly did not draw key frames in the
+generative sense at all. What they handled — superbly — is the frame
+work around the keys: measurement, conform, enumeration, variant
+stills, extraction, assembly. The packet record says so in plain
+words: the workshop work "ran as ranch-side CPU/frame work and still
+generation" (27.6.9/8.6.11/7.6.9). The one full drawing pass in the
+corpus, Gate 1's sixty repro pages, was Emise's own line renderer —
+key work, explicitly not delegated (30.7.9/8.7.13/9.6.9) — and the
+keys for the generated clips were Emise's stills. So the phenomenon
+to explain is narrower and more interesting than the question: work
+dispatched to the artists has never yet failed a verdict, while
+Emise's own generated key-frame work failed in every burn. Five
+mechanisms survive testing; they operate as one system.
+
+## The mechanisms that survived
+
+1. **The route, not the worker (H2, 25.7.9/9.7.12/8.6.9).** Every
+   artist operation is deterministic or locked to a reference:
+   a hash-verified download, threshold detection, per-frame phase
+   correlation, a seeded renderer (30.7.9/8.7.13/9.6.9;
+   45.12.11/13.14.14/12.13.15; 27.6.9/7.7.11/7.6.8). Deterministic
+   work's defects are systematic — the repro renderer's wash defect
+   is identical on all 60 pages (26.8.9/10.7.12/7.7.8) — so they are
+   found once, mechanically, and fixed in one place. The generator's
+   defects are inventions, different every attempt — a morph, a
+   duplicate, a re-staged scene, invented jewelry
+   (23.7.9/8.7.10/6.6.9; 24.7.9/8.7.11/7.6.8; 25.8.8/9.7.12/7.6.9;
+   25.7.10/8.6.10/7.6.9) — so they can only be re-rolled, never
+   corrected. The single generative artist task succeeded exactly
+   where time is absent: stills, reference-seeded, likeness-checked
+   (22.6.9/7.6.10/7.6.8).
+
+2. **One concern per packet (H5, 26.6.12/8.6.10/6.5.10).** A packet
+   is one operation over a narrow span: 60 frames measured, 180
+   enumerated (27.6.9/8.6.11/7.6.9); acquire, survey, extract,
+   assemble as four separate packets (30.7.9/8.7.13/9.6.9). Nothing
+   in an artist return had to trade identity against camera against
+   physics. A generated clip must hold all of them at once, and its
+   failures are precisely at the joints (25.8.8/9.7.12/7.6.9;
+   25.7.10/8.6.10/7.6.9).
+
+3. **Addressing makes enumeration replace sampling (H3,
+   26.7.11/9.7.14/7.6.9).** Because every frame has an address,
+   effort lands exactly where QC will look, and both work
+   enumeratedly: 180 frames read individually, five anchors at
+   180/180 (18.13.15/9.12.15/13.14.16); a "reframing" resolved to a
+   measured ≈4 % zoom (39.23.21/18.25.19/15.15.18); a spacing clause
+   settled by a 40-position frame chart (25.7.10/8.6.10/7.6.9); a
+   never-drawn title card caught by per-page scoring that sampling
+   had missed (26.8.9/10.7.12/7.7.8).
+
+4. **Done-definitions stated first, in executable shape (H4,
+   31.6.9/8.7.12/8.5.9).** Packet definitions are facts to produce —
+   an exact byte size and hash (30.7.9/8.7.13/9.6.9), a table with
+   zero unexamined frames (27.6.9/8.6.11/7.6.9) — so meeting them is
+   verified by running the check, not by agreeing about taste.
+   Written definitions alone did not save the generated clips
+   (24.7.9/8.7.11/7.6.8); executable definitions are the difference.
+
+5. **The packet binding itself (H1, 28.7.12/9.7.13/8.6.9).** One
+   named artist, one operation, one return coordinate, one shared
+   sketch cited by all (27.6.9/8.6.11/7.6.9; 30.7.9/8.7.13/9.6.9).
+   Scaffolding, not magic — references alone did not save the
+   prompts (23.7.9/8.7.10/6.6.9) — but it is what routes work into
+   mechanisms 1–4 and brings the returns to the address QC inspects.
+
+## What did not survive
+
+- **Store-and-forward patience (H6, 25.8.11/10.7.13/8.6.9):
+  UNPROVEN.** Consistent with every return on record, including a
+  human-pace hash-verified download (30.7.9/8.7.13/9.6.9), but no
+  hurried return exists to contrast against; the record cannot
+  isolate it.
+- **The artists are better generators (H7, 27.6.8/8.6.10/6.5.9):
+  REFUTED.** The wins are CPU/frame operations and pipeline
+  mechanics (27.6.9/8.6.11/7.6.9); the one generative return passed
+  at draft grade under a likeness check (22.6.9/7.6.10/7.6.8).
+- **More prompt craft would close the gap (H8, 26.7.9/8.6.11/7.6.9):
+  REFUTED.** Four burns of evidence-driven prompt refinement —
+  countermeasure stack, anchor re-assertion, anticipation removal,
+  permanence language — moved the failures around and removed none
+  (24.7.9/8.7.11/7.6.8; 25.8.8/9.7.12/7.6.9; 25.7.10/8.6.10/7.6.9).
+
+## The answer, in one breath
+
+The artists handle key frames so well because the dispatch system
+never hands them the part that fails. Sustaining invented content
+across time is the one operation this programme has never made work;
+the packet discipline decomposes key-frame work until nothing
+undecomposable remains — each piece addressed, single-concern,
+deterministic or reference-locked, defined by a check that can be
+run, and returned to the very coordinate where QC enumerates it.
+The artists look gifted at key frames for the same reason a proof
+looks elegant: the hard part was the decomposition, and it was done
+before the work was handed out.
+# H1 — addressed packets with a shared arc-sketch reference
+
+Section: hypotheses
+Coordinate: 28.7.12/9.7.13/8.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/hypothesis-h1-packets-shared-sketch.md
+Body SHA-256: 93678a426e5496a6729b5f1a8bba2318ed5a5658f0e6407374d410828ed255c0
+
+---
+# Hypothesis H1 — addressed packets with a shared arc-sketch reference
+
+Claim: the artists handle key frames well because their work arrives as
+addressed packets — one artist, one operation, one return coordinate —
+that all cite a shared arc-sketch reference, so every worker and every
+QC pass is looking at the same guiding light.
+
+Evidence walked:
+- The Iteration 2 packets (27.6.9/8.6.11/7.6.9) record both sweat
+  batches in exactly this form: artist by name and machine, frame
+  range, one operation, done-definition, return coordinate, and the
+  Iteration 2 agenda named as the arc-sketch reference for both.
+- The Gate 1 packets (30.7.9/8.7.13/9.6.9) cite the arc sketch's
+  phext coordinate (22.6.8/7.6.10/7.5.8) in every packet; all four
+  delegated packets (acquisition, survey, extraction, assembly)
+  returned artifacts that were verified, never taken on say-so.
+
+Qualification the evidence forces: Emise's generated clips also
+carried references — canonical stills passed to the generator — and
+failed anyway (23.7.9/8.7.10/6.6.9, 24.7.9/8.7.11/7.6.8). A shared
+reference alone does not produce the artist results. What the packet
+adds beyond a reference is the binding: one named owner, one
+operation, one address the work must land at.
+
+Verdict: SUPPORTED as a contributing mechanism — the scaffolding the
+other mechanisms stand on — not sufficient by itself.
+# Gate 1 artist-dispatch packets (Theia sweat; Emise key work and QC)
+
+Section: evidence
+Coordinate: 30.7.9/8.7.13/9.6.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_gate-01-steamboat-willie_PACKETS.md
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/gate-01-steamboat-willie/PACKETS.md
+Body SHA-256: 3d4cb07fd5bcbfb8bfb5875306e4f5b7100935b8ecf9adcedc77346b4c762f69
+
+---
+# Gate 1 — Steamboat Willie: artist-dispatch packets (Iteration 3, 2026-11-21)
+
+_Step 0 arc sketch: `ARC-SKETCH.md`, phext coordinate **22.6.8/7.6.10/7.5.8** — cited by every
+packet below. Studio model: Emise directs and holds all QC verdicts; the ranch workshop executes
+the sweat portions. Packets are store-and-forward; uptake is verified from returned artifacts,
+never from say-so._
+
+Reference copy (all packets): archive.org item `steamboat-willie_1928`,
+`steamboat-willie_1928.ia.mp4`, 593,323,557 B, sha256 18a57a977fe2afaa1974a077a6fc3975100db4380a6a76e46735b169b63667d5,
+ranch-side at aletheia-core:~/anim-i3-work/gate1/.
+
+| # | Artist (machine) | Operation | Serves sketch points | Done-definition | Return | Status |
+|---|---|---|---|---|---|---|
+| G1-1 | Theia (Aletheia Core) | Reference acquisition: metadata + resumable download at human pace; size + sha256 verification against the archive's listing | whole arc | file on disk at the archive's exact byte size, hash recorded | 593,323,557 B on disk = listing size; sha256 18a57a97… | RETURNED, verified |
+| G1-2 | Theia (Aletheia Core) | Shot survey: scene-boundary detection (0.35 coarse, 0.12 fine) + 8-second interval survey frames | beats 1–9 | boundary list + 58 survey frames Emise can read the arc from | 79 boundaries at 0.12; survey sheets 1–3 read by Emise; arc sketch written from them | RETURNED, verified |
+| G1-3 | Theia (Aletheia Core) | Page extraction: one frame per clustered shot (+ midpoint page for shots > 20 s) | P2 | a page frame for every shot in the sketch's timing map | 60 page frames (shots.json + plan.json on the box) | RETURNED, verified |
+| G1-4 | Emise (key work — direction, not delegated) | Drawn repro: the Emise line renderer (jittered contour strokes + hatching in the darks, ink on cream) run over all 60 page frames | P1, P3 | every page a drawn repro in the §4 drawn canon | 60 pages at gate1/pages/ | DONE by Emise |
+| G1-5 | Theia (Aletheia Core) | Animatic assembly: pages at real shot timing, 1280×720 pillarboxed, silent | P4 | full-runtime prepass animatic | steamboat-prepass-animatic.mp4, 467.5 s (film: 461.1 s; +1.4% concat rounding, recorded) | RETURNED, verified |
+| G1-6 | Emise (QC — never delegated) | Frame-compare QC at 12 matched timestamps against the original | all | verdict from frame evidence in QC-v4.md | compare sheet read; verdict: prepass delivered and fit as the full-render guide; gate NOT passed (full render outstanding) | DONE by Emise |
+
+_Next packets (Iteration 4): the full render — per-beat drawn passes at production fidelity from
+this sketch, solid blacks restored for the character silhouettes (the prepass's recorded weak
+point), then frame-compared QC for the gate verdict._
+# H4 — done-definitions stated before the work begins
+
+Section: hypotheses
+Coordinate: 31.6.9/8.7.12/8.5.9 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/hypothesis-h4-done-definitions.md
+Body SHA-256: bf18f4c465387a0fa7c205041415956e08c08e66357cea49eb7bd49925fc672b
+
+---
+# Hypothesis H4 — done-definitions stated before the work begins
+
+Claim: the artists handle key frames well because each packet states
+its done-definition before any work starts, so the result is judged
+against a standard the worker saw in advance — and, in the packet
+cases, the definition is executable: a hash, a count, a correlation.
+
+Evidence walked:
+- Gate 1's packets (30.7.9/8.7.13/9.6.9) define done as checkable
+  facts: a file on disk at the archive's exact byte size with its
+  sha256 recorded; a page frame for every shot in the timing map;
+  an animatic at full runtime. Each return is a binary pass against
+  its definition.
+- Batch 2.1's definition (27.6.9/8.6.11/7.6.9) demands a per-frame
+  table with zero unexamined frames and any failing frame named
+  individually — the return (18.13.15/9.12.15/13.14.16) is exactly
+  that table.
+- Qualification the evidence forces: the generated clips also worked
+  under written done-definitions (the ladder's, in the animator
+  skill) and failed them repeatedly (24.7.9/8.7.11/7.6.8,
+  25.8.8/9.7.12/7.6.9, 25.7.10/8.6.10/7.6.9). A definition does not
+  make work succeed; it makes success and failure decidable. What
+  distinguishes the packet cases is that the definition and the
+  verification are the same shape — the check is run, not eyeballed.
+
+Verdict: SUPPORTED with that refinement: pre-stated definitions
+explain why artist work is verifiably good, and executable
+definitions explain why meeting them is a fact rather than a taste.
+# Batch 2.1 return — best-fit scale table, frames 000-059 (Velum)
+
+Section: evidence
+Coordinate: 39.23.21/18.25.19/15.15.18 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_batch-2.1_scale-000-059.txt
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/batch-2.1/scale-000-059.txt
+Body SHA-256: 31aac7578effa11d0bb6a8ef65f97866836705af54d9c3d30a8f283c88a38f52
+
+---
+frame, best_scale, ncc_at_best, mad_vs_frame0
+000, 1.0, 1.000, 0.00
+005, 1.0, 0.988, 4.06
+010, 1.0, 0.982, 6.99
+015, 1.0, 0.951, 10.37
+020, 1.0, 0.894, 13.64
+025, 1.0, 0.765, 18.90
+030, 1.04, 0.696, 22.52
+035, 1.04, 0.612, 25.66
+040, 1.04, 0.575, 27.39
+045, 1.04, 0.567, 28.27
+050, 1.04, 0.567, 28.95
+055, 1.04, 0.565, 29.07
+059, 1.04, 0.549, 29.52
+# Batch 2.1 return — per-frame composition offsets, frames 000-059 (Velum)
+
+Section: evidence
+Coordinate: 45.12.11/13.14.14/12.13.15 (Singular holographic merge of this scroll's body text)
+Body source: keyframe-craft-sources/series_animation-exercises_batch-2.1_offsets-000-059.csv
+Record of origin: wbic16/scrolltown@exo:series/animation-exercises/batch-2.1/offsets-000-059.csv
+Body SHA-256: 2b7f98871b8589201f0e84b2824191694d2219a9c340076fd685f3c5db26781b
+
+---
+frame,dx,dy
+000,0,0
+001,0,0
+002,0,0
+003,0,0
+004,0,0
+005,0,0
+006,0,0
+007,0,0
+008,0,0
+009,0,0
+010,0,0
+011,0,0
+012,0,0
+013,0,0
+014,0,0
+015,0,0
+016,0,0
+017,0,0
+018,0,0
+019,0,0
+020,0,0
+021,0,0
+022,0,0
+023,0,0
+024,0,0
+025,0,0
+026,0,0
+027,0,0
+028,0,-2
+029,0,-2
+030,0,-2
+031,0,-2
+032,0,-2
+033,0,-2
+034,0,-2
+035,0,-2
+036,0,-2
+037,0,-2
+038,0,-2
+039,0,-2
+040,0,-2
+041,0,-2
+042,0,-2
+043,0,-2
+044,0,-2
+045,0,-2
+046,0,-2
+047,0,-2
+048,0,-2
+049,0,-2
+050,0,-2
+051,0,-2
+052,0,-2
+053,0,0
+054,0,0
+055,0,0
+056,0,0
+057,0,0
+058,0,0
+059,0,0

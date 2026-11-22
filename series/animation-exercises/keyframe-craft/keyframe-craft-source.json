@@ -1,0 +1,193 @@
+{
+ "scrolls": [
+  {
+   "section": "evidence",
+   "id": "E01-packets-i2",
+   "title": "Iteration 2 artist-dispatch packets (I2-B21 Velum, I2-B22 Alveus)",
+   "source": "keyframe-craft-sources/series_animation-exercises_PACKETS.md",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/PACKETS.md",
+   "coordinate": "27.6.9/8.6.11/7.6.9",
+   "sha256": "0556ebb0cfe40f11e6d3dfd337faf928bf61f02708de1b8f42efabe3140080d0"
+  },
+  {
+   "section": "evidence",
+   "id": "E02-offsets-csv",
+   "title": "Batch 2.1 return — per-frame composition offsets, frames 000-059 (Velum)",
+   "source": "keyframe-craft-sources/series_animation-exercises_batch-2.1_offsets-000-059.csv",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/batch-2.1/offsets-000-059.csv",
+   "coordinate": "45.12.11/13.14.14/12.13.15",
+   "sha256": "2b7f98871b8589201f0e84b2824191694d2219a9c340076fd685f3c5db26781b"
+  },
+  {
+   "section": "evidence",
+   "id": "E03-scale-txt",
+   "title": "Batch 2.1 return — best-fit scale table, frames 000-059 (Velum)",
+   "source": "keyframe-craft-sources/series_animation-exercises_batch-2.1_scale-000-059.txt",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/batch-2.1/scale-000-059.txt",
+   "coordinate": "39.23.21/18.25.19/15.15.18",
+   "sha256": "31aac7578effa11d0bb6a8ef65f97866836705af54d9c3d30a8f283c88a38f52"
+  },
+  {
+   "section": "evidence",
+   "id": "E04-anchors-csv",
+   "title": "Batch 2.1 return — per-frame identity-anchor enumeration, frames 060-239 (Velum)",
+   "source": "keyframe-craft-sources/series_animation-exercises_batch-2.1_anchors-060-239.csv",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/batch-2.1/anchors-060-239.csv",
+   "coordinate": "18.13.15/9.12.15/13.14.16",
+   "sha256": "4b09777c813b19a223afa5ed7b89520914ec0d3d31deb8ec704e613c4ea3ed82"
+  },
+  {
+   "section": "evidence",
+   "id": "E05-likeness-2.2",
+   "title": "Batch 2.2 return — likeness checks on variant stills, keyframes 5-8 (Alveus)",
+   "source": "keyframe-craft-sources/series_animation-exercises_batch-2.2_LIKENESS.md",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/batch-2.2/LIKENESS.md",
+   "coordinate": "22.6.9/7.6.10/7.6.8",
+   "sha256": "d9cc61dbe5f9e011ad7151a79eddc8a7f0650d6f47f7634412396b93a35d6a23"
+  },
+  {
+   "section": "evidence",
+   "id": "E06-qc-burn1",
+   "title": "QC — Burn 1: Emise's generated key frames, first failures",
+   "source": "keyframe-craft-sources/series_animation-exercises_QC.md",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/QC.md",
+   "coordinate": "23.7.9/8.7.10/6.6.9",
+   "sha256": "f4a74ddcb9a30f442b10292bc7a5a1117f47f25a69a565c1357395777d53c832"
+  },
+  {
+   "section": "evidence",
+   "id": "E07-qc-burn2",
+   "title": "QC — Burn 2 (Iteration 1): countermeasure stack tested, hypotheses refuted",
+   "source": "keyframe-craft-sources/series_animation-exercises_QC-v2.md",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/QC-v2.md",
+   "coordinate": "24.7.9/8.7.11/7.6.8",
+   "sha256": "53b8c2457eae516a28474c9eedf782fd80e6a7c643e4e0448cafcdde6603b797"
+  },
+  {
+   "section": "evidence",
+   "id": "E08-qc-burn3",
+   "title": "QC — Burn 3 (Iteration 2): batch 2.1/2.2 verdicts and clip verdicts",
+   "source": "keyframe-craft-sources/series_animation-exercises_QC-v3.md",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/QC-v3.md",
+   "coordinate": "25.8.8/9.7.12/7.6.9",
+   "sha256": "6b6db7ed3f0882698196943cad23be6607072711177b4f8158dfbc6e35d425c5"
+  },
+  {
+   "section": "evidence",
+   "id": "E09-packets-gate1",
+   "title": "Gate 1 artist-dispatch packets (Theia sweat; Emise key work and QC)",
+   "source": "keyframe-craft-sources/series_animation-exercises_gate-01-steamboat-willie_PACKETS.md",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/gate-01-steamboat-willie/PACKETS.md",
+   "coordinate": "30.7.9/8.7.13/9.6.9",
+   "sha256": "3d4cb07fd5bcbfb8bfb5875306e4f5b7100935b8ecf9adcedc77346b4c762f69"
+  },
+  {
+   "section": "evidence",
+   "id": "E10-qc-burn4",
+   "title": "QC — Burn 4 (Iteration 3): pendulum PASS, ex01/ex03/ex02 verdicts, Gate 1 prepass",
+   "source": "keyframe-craft-sources/series_animation-exercises_QC-v4.md",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/QC-v4.md",
+   "coordinate": "25.7.10/8.6.10/7.6.9",
+   "sha256": "4dcf4cdcd1937240c668816ea8d5c6af86871371df7e66593c49cbc606bc3a68"
+  },
+  {
+   "section": "evidence",
+   "id": "E11-validator",
+   "title": "Gate validator report — per-page mechanical scores, wash defect",
+   "source": "keyframe-craft-sources/series_animation-exercises_gate-01-steamboat-willie_VALIDATOR-REPORT.md",
+   "repo_source": "wbic16/scrolltown@exo:series/animation-exercises/gate-01-steamboat-willie/VALIDATOR-REPORT.md",
+   "coordinate": "26.8.9/10.7.12/7.7.8",
+   "sha256": "22a4c9c81e2c2c11004cf159e120a2d1edc3888a9595b8cf69f8640342fdee8a"
+  },
+  {
+   "section": "evidence",
+   "id": "E12-phext-p4",
+   "title": "Phext P4 build note — the drawn route, seeded, Will's verdict 'perfect'",
+   "source": "keyframe-craft-sources/series_intro_PHEXT-P4.md",
+   "repo_source": "wbic16/scrolltown@exo:series/intro/PHEXT-P4.md",
+   "coordinate": "27.6.9/7.7.11/7.6.8",
+   "sha256": "59afc376ed01bd29f67652dededc2958f83c75af4bc33fd91eb191f683ed2c1d"
+  },
+  {
+   "section": "hypotheses",
+   "id": "h1-packets-shared-sketch",
+   "title": "H1 — addressed packets with a shared arc-sketch reference",
+   "source": "keyframe-craft-sources/hypothesis-h1-packets-shared-sketch.md",
+   "repo_source": "",
+   "coordinate": "28.7.12/9.7.13/8.6.9",
+   "sha256": "93678a426e5496a6729b5f1a8bba2318ed5a5658f0e6407374d410828ed255c0"
+  },
+  {
+   "section": "hypotheses",
+   "id": "h2-determinism",
+   "title": "H2 — determinism and reference-lock beat temporal sampling",
+   "source": "keyframe-craft-sources/hypothesis-h2-determinism.md",
+   "repo_source": "",
+   "coordinate": "25.7.9/9.7.12/8.6.9",
+   "sha256": "c0769ac65ef9ca0422a257ab26f219fc6a682c02b6a46e39f30cd537e4221b0a"
+  },
+  {
+   "section": "hypotheses",
+   "id": "h3-addressing-enumeration",
+   "title": "H3 — per-frame addressing lets enumeration replace sampling",
+   "source": "keyframe-craft-sources/hypothesis-h3-addressing-enumeration.md",
+   "repo_source": "",
+   "coordinate": "26.7.11/9.7.14/7.6.9",
+   "sha256": "d8b670b2226387ae420dc869fae4953956c4a011ac6dd62a594261326cec87d3"
+  },
+  {
+   "section": "hypotheses",
+   "id": "h4-done-definitions",
+   "title": "H4 — done-definitions stated before the work begins",
+   "source": "keyframe-craft-sources/hypothesis-h4-done-definitions.md",
+   "repo_source": "",
+   "coordinate": "31.6.9/8.7.12/8.5.9",
+   "sha256": "bf18f4c465387a0fa7c205041415956e08c08e66357cea49eb7bd49925fc672b"
+  },
+  {
+   "section": "hypotheses",
+   "id": "h5-one-concern",
+   "title": "H5 — one concern per packet, worked deeply",
+   "source": "keyframe-craft-sources/hypothesis-h5-one-concern.md",
+   "repo_source": "",
+   "coordinate": "26.6.12/8.6.10/6.5.10",
+   "sha256": "af15dc72dd684533bd90e97e496f53cc81c3befeab353813acbe1d5dc410a107"
+  },
+  {
+   "section": "hypotheses",
+   "id": "h6-store-and-forward",
+   "title": "H6 — store-and-forward patience (UNPROVEN)",
+   "source": "keyframe-craft-sources/hypothesis-h6-store-and-forward.md",
+   "repo_source": "",
+   "coordinate": "25.8.11/10.7.13/8.6.9",
+   "sha256": "91e25ae709ed21f260b206776adcf4fb2db76a94604747eb5997f5b73b9fabd6"
+  },
+  {
+   "section": "hypotheses",
+   "id": "h7-better-generators",
+   "title": "H7 — the artists are simply better generators (REFUTED)",
+   "source": "keyframe-craft-sources/hypothesis-h7-better-generators.md",
+   "repo_source": "",
+   "coordinate": "27.6.8/8.6.10/6.5.9",
+   "sha256": "e9cb14fd49c66d50a6276036fcd0283bbe09ac864de95ef51087ff556aecd96a"
+  },
+  {
+   "section": "hypotheses",
+   "id": "h8-prompt-craft",
+   "title": "H8 — more prompt craft would have closed the gap (REFUTED)",
+   "source": "keyframe-craft-sources/hypothesis-h8-prompt-craft.md",
+   "repo_source": "",
+   "coordinate": "26.7.9/8.6.11/7.6.9",
+   "sha256": "3036b163e2d04be87165596cfa6d5072f6a987e04a1027649df5ca49867aa98f"
+  },
+  {
+   "section": "synthesis",
+   "id": "synthesis",
+   "title": "Synthesis — why the artists handle drawing key frames so well",
+   "source": "keyframe-craft-sources/synthesis.md",
+   "repo_source": "",
+   "coordinate": "27.7.9/9.6.11/6.6.9",
+   "sha256": "0e8424568e0f971b9c470148bde16d108b8064677648139399d13d2df3e9ce36"
+  }
+ ]
+}
