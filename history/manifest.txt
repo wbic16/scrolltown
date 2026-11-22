@@ -1,0 +1,224 @@
+# History — the Scrolltown renders: living archive manifest.
+# One entry per record, records separated by a line containing only ---
+# Fields are key=value, one per line. media= and poster= are paths inside
+# the wbic16/scrolltown repo (exo branch); build.py copies them into the
+# site and verifies each file's SHA-256 against the value recorded here.
+# To add a render: append a record, run build.py, deploy (see README.md).
+# verdict is one of: PASS, PARTIAL, FAIL, DRAFT (shown as a word chip).
+# reflection is the record's own words, trimmed — never invented. Leave
+# it empty when the record carries no reflection; the verdict still shows.
+---
+id=ex01-ignition
+group=burns
+title=Ignition — first try (Burn 1)
+date=2026-11-21
+verdict=PARTIAL
+media=series/animation-exercises/ex01-ignition.mp4
+sha256=c56a38f31135e3bce9ecff904554f3ea1d50ca8b880e94cbe8ace01a34ba535c
+reflection=Best motion of the burn: the scroll finishes unrolling, the town drawn on it lights progressively, camera locked, Waverly holds design. Failure: Fern's identity anchors dissolved mid-clip — smooth twin buns became tight dark curls and vanished; the lantern migrated from raised to lowered.
+---
+id=ex02-keepers-welcome
+group=burns
+title=Keeper's Welcome — first try (Burn 1)
+date=2026-11-21
+verdict=FAIL
+media=series/animation-exercises/ex02-keepers-welcome.mp4
+sha256=2071bafce44e157db2966a48bfb5c5dc0c3dc468d95f4370c35375f2b47b6224
+reflection=Despite "locked frame" in the prompt, the camera pushed in hard and Waverly's face morphed into a photorealistic older woman — full register break; composition lost.
+---
+id=ex02-keepers-welcome-retry
+group=burns
+title=Keeper's Welcome — retry (Burn 1)
+date=2026-11-21
+verdict=PARTIAL
+media=series/animation-exercises/ex02-keepers-welcome-retry.mp4
+sha256=b80225d4d573e74e78d564e2d1869ea63fc135345dea686de769564f274cbdc9
+reflection=Tightened prompt (static camera absolute, style lock explicit, three named micro-motions): register held for the whole clip, mid-frame the best Waverly of the burn. Still failing: camera pushed in over the back half; face softened toward generic illustration.
+---
+id=ex03-fern-at-the-ready
+group=burns
+title=Fern at the Ready — first try (Burn 1)
+date=2026-11-21
+verdict=FAIL
+media=series/animation-exercises/ex03-fern-at-the-ready.mp4
+sha256=1b8a9c0d48fe3861965e56e29e58a3878f6024d063e73b1acdfbccb2b8b1f9a8
+reflection=Push-in plus glossy-3D re-render of Fern (the exact drift the register lock exists to prevent); the named gesture never happened — she ended in an invented crossed-tools pose with an off-model grin.
+---
+id=ex01-ignition-v2
+group=burns
+title=Ignition v2 — testing the countermeasures (Burn 2)
+date=2026-11-21
+verdict=PARTIAL
+media=series/animation-exercises/ex01-ignition-v2.mp4
+sha256=f722f01faec3a227859566cbd199d4bead233fa5ea443ff202388d8c2b3fb92d
+reflection=Identity held the full 10 s (buns, bow, badge intact in all sampled frames — Burn 1's fatal failure fixed for near-static characters); named end state delivered. Deductions: mild reframing in the first 2.5 s (later measured as a 4 percent zoom, not a drift); the scroll's map art shifts from ink drawing to volumetric miniature as it lights.
+---
+id=ex02-keepers-welcome-v2
+group=burns
+title=Keeper's Welcome v2 (Burn 2)
+date=2026-11-21
+verdict=PARTIAL
+media=series/animation-exercises/ex02-keepers-welcome-v2.mp4
+sha256=2eac2bd42aaf494ee30ba75eaadd74a4619af8a2b21581f513f67aa7d33ed98a
+reflection=Burn 1's register break did not recur — painterly and on-model in every frame, both micro-motions read. But the push-in happened anyway: wide at start, close-up by 2.5 s, medium at end. The stack protects the register, not the camera.
+---
+id=ex03-fern-at-the-ready-v2
+group=burns
+title=Fern at the Ready v2 (Burn 2)
+date=2026-11-21
+verdict=FAIL
+media=series/animation-exercises/ex03-fern-at-the-ready-v2.mp4
+sha256=e8553bf09062ddb1175e50d1d7bdeb0cd6efe3f9931fe355e2ed5d41457c0c05
+reflection=The named anticipation crouch was promoted to the main action (crouch to kneel, tools crossed in lap); the gesture never happened; the named end pose was ignored; Fern's buns dissolved into curls under the body motion despite anchor re-assertion. Lesson: never name anticipation as a body movement — in generated clips it is a held beat of stillness.
+---
+id=ex01-bouncing-ball
+group=burns
+title=Bouncing Ball — the face-free control (Burn 2)
+date=2026-11-21
+verdict=PARTIAL
+media=series/animation-exercises/ex01-bouncing-ball.mp4
+sha256=ea84201b82bcd2d4c96f140de834bdef32f96f22beb4f3a4af2116c6ef3aa0fb
+reflection=Camera static in all seven sampled frames over 10 s — the camera law is face-seeking: no face, no push-in. The three-material sequence arrived in order with distinct physics (wood flip-and-settle, brass high springy arc, paper tumble-and-settle) and the exact named end state. Unverified then: decaying multi-bounce and contact-frame squash.
+---
+id=ex03-fern-at-the-ready-v3
+group=burns
+title=Fern at the Ready v3 — the arm-only test (Burn 3)
+date=2026-11-21
+verdict=FAIL
+media=series/animation-exercises/ex03-fern-at-the-ready-v3.mp4
+sha256=d5d088b06daafd2f53beac1ec272ad06830fbaa3fab2c8e7531091e3f90bc502
+reflection=The hypothesis splits. Motion restriction delivered the gesture exactly (hammer raised at mid, back down at end, camera never moved) — but the buns re-drew into curls by about 1.25 s anyway, and an un-named closed-eye grin closed the clip. Refined law: any motion of the character herself triggers the hair re-draw; anchors hold only when she is fully still and the world moves around her.
+---
+id=ex02-keepers-welcome-v3
+group=burns
+title=Keeper's Welcome v3 — designing for the push-in (Burn 3)
+date=2026-11-21
+verdict=PARTIAL
+media=series/animation-exercises/ex02-keepers-welcome-v3.mp4
+sha256=425093509064ab19f968ef4947f026e635adcf09d3305d0c84baef05e7f4ab2f
+reflection=From a key with Waverly at about one-sixth of frame height the push-in was total, but painterly throughout and on-model at the landing. The landing was invented, not designed: her rolled scroll became an unrolled scroll covered in pseudo-writing. Landings are found compositions needing their own QC; their characteristic defect is invented props, text-bearing above all.
+---
+id=ex01-bouncing-ball-v2
+group=burns
+title=Bouncing Ball v2 (Burn 3)
+date=2026-11-21
+verdict=FAIL
+media=series/animation-exercises/ex01-bouncing-ball-v2.mp4
+sha256=4e381cb5c8fefc06bd824ce095750ab07239b412d837957c7a5f4cf387a594d6
+reflection=The three-prop key betrayed the test: the generator animated a duplicate token while the key's own token never moved, and the bounce re-launched to full height after settling. The indicted vector was the key, not the generator — a multi-prop still is not a single-object key.
+---
+id=probe-two-keyframe
+group=burns
+title=Two-Keyframe Probe (Burn 3)
+date=2026-11-21
+verdict=PARTIAL
+media=series/animation-exercises/probe-two-keyframe-ignition.mp4
+sha256=c8046c6ce95c90ce7b87e38b5246cddcfb10bb7c01b74a3d5cd16f1101e7af10
+reflection=Frame 0 is the start still exactly; the end delivers the end still's content as a new drawing — tighter framing, invented closed-eye smiles. Start exact, end thematic: not yet pose-to-pose control.
+---
+id=ex01-bouncing-ball-v3
+group=burns
+title=Bouncing Ball v3 — single-object key (Burn 4)
+date=2026-11-21
+verdict=FAIL
+media=series/animation-exercises/ex01-bouncing-ball-v3.mp4
+sha256=fbf1b445ceaac74fe7261868970d1948d8c70f9d7a396b4619d1f710367bdb22
+reflection=The dedicated single-object key passed as a key, but the clip turned the disc into a round ball, flew a wandering arc, then duplicated it into floating copies. Object permanence cannot be prompt-held in a minimal scene.
+---
+id=ex01-bouncing-ball-v4
+group=burns
+title=Bouncing Ball v4 — permanence language (Burn 4)
+date=2026-11-21
+verdict=FAIL
+media=series/animation-exercises/ex01-bouncing-ball-v4.mp4
+sha256=3e3e7c37e6a4430414db9ee4b6f05e953b1c36fa159ab88f585239563dc60083
+reflection=Explicit permanence language changed the failure mode, not the outcome: the token morphed in place (loaf to dome to ring to oval) and scale-pulsed instead of bouncing. "Squash" wording invites morphing. After four attempts the exercise changes instrument: the drawn route, where spacing and squash are exact by construction.
+---
+id=ex03-fern-at-the-ready-v4
+group=burns
+title=Fern at the Ready v4 — two keys, lowering (Burn 4)
+date=2026-11-21
+verdict=FAIL
+media=series/animation-exercises/ex03-fern-at-the-ready-v4.mp4
+sha256=8432bf8235b5ec026fb737a3986c28c07f986c43b73446b3928dbe4cdf5b9e5e
+reflection=Frame 0 was not the start key — the generator re-staged the scene entirely; the end matched the end key's pose thematically, not its composition. Refined law: endpoints hold only when both keys are generator-native to one scene instance.
+---
+id=ex02-keepers-welcome-v4
+group=burns
+title=Keeper's Welcome v4 (Burn 4)
+date=2026-11-21
+verdict=PARTIAL
+media=series/animation-exercises/ex02-keepers-welcome-v4.mp4
+sha256=5e85a0c18c4a151e89d22f2032b7f0582fd0a883e20d084ceda4f4e33d6ea382
+reflection=Text discipline held completely — no text or pseudo-writing anywhere — and the nod landed. But Waverly walked to camera, broke the room's scale, and arrived in a bust close-up wearing invented jewelry. A landing cannot be designed from the start key while the character is free to move.
+---
+id=ex02-pendulum
+group=burns
+title=The Pendulum — the first Pass (Burns 3–4)
+date=2026-11-21
+verdict=PASS
+media=series/animation-exercises/ex02-pendulum.mp4
+sha256=12dfd90d4e532a026472622587b9ff7acfb2b8849746f44bd9fc3316bc4eff03
+reflection=The programme's first ladder Pass. Three automated trackers failed to settle the spacing clause and are recorded as failed measurements; a human frame chart — 40 positions transcribed from dense sheets — settled it: extremes decay monotonically, and near-extreme steps average 8.4 percent against 16.4 percent at center crossings. Spacing clusters at the extremes. Every clause of the done-definition verified.
+---
+id=gate1-prepass
+group=gates
+title=Gate 1 — Steamboat Willie (1928): the prepass
+date=2026-11-21
+verdict=DRAFT
+media=series/animation-exercises/gate-01-steamboat-willie/steamboat-prepass-animatic.mp4
+poster=series/animation-exercises/gate-01-steamboat-willie/pages-sample/page00p0-t0000.6.png
+sha256=1d5c262f3767113a3001c5dfedd8184712e5590c786ec09efcc2a236e7e0fd90
+reflection=Setup and prepass complete; the gate is NOT passed — a gate passes only on prepass plus full render. Sixty hand-drawn repro pages at real shot timing, from an arc sketch derived from the original's actual shots. The validator then checked every page mechanically: 30 PASS, 30 FLAG. Its root-cause finding: the renderer's answer to solid black is a flat wash with interior ink density 0.00 on all 60 pages — the mechanical form of "doesn't look good yet". The flagged pages are the re-draw queue, to be re-drawn as key frames in the Emise design language.
+---
+id=mcu-flipbook-intro-draft
+group=intro
+title=The MCU Flipbook Intro — draft
+date=2026-11-21
+verdict=DRAFT
+media=series/intro/mcu-flipbook-intro-draft.mp4
+poster=series/intro/fern-waverly-intro-keyframe-draft.webp
+sha256=08530873c78efdfadfb7e51d8ac7055f8a21f4ca2d252216edbfe6581b7a6d77
+reflection=Pass as a draft. Gate 1 prepass pages flipping with accelerating holds, the woven tiling field delivered in parallel and stabilizing, then the Fern and Waverly beat taken only from frame-QC-passing material — the segment enumerated 180 of 180 frames on all five identity anchors — then the title lettered over the field in the Emise font. One soft spot: the flipbook's last page, the drawn THE END card, is sparse at small size. The duo keyframe above is a draft, pending Will's tuning.
+---
+id=intro-prepass-current-skill
+group=intro
+title=Prepass of the Current Skill
+date=2026-11-22
+ee=EE 15
+verdict=DRAFT
+media=series/intro/intro-prepass-current-skill.mp4
+poster=series/intro/prepass-contact-sheet.png
+sha256=1294fb199ab7823910a7d640b244a1e84ae9633ea56fb42477f49c8bc4a552f1
+reflection=Pass as a prepass: the whole 15-second arc present, in order, at sketch timings, drawn route only — Fern lifts her lantern, Waverly unrolls the Great Scroll and its town lights house by house, the real town answers, the title lands over the tiling field. The fixes it named for the full render: tame the lantern glow that washes out Fern's right bun at the peak, keep Fern readable at wide scale, and fit the tiling field to the frame.
+---
+id=phext-p4
+group=intro
+title=Phext P4 — the pattern, delivered in parallel
+date=2026-11-21
+verdict=PASS
+media=series/intro/phext-p4-parallel-tiling-intro-draft.mp4
+sha256=857a3c6d7857716f28eb858f4049fb69828b787cdfbf0156bac6a149049df400
+reflection=Will's verdict: "the animation is perfect." Drawn programmatically — 144 boxes, 720 lines, one line picked at random per box, boxes picked at random, seed 20261121, fully reproducible. Born here as a Scrolltown intro study; Will migrated it the same morning to the Phext logo video (PH: Revenue, then Evolution), where it was retimed to six seconds. The file still lives in this repo; the work continues there.
+---
+id=live-drawing-01
+group=live
+title=Live Drawing, Session 1 — studio pace
+date=2026-11-22
+ee=EE 72
+verdict=PASS
+media=series/live-drawing/session-01.mp4
+poster=series/live-drawing/session-01-mid.png
+sha256=51ab64dd7d9cb2c1f055e633b1be48d97b05f552b7d62b50fe8dd587c1fc2883
+reflection=Skeleton: one light, lit slowly — a full third of the drawing is the single lantern — then a street of houses, then the windows answering, then the sentence written underneath everything. What remained when the night was drawn: ignition, answering, inscription, in that order. The idea the drawing itself generated: the words are not a caption. They sit at street level, under the scene, spanning its full width — the drawing puts inscription as the ground the town stands on. And the time budget was its own evidence: as long on one lantern as on the whole street — the conversation's weight was the first light, not the town.
+---
+id=live-drawing-02
+group=live
+title=Live Drawing, Session 2 — meeting pace
+date=2026-11-22
+ee=EE 87
+verdict=PASS
+media=series/live-drawing/session-02.mp4
+poster=series/live-drawing/session-02-mid.png
+sha256=9e9b4f19ee3f89cd6c32143dd676aed23d4fed8c40ecd34bdb7b515dd4cab104
+reflection=What survived the 4x compression: the lantern entire, the five-house roofline, the answering windows, and the full sentence — the skeleton is unchanged at a quarter of the time; what survived speed is the conversation itself. What fell away: eave hatching, window crossbars, two of five stars, the wind curls, the crescent's inner arc, the glow's slow build — all duration, no meaning, except the moon's arc. The idea the drawing generated: written fast by hand, the sentence changes role. At studio pace it was a caption revealed after the scene; stroked at speed it lands as the scene's last act — the hand signs the drawing.

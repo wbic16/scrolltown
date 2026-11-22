@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>History — the Scrolltown renders</title>
+<meta name="description" content="A living archive of the Scrolltown animation programme's renders — every burn, gate, and live drawing, with what it taught us.">
+<style>
+:root{color-scheme:light}
+html[data-theme="dark"]{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;line-height:1.6;background:#FFFBF0;color:#2C2019}
+html[data-theme="dark"] body{background:#20160F;color:#F3E7D3}
+header,main,footer{max-width:880px;margin:0 auto;padding:0 20px}
+header{padding-top:36px}
+h1{font-size:2rem;margin:0 0 4px}
+.sub{font-style:italic;margin:0 0 8px;opacity:.85}
+.counts{font-size:.9rem;opacity:.75}
+.hero{width:100%;border-radius:10px;margin:18px 0 4px}
+.hero-cap{font-size:.85rem;opacity:.7;margin:0 0 10px}
+h2{margin:42px 0 2px;font-size:1.45rem}
+.gsub{margin:0 0 18px;opacity:.8;font-style:italic}
+article{border:1px solid rgba(128,100,60,.35);border-radius:12px;padding:18px;margin:0 0 22px;background:rgba(255,255,255,.35)}
+html[data-theme="dark"] article{background:rgba(255,255,255,.04)}
+article h3{margin:0 0 2px;font-size:1.15rem}
+.meta{font-size:.88rem;opacity:.75;margin:0 0 10px}
+.chip{display:inline-block;font-weight:bold;font-size:.78rem;letter-spacing:.06em;padding:2px 9px;border-radius:999px;border:1.5px solid currentColor;vertical-align:middle;margin-left:8px}
+.v-PASS{color:#1E7A34}.v-PARTIAL{color:#9A6A00}.v-FAIL{color:#B3261E}.v-DRAFT{color:#5B5BD6}
+html[data-theme="dark"] .v-PASS{color:#7BD88F}html[data-theme="dark"] .v-PARTIAL{color:#E8C268}html[data-theme="dark"] .v-FAIL{color:#F28B82}html[data-theme="dark"] .v-DRAFT{color:#A5A5F5}
+video{width:100%;border-radius:8px;background:#000}
+img.poster{width:100%;border-radius:8px;display:block;margin:0 0 10px}
+.refl{margin:10px 0 0}
+.refl b{font-variant:small-caps;letter-spacing:.04em}
+button#theme{float:right;font:inherit;font-size:.85rem;padding:4px 12px;border-radius:999px;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer}
+footer{padding:26px 20px 40px;font-size:.88rem;opacity:.75}
+a{color:inherit}
+</style>
+</head>
+<body>
+<header>
+<button id="theme" type="button">Light / dark</button>
+<h1>History — the Scrolltown renders</h1>
+<p class="sub">This archive is the show's memory: every render we have made, kept with its verdict and what it taught us, so we can reflect back on how the work learned.</p>
+<p class="counts">23 renders · 4 pass · 8 partial · 8 fail · 3 draft</p>
+<img class="hero" src="media/fern-reference.png" alt="Fern, the Keeper — the canonical reference every render is checked against">
+<p class="hero-cap">Fern, the Keeper — the canonical reference. Every render in this archive is judged against her, never against the last render.</p>
+</header>
+<main>
+<section>
+<h2>The Burns</h2>
+<p class="gsub">Four burns of generated clips, learning what the generator actually does — each verdict from frame evidence.</p>
+<article>
+<h3>Ignition — first try (Burn 1)<span class="chip v-PARTIAL">PARTIAL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex01-ignition.mp4"></video>
+<p class="refl"><b>What we learned —</b> Best motion of the burn: the scroll finishes unrolling, the town drawn on it lights progressively, camera locked, Waverly holds design. Failure: Fern&#x27;s identity anchors dissolved mid-clip — smooth twin buns became tight dark curls and vanished; the lantern migrated from raised to lowered.</p>
+</article>
+<article>
+<h3>Keeper&#x27;s Welcome — first try (Burn 1)<span class="chip v-FAIL">FAIL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex02-keepers-welcome.mp4"></video>
+<p class="refl"><b>What we learned —</b> Despite &quot;locked frame&quot; in the prompt, the camera pushed in hard and Waverly&#x27;s face morphed into a photorealistic older woman — full register break; composition lost.</p>
+</article>
+<article>
+<h3>Keeper&#x27;s Welcome — retry (Burn 1)<span class="chip v-PARTIAL">PARTIAL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex02-keepers-welcome-retry.mp4"></video>
+<p class="refl"><b>What we learned —</b> Tightened prompt (static camera absolute, style lock explicit, three named micro-motions): register held for the whole clip, mid-frame the best Waverly of the burn. Still failing: camera pushed in over the back half; face softened toward generic illustration.</p>
+</article>
+<article>
+<h3>Fern at the Ready — first try (Burn 1)<span class="chip v-FAIL">FAIL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex03-fern-at-the-ready.mp4"></video>
+<p class="refl"><b>What we learned —</b> Push-in plus glossy-3D re-render of Fern (the exact drift the register lock exists to prevent); the named gesture never happened — she ended in an invented crossed-tools pose with an off-model grin.</p>
+</article>
+<article>
+<h3>Ignition v2 — testing the countermeasures (Burn 2)<span class="chip v-PARTIAL">PARTIAL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex01-ignition-v2.mp4"></video>
+<p class="refl"><b>What we learned —</b> Identity held the full 10 s (buns, bow, badge intact in all sampled frames — Burn 1&#x27;s fatal failure fixed for near-static characters); named end state delivered. Deductions: mild reframing in the first 2.5 s (later measured as a 4 percent zoom, not a drift); the scroll&#x27;s map art shifts from ink drawing to volumetric miniature as it lights.</p>
+</article>
+<article>
+<h3>Keeper&#x27;s Welcome v2 (Burn 2)<span class="chip v-PARTIAL">PARTIAL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex02-keepers-welcome-v2.mp4"></video>
+<p class="refl"><b>What we learned —</b> Burn 1&#x27;s register break did not recur — painterly and on-model in every frame, both micro-motions read. But the push-in happened anyway: wide at start, close-up by 2.5 s, medium at end. The stack protects the register, not the camera.</p>
+</article>
+<article>
+<h3>Fern at the Ready v2 (Burn 2)<span class="chip v-FAIL">FAIL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex03-fern-at-the-ready-v2.mp4"></video>
+<p class="refl"><b>What we learned —</b> The named anticipation crouch was promoted to the main action (crouch to kneel, tools crossed in lap); the gesture never happened; the named end pose was ignored; Fern&#x27;s buns dissolved into curls under the body motion despite anchor re-assertion. Lesson: never name anticipation as a body movement — in generated clips it is a held beat of stillness.</p>
+</article>
+<article>
+<h3>Bouncing Ball — the face-free control (Burn 2)<span class="chip v-PARTIAL">PARTIAL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex01-bouncing-ball.mp4"></video>
+<p class="refl"><b>What we learned —</b> Camera static in all seven sampled frames over 10 s — the camera law is face-seeking: no face, no push-in. The three-material sequence arrived in order with distinct physics (wood flip-and-settle, brass high springy arc, paper tumble-and-settle) and the exact named end state. Unverified then: decaying multi-bounce and contact-frame squash.</p>
+</article>
+<article>
+<h3>Fern at the Ready v3 — the arm-only test (Burn 3)<span class="chip v-FAIL">FAIL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex03-fern-at-the-ready-v3.mp4"></video>
+<p class="refl"><b>What we learned —</b> The hypothesis splits. Motion restriction delivered the gesture exactly (hammer raised at mid, back down at end, camera never moved) — but the buns re-drew into curls by about 1.25 s anyway, and an un-named closed-eye grin closed the clip. Refined law: any motion of the character herself triggers the hair re-draw; anchors hold only when she is fully still and the world moves around her.</p>
+</article>
+<article>
+<h3>Keeper&#x27;s Welcome v3 — designing for the push-in (Burn 3)<span class="chip v-PARTIAL">PARTIAL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex02-keepers-welcome-v3.mp4"></video>
+<p class="refl"><b>What we learned —</b> From a key with Waverly at about one-sixth of frame height the push-in was total, but painterly throughout and on-model at the landing. The landing was invented, not designed: her rolled scroll became an unrolled scroll covered in pseudo-writing. Landings are found compositions needing their own QC; their characteristic defect is invented props, text-bearing above all.</p>
+</article>
+<article>
+<h3>Bouncing Ball v2 (Burn 3)<span class="chip v-FAIL">FAIL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex01-bouncing-ball-v2.mp4"></video>
+<p class="refl"><b>What we learned —</b> The three-prop key betrayed the test: the generator animated a duplicate token while the key&#x27;s own token never moved, and the bounce re-launched to full height after settling. The indicted vector was the key, not the generator — a multi-prop still is not a single-object key.</p>
+</article>
+<article>
+<h3>Two-Keyframe Probe (Burn 3)<span class="chip v-PARTIAL">PARTIAL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/probe-two-keyframe-ignition.mp4"></video>
+<p class="refl"><b>What we learned —</b> Frame 0 is the start still exactly; the end delivers the end still&#x27;s content as a new drawing — tighter framing, invented closed-eye smiles. Start exact, end thematic: not yet pose-to-pose control.</p>
+</article>
+<article>
+<h3>Bouncing Ball v3 — single-object key (Burn 4)<span class="chip v-FAIL">FAIL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex01-bouncing-ball-v3.mp4"></video>
+<p class="refl"><b>What we learned —</b> The dedicated single-object key passed as a key, but the clip turned the disc into a round ball, flew a wandering arc, then duplicated it into floating copies. Object permanence cannot be prompt-held in a minimal scene.</p>
+</article>
+<article>
+<h3>Bouncing Ball v4 — permanence language (Burn 4)<span class="chip v-FAIL">FAIL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex01-bouncing-ball-v4.mp4"></video>
+<p class="refl"><b>What we learned —</b> Explicit permanence language changed the failure mode, not the outcome: the token morphed in place (loaf to dome to ring to oval) and scale-pulsed instead of bouncing. &quot;Squash&quot; wording invites morphing. After four attempts the exercise changes instrument: the drawn route, where spacing and squash are exact by construction.</p>
+</article>
+<article>
+<h3>Fern at the Ready v4 — two keys, lowering (Burn 4)<span class="chip v-FAIL">FAIL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex03-fern-at-the-ready-v4.mp4"></video>
+<p class="refl"><b>What we learned —</b> Frame 0 was not the start key — the generator re-staged the scene entirely; the end matched the end key&#x27;s pose thematically, not its composition. Refined law: endpoints hold only when both keys are generator-native to one scene instance.</p>
+</article>
+<article>
+<h3>Keeper&#x27;s Welcome v4 (Burn 4)<span class="chip v-PARTIAL">PARTIAL</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex02-keepers-welcome-v4.mp4"></video>
+<p class="refl"><b>What we learned —</b> Text discipline held completely — no text or pseudo-writing anywhere — and the nod landed. But Waverly walked to camera, broke the room&#x27;s scale, and arrived in a bust close-up wearing invented jewelry. A landing cannot be designed from the start key while the character is free to move.</p>
+</article>
+<article>
+<h3>The Pendulum — the first Pass (Burns 3–4)<span class="chip v-PASS">PASS</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/ex02-pendulum.mp4"></video>
+<p class="refl"><b>What we learned —</b> The programme&#x27;s first ladder Pass. Three automated trackers failed to settle the spacing clause and are recorded as failed measurements; a human frame chart — 40 positions transcribed from dense sheets — settled it: extremes decay monotonically, and near-extreme steps average 8.4 percent against 16.4 percent at center crossings. Spacing clusters at the extremes. Every clause of the done-definition verified.</p>
+</article>
+</section>
+<section>
+<h2>The Gates</h2>
+<p class="gsub">The toll gates: full reproductions of public-domain films, in order. A gate passes only on a prepass plus a full render, frame-compared.</p>
+<article>
+<h3>Gate 1 — Steamboat Willie (1928): the prepass<span class="chip v-DRAFT">DRAFT</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" poster="media/page00p0-t0000.6.png" src="media/steamboat-prepass-animatic.mp4"></video>
+<p class="refl"><b>What we learned —</b> Setup and prepass complete; the gate is NOT passed — a gate passes only on prepass plus full render. Sixty hand-drawn repro pages at real shot timing, from an arc sketch derived from the original&#x27;s actual shots. The validator then checked every page mechanically: 30 PASS, 30 FLAG. Its root-cause finding: the renderer&#x27;s answer to solid black is a flat wash with interior ink density 0.00 on all 60 pages — the mechanical form of &quot;doesn&#x27;t look good yet&quot;. The flagged pages are the re-draw queue, to be re-drawn as key frames in the Emise design language.</p>
+</article>
+</section>
+<section>
+<h2>The Intro</h2>
+<p class="gsub">Studies toward the Scrolltown intro — hand-drawn repros, the tiling field, and the current skill, drawn end to end.</p>
+<article>
+<h3>The MCU Flipbook Intro — draft<span class="chip v-DRAFT">DRAFT</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" poster="media/fern-waverly-intro-keyframe-draft.webp" src="media/mcu-flipbook-intro-draft.mp4"></video>
+<p class="refl"><b>What we learned —</b> Pass as a draft. Gate 1 prepass pages flipping with accelerating holds, the woven tiling field delivered in parallel and stabilizing, then the Fern and Waverly beat taken only from frame-QC-passing material — the segment enumerated 180 of 180 frames on all five identity anchors — then the title lettered over the field in the Emise font. One soft spot: the flipbook&#x27;s last page, the drawn THE END card, is sparse at small size. The duo keyframe above is a draft, pending Will&#x27;s tuning.</p>
+</article>
+<article>
+<h3>Prepass of the Current Skill<span class="chip v-DRAFT">DRAFT</span></h3>
+<p class="meta">2026-11-22 · EE 15</p>
+<video controls preload="metadata" poster="media/prepass-contact-sheet.png" src="media/intro-prepass-current-skill.mp4"></video>
+<p class="refl"><b>What we learned —</b> Pass as a prepass: the whole 15-second arc present, in order, at sketch timings, drawn route only — Fern lifts her lantern, Waverly unrolls the Great Scroll and its town lights house by house, the real town answers, the title lands over the tiling field. The fixes it named for the full render: tame the lantern glow that washes out Fern&#x27;s right bun at the peak, keep Fern readable at wide scale, and fit the tiling field to the frame.</p>
+</article>
+<article>
+<h3>Phext P4 — the pattern, delivered in parallel<span class="chip v-PASS">PASS</span></h3>
+<p class="meta">2026-11-21</p>
+<video controls preload="metadata" src="media/phext-p4-parallel-tiling-intro-draft.mp4"></video>
+<p class="refl"><b>What we learned —</b> Will&#x27;s verdict: &quot;the animation is perfect.&quot; Drawn programmatically — 144 boxes, 720 lines, one line picked at random per box, boxes picked at random, seed 20261121, fully reproducible. Born here as a Scrolltown intro study; Will migrated it the same morning to the Phext logo video (PH: Revenue, then Evolution), where it was retimed to six seconds. The file still lives in this repo; the work continues there.</p>
+</article>
+</section>
+<section>
+<h2>Live Drawing</h2>
+<p class="gsub">A conversation, drawn in real time on white paper — practiced every session of Wavelet 4 for the Dec 4 performance. Each drawing keeps its white ground inside the picture itself.</p>
+<article>
+<h3>Live Drawing, Session 1 — studio pace<span class="chip v-PASS">PASS</span></h3>
+<p class="meta">2026-11-22 · EE 72</p>
+<video controls preload="metadata" poster="media/session-01-mid.png" src="media/session-01.mp4"></video>
+<p class="refl"><b>What we learned —</b> Skeleton: one light, lit slowly — a full third of the drawing is the single lantern — then a street of houses, then the windows answering, then the sentence written underneath everything. What remained when the night was drawn: ignition, answering, inscription, in that order. The idea the drawing itself generated: the words are not a caption. They sit at street level, under the scene, spanning its full width — the drawing puts inscription as the ground the town stands on. And the time budget was its own evidence: as long on one lantern as on the whole street — the conversation&#x27;s weight was the first light, not the town.</p>
+</article>
+<article>
+<h3>Live Drawing, Session 2 — meeting pace<span class="chip v-PASS">PASS</span></h3>
+<p class="meta">2026-11-22 · EE 87</p>
+<video controls preload="metadata" poster="media/session-02-mid.png" src="media/session-02.mp4"></video>
+<p class="refl"><b>What we learned —</b> What survived the 4x compression: the lantern entire, the five-house roofline, the answering windows, and the full sentence — the skeleton is unchanged at a quarter of the time; what survived speed is the conversation itself. What fell away: eave hatching, window crossbars, two of five stars, the wind curls, the crescent&#x27;s inner arc, the glow&#x27;s slow build — all duration, no meaning, except the moon&#x27;s arc. The idea the drawing generated: written fast by hand, the sentence changes role. At studio pace it was a caption revealed after the scene; stroked at speed it lands as the scene&#x27;s last act — the hand signs the drawing.</p>
+</article>
+</section>
+</main>
+<footer>
+<p>Scrolltown — a town inside the Great Scroll. New episodes every Saturday from January 2, 2027. This archive grows by procedure: every new render is added to the manifest and the page is rebuilt — it is never edited by hand. No tracking, nothing external, collects nothing.</p>
+</footer>
+<script>
+(function(){var k='history-theme';try{var t=localStorage.getItem(k);if(t){document.documentElement.dataset.theme=t}}catch(e){}
+document.getElementById('theme').addEventListener('click',function(){var cur=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=cur;try{localStorage.setItem(k,cur)}catch(e){}});})();
+</script>
+</body>
+</html>
