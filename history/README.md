@@ -63,6 +63,15 @@ one-time sudo install on the box:
     sudo ln -s /etc/nginx/sites-available/history.phext.io /etc/nginx/sites-enabled/
     sudo nginx -t && sudo systemctl reload nginx
 
+(That install is packaged, with the placeholder cert and the certbot
+step, as `~/history-phext-deploy/install-history.sh` on the box:
+`sudo bash ~/history-phext-deploy/install-history.sh`.)
+
+After deploying, run the walk check (`python3 ~/bin/walk-check.py` on
+awsbox; source: `deploy/walk-check.py` in bickford-llama-ranch) —
+history.phext.io must be walk-reachable from phext.io, like every
+built site (Will, 2026-11-22 11:23).
+
 **Publish state at first build (2026-11-22):** DNS for history.phext.io
 did not resolve (checked from aletheia-core; sibling phext.io names point
 at awsbox, 44.248.235.76). The docroot was staged on the box and the site
