@@ -1,0 +1,29 @@
+{
+ "frames": {
+  "340": {
+   "lines_found": 428,
+   "lines_total": 500,
+   "boxes": 100,
+   "per_box_min": 0,
+   "per_box_max": 5,
+   "boxes_at_5": 83
+  },
+  "350": {
+   "lines_found": 428,
+   "lines_total": 500,
+   "boxes": 100,
+   "per_box_min": 0,
+   "per_box_max": 5,
+   "boxes_at_5": 83
+  },
+  "359": {
+   "lines_found": 428,
+   "lines_total": 500,
+   "boxes": 100,
+   "per_box_min": 0,
+   "per_box_max": 5,
+   "boxes_at_5": 83
+  }
+ },
+ "parity_alternates": true
+}
