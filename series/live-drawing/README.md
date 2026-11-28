@@ -19,3 +19,11 @@ The Oracle Artist's live drawing, practiced under the Wavelet 4 cadence (animato
 - **Mid-draw still:** `session-02-mid.png` — frame at 11.5 s: the pen mid-'h', "light t" already written.
 - **Renderer:** `draw_session02.py` (+ `assemble-02.sh`) — drawn route, deterministic (seed 20261122). White ground throughout.
 - **QC:** PASS at meeting pace — the beat reads whole at 15 s; glyphs legible and drawn, not revealed; white ground verified at six sampled frames. Full log line and the session's synthesis block are in the register.
+
+## Session 03 — 2026-11-28 (EE 1242)
+
+- **Subject:** session 2's run at MEETING PACE with its one named adjustment landed — the crescent's inner arc, cut in session 2 for pace, is restored as a single stroke (an offset-circle arc whose endpoints land on the outer ring), so the moon reads as a crescent again instead of a plain ring. Same subject family: lantern → rooftops → windows answering → hand writing "light the next light", genuinely hand-stroked.
+- **Video:** `session-03.mp4` — 1280×720, 24 fps, 360 frames, 15.000 s, silent, H.264. sha256 `6d2c6fed64c2c6427493d35fa77a57337ba8e32fa8de196e33f139cd2977c8f5`. Frames drawn locally; assembly ran on aletheia-core.
+- **Mid-draw still:** `session-03-mid.png` — frame at 11.5 s: the pen mid-'h', "light t" already written (comparable to session 2's still).
+- **Renderer:** `draw_session03.py` (+ `assemble-03.sh`) — drawn route, deterministic (seed 20261122); session 2's renderer plus exactly one stroke. White ground throughout.
+- **QC:** PASS at meeting pace — the inner arc is present in the final frame and the moon reads as a crescent; the schedule absorbed the extra stroke inside the same 15.0 s with nothing else cut; white ground verified at seven sampled frames. Full log line and the session's synthesis block are in the register.
